@@ -49,7 +49,7 @@ alpha:alphaValue]
     view.layer.masksToBounds = YES;
     
     UILabel *label2 = [[UILabel alloc] init];
-    label2.frame  =  CGRectMake(self.view.bounds.size.width - 120, 10, 100 , 40);
+    label2.frame  =  CGRectMake(self.view.bounds.size.width - 110, 10, 100 , 40);
     label2.textColor = [UIColor whiteColor];
     label2.text = @"去结算" ;
     label2.textAlignment = NSTextAlignmentCenter ;
@@ -70,6 +70,9 @@ alpha:alphaValue]
 -(void)tapAction
 {
     CheckOrderController *VC = [[CheckOrderController alloc] init];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[@"image"] = @"chore1" ;
+    VC.dataDict = dict ;
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:YES];
 }

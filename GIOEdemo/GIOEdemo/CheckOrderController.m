@@ -46,7 +46,7 @@
     cell.selectionStyle =  UITableViewCellSelectionStyleNone ;
     NSDictionary *dict =  @{@"number":@"订单编号：6234542819",@"title":@"GIO 商品",@"monney":@"¥59.00",@"state":@"nil",};
     [cell updateCell:dict];
-    cell.imageIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"order%d", 1]] ;
+    cell.imageIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",[self.dataDict objectForKey:@"image"]]] ;
     [imageView addSubview:cell];
 
     UILabel *label4 = [[UILabel alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(cell.frame)+ 30, self.view.bounds.size.width , 0.5)];
@@ -95,7 +95,7 @@
     view.layer.masksToBounds = YES;
     
     UILabel *label2 = [[UILabel alloc] init];
-    label2.frame  =  CGRectMake(self.view.bounds.size.width - 100, 10, 80 , 40);
+    label2.frame  =  CGRectMake(self.view.bounds.size.width - 110, 10, 100 , 40);
     label2.backgroundColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
     label2.textColor = [UIColor whiteColor];
     label2.text = @"提交订单" ;

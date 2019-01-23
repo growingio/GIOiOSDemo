@@ -53,7 +53,7 @@
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         if (i ==  0) {
             self.chooseBtn = btn ;
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 3, 60)];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 3, 40)];
             label.tag = 6666 ;
             label.backgroundColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
             [self.chooseBtn addSubview:label];
@@ -92,7 +92,7 @@
             [view addSubview:cell];
         
             UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
-           [cell addGestureRecognizer:tapGesturRecognizer];
+            [cell addGestureRecognizer:tapGesturRecognizer];
         if (array.count == 1) {
             cell.center  = CGPointMake((self.view.bounds.size.width - 120)/2.0, 60) ;
         }
@@ -110,7 +110,7 @@
         }
     }
     self.chooseBtn = btn ;
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 3, 60)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 3, 40)];
     label.tag = 6666 ;
     label.backgroundColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
     [self.chooseBtn addSubview:label];
@@ -125,7 +125,7 @@
                 for (int i = 0; i < 2; i ++) {
                     NSMutableArray *array = [NSMutableArray arrayWithObjects:@"手机",@"文化衫",@"马克杯", nil];
                     UIView *cellView =  [self makeCellArray:array];
-                    cellView.frame = CGRectMake(10 , i * 130 + 10,  self.view.bounds.size.width - 120, 120);
+                    cellView.frame = CGRectMake(0 , i * 120 + 10,  self.view.bounds.size.width - 120, 120);
                     [self.rightView addSubview:cellView];
                 }
             }

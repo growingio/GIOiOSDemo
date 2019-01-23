@@ -68,7 +68,7 @@
 
     
     UILabel *label2 = [[UILabel alloc] init];
-    label2.frame  =  CGRectMake(self.view.bounds.size.width - 60, 10, 30 , 30);
+    label2.frame  =  CGRectMake(self.view.bounds.size.width - 30, 10, 30 , 30);
     label2.textColor = [UIColor blackColor];
     label2.text = @">" ;
     [view addSubview:label2];

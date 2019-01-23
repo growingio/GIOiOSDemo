@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self  makeTitleView];
     self.dataArray = [NSArray arrayWithObjects:@"积分",@"会员等级",@"我的订单",@"红包",@"地址",nil];
 //    [self makeUpview];

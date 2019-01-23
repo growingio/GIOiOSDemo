@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CheckOrderController : UIViewController
-
+@property(nonatomic ,strong) NSMutableDictionary *dataDict ;
 @end
 
 NS_ASSUME_NONNULL_END

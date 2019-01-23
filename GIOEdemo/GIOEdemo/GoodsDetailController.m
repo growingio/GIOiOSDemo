@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 49)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height - 64)];
     self.tableView.delegate = self ;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone ;
@@ -64,30 +64,40 @@
 -(void)makeBottomview{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,self.view.bounds.size.height - 80, self.view.bounds.size.width , 80)];
     view.backgroundColor = [UIColor whiteColor];
-    UILabel *label = [[UILabel alloc] init];
-    label.backgroundColor = [UIColor whiteColor];
-    label.frame  = CGRectMake(0, 0, self.view.bounds.size.width /2.0 - 10, 60);
-    label.textColor = [UIColor blackColor];
-    label.textAlignment = NSTextAlignmentCenter ;
-    label.layer.masksToBounds = YES ;
-    label.layer.cornerRadius = 5 ;
-    label.layer.borderColor = [UIColor blackColor].CGColor;
-    label.layer.borderWidth = 1 ;
-    label.text = @"加入购物车" ;
-    [view addSubview:label];
+    UIButton *btnLeft = [[UIButton alloc] init];
+    btnLeft.backgroundColor = [UIColor whiteColor];
+    btnLeft.frame  = CGRectMake(0, 0, self.view.bounds.size.width /2.0 - 10, 60);
+    btnLeft.titleLabel.textAlignment = NSTextAlignmentCenter ;
+    btnLeft.layer.masksToBounds = YES ;
+    btnLeft.layer.cornerRadius = 5 ;
+    btnLeft.layer.borderColor = [UIColor blackColor].CGColor;
+    btnLeft.layer.borderWidth = 1 ;
+    [btnLeft setTitle:@"加入购物车" forState:UIControlStateNormal];
+    [btnLeft setTitleColor: [UIColor blackColor] forState:UIControlStateNormal];
+    [btnLeft addTarget:self action:@selector(btnLeftCLick) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:btnLeft];
 
-    UILabel *label2 = [[UILabel alloc] init];
-    label2.backgroundColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
-    label2.frame  = CGRectMake(self.view.bounds.size.width /2.0 + 10 , 0, self.view.bounds.size.width /2.0  - 10, 60);
-    label2.textColor = [UIColor whiteColor];
-    label2.textAlignment = NSTextAlignmentCenter ;
-    label2.text = @"立即购买" ;
-    label2.layer.masksToBounds = YES ;
-    label2.layer.cornerRadius = 5 ;
-    [view addSubview:label2];
+    UIButton *btnRight = [[UIButton alloc] init];
+    btnRight.backgroundColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
+    btnRight.frame  = CGRectMake(self.view.bounds.size.width /2.0 + 10 , 0, self.view.bounds.size.width /2.0  - 10, 60);
+    btnRight.titleLabel.textColor = [UIColor whiteColor];
+    btnRight.titleLabel.textAlignment = NSTextAlignmentCenter ;
+    [btnRight setTitle:@"立即购买" forState:UIControlStateNormal];
+    btnRight.layer.masksToBounds = YES ;
+    btnRight.layer.cornerRadius = 5 ;
+    [btnRight addTarget:self action:@selector(btnRightCLick) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:btnRight];
     [self.view addSubview:view];
 }
 
+-(void)btnLeftCLick{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"添加购物车成功" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+    [alert show];
+}
+
+-(void)btnRightCLick{
+    self.tabBarController.selectedIndex = 2 ;
+}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [[UITableViewCell alloc] init];
@@ -119,7 +129,7 @@
     [view addSubview:label3];
 
     UILabel *label4 = [[UILabel alloc] init];
-    label4.frame  =  CGRectMake(10,  80, self.view.bounds.size.width , 60);
+    label4.frame  =  CGRectMake(10,  80, self.view.bounds.size.width - 40 , 60);
     label4.textColor = [UIColor blackColor];
     label4.numberOfLines = 0 ;
     label4.text = @"外观非常漂亮，使用起来也很流畅，大品牌非常好用，送货也很及时，包装很好" ;
@@ -152,13 +162,13 @@
 
 
 -(UIView *)makeFooterView{
-        UIView * footerView = [[UIView alloc] initWithFrame:CGRectMake(20, 100 , self.view.bounds.size.width - 40, 260)];
+        UIView * footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 100 , self.view.bounds.size.width , 260)];
     
-        UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(0, 1, self.view.bounds.size.width , 0.5)];
+        UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(10, 1, self.view.bounds.size.width - 20 , 0.5)];
         label6.backgroundColor = [UIColor lightGrayColor];
         [footerView addSubview:label6];
     
-        UILabel *upLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0 , self.view.bounds.size.width - 40, 30)];
+        UILabel *upLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0 , self.view.bounds.size.width - 40, 30)];
         upLabel.textAlignment = NSTextAlignmentLeft ;
         upLabel.text = @"推荐" ;
         [footerView addSubview:upLabel];
@@ -206,15 +216,6 @@
     JudgeController *VC = [[JudgeController alloc] init];
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:NO];
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 300 ;
-}
-
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 400 ;
 }
 
 @end
