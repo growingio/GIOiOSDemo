@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		426E80E921F84AC300EFD42A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 426E80E821F84AC300EFD42A /* main.m */; };
 		42F30CF921F0939300C4E6E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30CF821F0939300C4E6E9 /* AppDelegate.m */; };
 		42F30CFC21F0939300C4E6E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30CFB21F0939300C4E6E9 /* ViewController.m */; };
 		42F30CFF21F0939300C4E6E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F30CFD21F0939300C4E6E9 /* Main.storyboard */; };
@@ -23,7 +24,6 @@
 		42F30D5521F0942E00C4E6E9 /* ClassifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D3F21F0942D00C4E6E9 /* ClassifyController.m */; };
 		42F30D5621F0942E00C4E6E9 /* NewTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D4121F0942D00C4E6E9 /* NewTabController.m */; };
 		42F30D5721F0942E00C4E6E9 /* LoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D4421F0942D00C4E6E9 /* LoopView.m */; };
-		42F30D5821F0942E00C4E6E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D4621F0942D00C4E6E9 /* main.m */; };
 		42F30D5921F0942E00C4E6E9 /* MineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D4821F0942E00C4E6E9 /* MineController.m */; };
 		42F30D5A21F0942E00C4E6E9 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D4A21F0942E00C4E6E9 /* OrderCell.m */; };
 		42F30D5B21F0942E00C4E6E9 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D4B21F0942E00C4E6E9 /* HomeController.m */; };
@@ -64,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		426E80E821F84AC300EFD42A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		42F30CF421F0939300C4E6E9 /* GIOEdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIOEdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F30CF721F0939300C4E6E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		42F30CF821F0939300C4E6E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		42F30D4321F0942D00C4E6E9 /* LoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopView.h; sourceTree = "<group>"; };
 		42F30D4421F0942D00C4E6E9 /* LoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopView.m; sourceTree = "<group>"; };
 		42F30D4521F0942D00C4E6E9 /* CheckOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckOrderController.h; sourceTree = "<group>"; };
-		42F30D4621F0942D00C4E6E9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../GIOdemo/GIOdemo/main.m; sourceTree = "<group>"; };
 		42F30D4721F0942D00C4E6E9 /* MineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineController.h; sourceTree = "<group>"; };
 		42F30D4821F0942E00C4E6E9 /* MineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineController.m; sourceTree = "<group>"; };
 		42F30D4921F0942E00C4E6E9 /* OrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderCell.h; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 				42F30D5021F0942E00C4E6E9 /* JudgeController.m */,
 				42F30D4321F0942D00C4E6E9 /* LoopView.h */,
 				42F30D4421F0942D00C4E6E9 /* LoopView.m */,
-				42F30D4621F0942D00C4E6E9 /* main.m */,
+				426E80E821F84AC300EFD42A /* main.m */,
 				42F30D4721F0942D00C4E6E9 /* MineController.h */,
 				42F30D4821F0942E00C4E6E9 /* MineController.m */,
 				42F30D3E21F0942D00C4E6E9 /* NewTabController.h */,
@@ -424,8 +424,8 @@
 				42F30CF921F0939300C4E6E9 /* AppDelegate.m in Sources */,
 				42F30D5B21F0942E00C4E6E9 /* HomeController.m in Sources */,
 				42F30D5721F0942E00C4E6E9 /* LoopView.m in Sources */,
-				42F30D5821F0942E00C4E6E9 /* main.m in Sources */,
 				42F30D5921F0942E00C4E6E9 /* MineController.m in Sources */,
+				426E80E921F84AC300EFD42A /* main.m in Sources */,
 				42F30D5521F0942E00C4E6E9 /* ClassifyController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
