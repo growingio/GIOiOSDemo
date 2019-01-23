@@ -1,0 +1,756 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42F30CF921F0939300C4E6E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30CF821F0939300C4E6E9 /* AppDelegate.m */; };
+		42F30CFC21F0939300C4E6E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30CFB21F0939300C4E6E9 /* ViewController.m */; };
+		42F30CFF21F0939300C4E6E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F30CFD21F0939300C4E6E9 /* Main.storyboard */; };
+		42F30D0421F0939400C4E6E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F30D0221F0939400C4E6E9 /* LaunchScreen.storyboard */; };
+		42F30D1121F0939400C4E6E9 /* GIOEdemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D1021F0939400C4E6E9 /* GIOEdemoTests.m */; };
+		42F30D1C21F0939400C4E6E9 /* GIOEdemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D1B21F0939400C4E6E9 /* GIOEdemoUITests.m */; };
+		42F30D3521F093FF00C4E6E9 /* ShoppingCartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D2A21F093FF00C4E6E9 /* ShoppingCartController.m */; };
+		42F30D3621F093FF00C4E6E9 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D2C21F093FF00C4E6E9 /* SearchViewController.m */; };
+		42F30D3721F093FF00C4E6E9 /* ShopingCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D2D21F093FF00C4E6E9 /* ShopingCartCell.m */; };
+		42F30D3821F093FF00C4E6E9 /* OrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D3221F093FF00C4E6E9 /* OrderController.m */; };
+		42F30D3921F093FF00C4E6E9 /* PayResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D3321F093FF00C4E6E9 /* PayResultController.m */; };
+		42F30D3A21F093FF00C4E6E9 /* UIViewController+GIOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D3421F093FF00C4E6E9 /* UIViewController+GIOController.m */; };
+		42F30D5421F0942E00C4E6E9 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D3D21F0942D00C4E6E9 /* HomeCell.m */; };
+		42F30D5521F0942E00C4E6E9 /* ClassifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D3F21F0942D00C4E6E9 /* ClassifyController.m */; };
+		42F30D5621F0942E00C4E6E9 /* NewTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D4121F0942D00C4E6E9 /* NewTabController.m */; };
+		42F30D5721F0942E00C4E6E9 /* LoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D4421F0942D00C4E6E9 /* LoopView.m */; };
+		42F30D5821F0942E00C4E6E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D4621F0942D00C4E6E9 /* main.m */; };
+		42F30D5921F0942E00C4E6E9 /* MineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D4821F0942E00C4E6E9 /* MineController.m */; };
+		42F30D5A21F0942E00C4E6E9 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D4A21F0942E00C4E6E9 /* OrderCell.m */; };
+		42F30D5B21F0942E00C4E6E9 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D4B21F0942E00C4E6E9 /* HomeController.m */; };
+		42F30D5C21F0942E00C4E6E9 /* GoodsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D4C21F0942E00C4E6E9 /* GoodsDetailController.m */; };
+		42F30D5D21F0942E00C4E6E9 /* CashierDeskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D4E21F0942E00C4E6E9 /* CashierDeskController.m */; };
+		42F30D5E21F0942E00C4E6E9 /* JudgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D5021F0942E00C4E6E9 /* JudgeController.m */; };
+		42F30D5F21F0942E00C4E6E9 /* CheckOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D5221F0942E00C4E6E9 /* CheckOrderController.m */; };
+		42F30D6121F0946100C4E6E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F30D6021F0946100C4E6E9 /* Assets.xcassets */; };
+		42F30D6321F0954000C4E6E9 /* GrowingCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D6221F0954000C4E6E9 /* GrowingCoreKit.framework */; };
+		42F30D6521F0954800C4E6E9 /* GrowingAutoTrackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D6421F0954800C4E6E9 /* GrowingAutoTrackKit.framework */; };
+		42F30D6821F0955B00C4E6E9 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D6721F0955A00C4E6E9 /* JavaScriptCore.framework */; };
+		42F30D6A21F0958000C4E6E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D6921F0958000C4E6E9 /* Foundation.framework */; };
+		42F30D6C21F0958600C4E6E9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D6B21F0958600C4E6E9 /* Security.framework */; };
+		42F30D6E21F0958C00C4E6E9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D6D21F0958C00C4E6E9 /* CoreTelephony.framework */; };
+		42F30D7021F0959300C4E6E9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D6F21F0959300C4E6E9 /* SystemConfiguration.framework */; };
+		42F30D7221F0959A00C4E6E9 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D7121F0959A00C4E6E9 /* AdSupport.framework */; };
+		42F30D7421F095A200C4E6E9 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D7321F095A200C4E6E9 /* libicucore.tbd */; };
+		42F30D7621F095A800C4E6E9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D7521F095A800C4E6E9 /* libsqlite3.0.tbd */; };
+		42F30D7821F095AE00C4E6E9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D7721F095AE00C4E6E9 /* CoreLocation.framework */; };
+		42F30D7A21F0962300C4E6E9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D7921F0962300C4E6E9 /* WebKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42F30D0D21F0939400C4E6E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42F30CEC21F0939300C4E6E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42F30CF321F0939300C4E6E9;
+			remoteInfo = GIOEdemo;
+		};
+		42F30D1821F0939400C4E6E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42F30CEC21F0939300C4E6E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42F30CF321F0939300C4E6E9;
+			remoteInfo = GIOEdemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		42F30CF421F0939300C4E6E9 /* GIOEdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIOEdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42F30CF721F0939300C4E6E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		42F30CF821F0939300C4E6E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		42F30CFA21F0939300C4E6E9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		42F30CFB21F0939300C4E6E9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		42F30CFE21F0939300C4E6E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		42F30D0321F0939400C4E6E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		42F30D0521F0939400C4E6E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42F30D0C21F0939400C4E6E9 /* GIOEdemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GIOEdemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42F30D1021F0939400C4E6E9 /* GIOEdemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIOEdemoTests.m; sourceTree = "<group>"; };
+		42F30D1221F0939400C4E6E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42F30D1721F0939400C4E6E9 /* GIOEdemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GIOEdemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42F30D1B21F0939400C4E6E9 /* GIOEdemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIOEdemoUITests.m; sourceTree = "<group>"; };
+		42F30D1D21F0939400C4E6E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42F30D2921F093FF00C4E6E9 /* ShopingCartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopingCartCell.h; sourceTree = "<group>"; };
+		42F30D2A21F093FF00C4E6E9 /* ShoppingCartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartController.m; sourceTree = "<group>"; };
+		42F30D2B21F093FF00C4E6E9 /* PayResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayResultController.h; sourceTree = "<group>"; };
+		42F30D2C21F093FF00C4E6E9 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		42F30D2D21F093FF00C4E6E9 /* ShopingCartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopingCartCell.m; sourceTree = "<group>"; };
+		42F30D2E21F093FF00C4E6E9 /* UIViewController+GIOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GIOController.h"; sourceTree = "<group>"; };
+		42F30D2F21F093FF00C4E6E9 /* OrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderController.h; sourceTree = "<group>"; };
+		42F30D3021F093FF00C4E6E9 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		42F30D3121F093FF00C4E6E9 /* ShoppingCartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartController.h; sourceTree = "<group>"; };
+		42F30D3221F093FF00C4E6E9 /* OrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderController.m; sourceTree = "<group>"; };
+		42F30D3321F093FF00C4E6E9 /* PayResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayResultController.m; sourceTree = "<group>"; };
+		42F30D3421F093FF00C4E6E9 /* UIViewController+GIOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GIOController.m"; sourceTree = "<group>"; };
+		42F30D3C21F0942D00C4E6E9 /* JudgeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JudgeController.h; sourceTree = "<group>"; };
+		42F30D3D21F0942D00C4E6E9 /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
+		42F30D3E21F0942D00C4E6E9 /* NewTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTabController.h; sourceTree = "<group>"; };
+		42F30D3F21F0942D00C4E6E9 /* ClassifyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyController.m; sourceTree = "<group>"; };
+		42F30D4021F0942D00C4E6E9 /* ClassifyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyController.h; sourceTree = "<group>"; };
+		42F30D4121F0942D00C4E6E9 /* NewTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTabController.m; sourceTree = "<group>"; };
+		42F30D4221F0942D00C4E6E9 /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
+		42F30D4321F0942D00C4E6E9 /* LoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopView.h; sourceTree = "<group>"; };
+		42F30D4421F0942D00C4E6E9 /* LoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopView.m; sourceTree = "<group>"; };
+		42F30D4521F0942D00C4E6E9 /* CheckOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckOrderController.h; sourceTree = "<group>"; };
+		42F30D4621F0942D00C4E6E9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../GIOdemo/GIOdemo/main.m; sourceTree = "<group>"; };
+		42F30D4721F0942D00C4E6E9 /* MineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineController.h; sourceTree = "<group>"; };
+		42F30D4821F0942E00C4E6E9 /* MineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineController.m; sourceTree = "<group>"; };
+		42F30D4921F0942E00C4E6E9 /* OrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderCell.h; sourceTree = "<group>"; };
+		42F30D4A21F0942E00C4E6E9 /* OrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderCell.m; sourceTree = "<group>"; };
+		42F30D4B21F0942E00C4E6E9 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		42F30D4C21F0942E00C4E6E9 /* GoodsDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailController.m; sourceTree = "<group>"; };
+		42F30D4D21F0942E00C4E6E9 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
+		42F30D4E21F0942E00C4E6E9 /* CashierDeskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashierDeskController.m; sourceTree = "<group>"; };
+		42F30D4F21F0942E00C4E6E9 /* GoodsDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsDetailController.h; sourceTree = "<group>"; };
+		42F30D5021F0942E00C4E6E9 /* JudgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JudgeController.m; sourceTree = "<group>"; };
+		42F30D5121F0942E00C4E6E9 /* CashierDeskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashierDeskController.h; sourceTree = "<group>"; };
+		42F30D5221F0942E00C4E6E9 /* CheckOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckOrderController.m; sourceTree = "<group>"; };
+		42F30D6021F0946100C4E6E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42F30D6221F0954000C4E6E9 /* GrowingCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingCoreKit.framework; sourceTree = "<group>"; };
+		42F30D6421F0954800C4E6E9 /* GrowingAutoTrackKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingAutoTrackKit.framework; sourceTree = "<group>"; };
+		42F30D6721F0955A00C4E6E9 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		42F30D6921F0958000C4E6E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		42F30D6B21F0958600C4E6E9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		42F30D6D21F0958C00C4E6E9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		42F30D6F21F0959300C4E6E9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		42F30D7121F0959A00C4E6E9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		42F30D7321F095A200C4E6E9 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		42F30D7521F095A800C4E6E9 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		42F30D7721F095AE00C4E6E9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		42F30D7921F0962300C4E6E9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		42F30D7B21F096A100C4E6E9 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		42F30D7C21F096AE00C4E6E9 /* Growing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Growing.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42F30CF121F0939300C4E6E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42F30D7A21F0962300C4E6E9 /* WebKit.framework in Frameworks */,
+				42F30D7821F095AE00C4E6E9 /* CoreLocation.framework in Frameworks */,
+				42F30D7621F095A800C4E6E9 /* libsqlite3.0.tbd in Frameworks */,
+				42F30D7421F095A200C4E6E9 /* libicucore.tbd in Frameworks */,
+				42F30D7221F0959A00C4E6E9 /* AdSupport.framework in Frameworks */,
+				42F30D7021F0959300C4E6E9 /* SystemConfiguration.framework in Frameworks */,
+				42F30D6E21F0958C00C4E6E9 /* CoreTelephony.framework in Frameworks */,
+				42F30D6C21F0958600C4E6E9 /* Security.framework in Frameworks */,
+				42F30D6A21F0958000C4E6E9 /* Foundation.framework in Frameworks */,
+				42F30D6821F0955B00C4E6E9 /* JavaScriptCore.framework in Frameworks */,
+				42F30D6521F0954800C4E6E9 /* GrowingAutoTrackKit.framework in Frameworks */,
+				42F30D6321F0954000C4E6E9 /* GrowingCoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42F30D0921F0939400C4E6E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42F30D1421F0939400C4E6E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42F30CEB21F0939300C4E6E9 = {
+			isa = PBXGroup;
+			children = (
+				42F30D6421F0954800C4E6E9 /* GrowingAutoTrackKit.framework */,
+				42F30D6221F0954000C4E6E9 /* GrowingCoreKit.framework */,
+				42F30CF621F0939300C4E6E9 /* GIOEdemo */,
+				42F30D0F21F0939400C4E6E9 /* GIOEdemoTests */,
+				42F30D1A21F0939400C4E6E9 /* GIOEdemoUITests */,
+				42F30CF521F0939300C4E6E9 /* Products */,
+				42F30D6621F0955A00C4E6E9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		42F30CF521F0939300C4E6E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42F30CF421F0939300C4E6E9 /* GIOEdemo.app */,
+				42F30D0C21F0939400C4E6E9 /* GIOEdemoTests.xctest */,
+				42F30D1721F0939400C4E6E9 /* GIOEdemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42F30CF621F0939300C4E6E9 /* GIOEdemo */ = {
+			isa = PBXGroup;
+			children = (
+				42F30D2F21F093FF00C4E6E9 /* OrderController.h */,
+				42F30D5121F0942E00C4E6E9 /* CashierDeskController.h */,
+				42F30D4E21F0942E00C4E6E9 /* CashierDeskController.m */,
+				42F30D4521F0942D00C4E6E9 /* CheckOrderController.h */,
+				42F30D5221F0942E00C4E6E9 /* CheckOrderController.m */,
+				42F30D7B21F096A100C4E6E9 /* module.modulemap */,
+				42F30D7C21F096AE00C4E6E9 /* Growing.h */,
+				42F30D4021F0942D00C4E6E9 /* ClassifyController.h */,
+				42F30D3F21F0942D00C4E6E9 /* ClassifyController.m */,
+				42F30D4F21F0942E00C4E6E9 /* GoodsDetailController.h */,
+				42F30D4C21F0942E00C4E6E9 /* GoodsDetailController.m */,
+				42F30D4221F0942D00C4E6E9 /* HomeCell.h */,
+				42F30D3D21F0942D00C4E6E9 /* HomeCell.m */,
+				42F30D4D21F0942E00C4E6E9 /* HomeController.h */,
+				42F30D4B21F0942E00C4E6E9 /* HomeController.m */,
+				42F30D3C21F0942D00C4E6E9 /* JudgeController.h */,
+				42F30D5021F0942E00C4E6E9 /* JudgeController.m */,
+				42F30D4321F0942D00C4E6E9 /* LoopView.h */,
+				42F30D4421F0942D00C4E6E9 /* LoopView.m */,
+				42F30D4621F0942D00C4E6E9 /* main.m */,
+				42F30D4721F0942D00C4E6E9 /* MineController.h */,
+				42F30D4821F0942E00C4E6E9 /* MineController.m */,
+				42F30D3E21F0942D00C4E6E9 /* NewTabController.h */,
+				42F30D4121F0942D00C4E6E9 /* NewTabController.m */,
+				42F30D4921F0942E00C4E6E9 /* OrderCell.h */,
+				42F30D4A21F0942E00C4E6E9 /* OrderCell.m */,
+				42F30D3221F093FF00C4E6E9 /* OrderController.m */,
+				42F30D2B21F093FF00C4E6E9 /* PayResultController.h */,
+				42F30D3321F093FF00C4E6E9 /* PayResultController.m */,
+				42F30D3021F093FF00C4E6E9 /* SearchViewController.h */,
+				42F30D2C21F093FF00C4E6E9 /* SearchViewController.m */,
+				42F30D2921F093FF00C4E6E9 /* ShopingCartCell.h */,
+				42F30D2D21F093FF00C4E6E9 /* ShopingCartCell.m */,
+				42F30D3121F093FF00C4E6E9 /* ShoppingCartController.h */,
+				42F30D2A21F093FF00C4E6E9 /* ShoppingCartController.m */,
+				42F30D2E21F093FF00C4E6E9 /* UIViewController+GIOController.h */,
+				42F30D3421F093FF00C4E6E9 /* UIViewController+GIOController.m */,
+				42F30CF721F0939300C4E6E9 /* AppDelegate.h */,
+				42F30CF821F0939300C4E6E9 /* AppDelegate.m */,
+				42F30CFA21F0939300C4E6E9 /* ViewController.h */,
+				42F30CFB21F0939300C4E6E9 /* ViewController.m */,
+				42F30D6021F0946100C4E6E9 /* Assets.xcassets */,
+				42F30CFD21F0939300C4E6E9 /* Main.storyboard */,
+				42F30D0221F0939400C4E6E9 /* LaunchScreen.storyboard */,
+				42F30D0521F0939400C4E6E9 /* Info.plist */,
+			);
+			path = GIOEdemo;
+			sourceTree = "<group>";
+		};
+		42F30D0F21F0939400C4E6E9 /* GIOEdemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				42F30D1021F0939400C4E6E9 /* GIOEdemoTests.m */,
+				42F30D1221F0939400C4E6E9 /* Info.plist */,
+			);
+			path = GIOEdemoTests;
+			sourceTree = "<group>";
+		};
+		42F30D1A21F0939400C4E6E9 /* GIOEdemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				42F30D1B21F0939400C4E6E9 /* GIOEdemoUITests.m */,
+				42F30D1D21F0939400C4E6E9 /* Info.plist */,
+			);
+			path = GIOEdemoUITests;
+			sourceTree = "<group>";
+		};
+		42F30D6621F0955A00C4E6E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42F30D7921F0962300C4E6E9 /* WebKit.framework */,
+				42F30D7721F095AE00C4E6E9 /* CoreLocation.framework */,
+				42F30D7521F095A800C4E6E9 /* libsqlite3.0.tbd */,
+				42F30D7321F095A200C4E6E9 /* libicucore.tbd */,
+				42F30D7121F0959A00C4E6E9 /* AdSupport.framework */,
+				42F30D6F21F0959300C4E6E9 /* SystemConfiguration.framework */,
+				42F30D6D21F0958C00C4E6E9 /* CoreTelephony.framework */,
+				42F30D6B21F0958600C4E6E9 /* Security.framework */,
+				42F30D6921F0958000C4E6E9 /* Foundation.framework */,
+				42F30D6721F0955A00C4E6E9 /* JavaScriptCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42F30CF321F0939300C4E6E9 /* GIOEdemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42F30D2021F0939400C4E6E9 /* Build configuration list for PBXNativeTarget "GIOEdemo" */;
+			buildPhases = (
+				42F30CF021F0939300C4E6E9 /* Sources */,
+				42F30CF121F0939300C4E6E9 /* Frameworks */,
+				42F30CF221F0939300C4E6E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GIOEdemo;
+			productName = GIOEdemo;
+			productReference = 42F30CF421F0939300C4E6E9 /* GIOEdemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42F30D0B21F0939400C4E6E9 /* GIOEdemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42F30D2321F0939400C4E6E9 /* Build configuration list for PBXNativeTarget "GIOEdemoTests" */;
+			buildPhases = (
+				42F30D0821F0939400C4E6E9 /* Sources */,
+				42F30D0921F0939400C4E6E9 /* Frameworks */,
+				42F30D0A21F0939400C4E6E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42F30D0E21F0939400C4E6E9 /* PBXTargetDependency */,
+			);
+			name = GIOEdemoTests;
+			productName = GIOEdemoTests;
+			productReference = 42F30D0C21F0939400C4E6E9 /* GIOEdemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		42F30D1621F0939400C4E6E9 /* GIOEdemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42F30D2621F0939400C4E6E9 /* Build configuration list for PBXNativeTarget "GIOEdemoUITests" */;
+			buildPhases = (
+				42F30D1321F0939400C4E6E9 /* Sources */,
+				42F30D1421F0939400C4E6E9 /* Frameworks */,
+				42F30D1521F0939400C4E6E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42F30D1921F0939400C4E6E9 /* PBXTargetDependency */,
+			);
+			name = GIOEdemoUITests;
+			productName = GIOEdemoUITests;
+			productReference = 42F30D1721F0939400C4E6E9 /* GIOEdemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42F30CEC21F0939300C4E6E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = M;
+				TargetAttributes = {
+					42F30CF321F0939300C4E6E9 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					42F30D0B21F0939400C4E6E9 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 42F30CF321F0939300C4E6E9;
+					};
+					42F30D1621F0939400C4E6E9 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 42F30CF321F0939300C4E6E9;
+					};
+				};
+			};
+			buildConfigurationList = 42F30CEF21F0939300C4E6E9 /* Build configuration list for PBXProject "GIOEdemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42F30CEB21F0939300C4E6E9;
+			productRefGroup = 42F30CF521F0939300C4E6E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42F30CF321F0939300C4E6E9 /* GIOEdemo */,
+				42F30D0B21F0939400C4E6E9 /* GIOEdemoTests */,
+				42F30D1621F0939400C4E6E9 /* GIOEdemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42F30CF221F0939300C4E6E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42F30D0421F0939400C4E6E9 /* LaunchScreen.storyboard in Resources */,
+				42F30D6121F0946100C4E6E9 /* Assets.xcassets in Resources */,
+				42F30CFF21F0939300C4E6E9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42F30D0A21F0939400C4E6E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42F30D1521F0939400C4E6E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42F30CF021F0939300C4E6E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42F30D3A21F093FF00C4E6E9 /* UIViewController+GIOController.m in Sources */,
+				42F30CFC21F0939300C4E6E9 /* ViewController.m in Sources */,
+				42F30D5A21F0942E00C4E6E9 /* OrderCell.m in Sources */,
+				42F30D5621F0942E00C4E6E9 /* NewTabController.m in Sources */,
+				42F30D5421F0942E00C4E6E9 /* HomeCell.m in Sources */,
+				42F30D3521F093FF00C4E6E9 /* ShoppingCartController.m in Sources */,
+				42F30D3621F093FF00C4E6E9 /* SearchViewController.m in Sources */,
+				42F30D5C21F0942E00C4E6E9 /* GoodsDetailController.m in Sources */,
+				42F30D3821F093FF00C4E6E9 /* OrderController.m in Sources */,
+				42F30D5F21F0942E00C4E6E9 /* CheckOrderController.m in Sources */,
+				42F30D3921F093FF00C4E6E9 /* PayResultController.m in Sources */,
+				42F30D5E21F0942E00C4E6E9 /* JudgeController.m in Sources */,
+				42F30D3721F093FF00C4E6E9 /* ShopingCartCell.m in Sources */,
+				42F30D5D21F0942E00C4E6E9 /* CashierDeskController.m in Sources */,
+				42F30CF921F0939300C4E6E9 /* AppDelegate.m in Sources */,
+				42F30D5B21F0942E00C4E6E9 /* HomeController.m in Sources */,
+				42F30D5721F0942E00C4E6E9 /* LoopView.m in Sources */,
+				42F30D5821F0942E00C4E6E9 /* main.m in Sources */,
+				42F30D5921F0942E00C4E6E9 /* MineController.m in Sources */,
+				42F30D5521F0942E00C4E6E9 /* ClassifyController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42F30D0821F0939400C4E6E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42F30D1121F0939400C4E6E9 /* GIOEdemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42F30D1321F0939400C4E6E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42F30D1C21F0939400C4E6E9 /* GIOEdemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42F30D0E21F0939400C4E6E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42F30CF321F0939300C4E6E9 /* GIOEdemo */;
+			targetProxy = 42F30D0D21F0939400C4E6E9 /* PBXContainerItemProxy */;
+		};
+		42F30D1921F0939400C4E6E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42F30CF321F0939300C4E6E9 /* GIOEdemo */;
+			targetProxy = 42F30D1821F0939400C4E6E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42F30CFD21F0939300C4E6E9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42F30CFE21F0939300C4E6E9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		42F30D0221F0939400C4E6E9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42F30D0321F0939400C4E6E9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42F30D1E21F0939400C4E6E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		42F30D1F21F0939400C4E6E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42F30D2121F0939400C4E6E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3W9Y8XVXQ9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = GIOEdemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.min.GIOEdemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42F30D2221F0939400C4E6E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3W9Y8XVXQ9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = GIOEdemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.min.GIOEdemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		42F30D2421F0939400C4E6E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3W9Y8XVXQ9;
+				INFOPLIST_FILE = GIOEdemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.min.GIOEdemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GIOEdemo.app/GIOEdemo";
+			};
+			name = Debug;
+		};
+		42F30D2521F0939400C4E6E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3W9Y8XVXQ9;
+				INFOPLIST_FILE = GIOEdemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.min.GIOEdemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GIOEdemo.app/GIOEdemo";
+			};
+			name = Release;
+		};
+		42F30D2721F0939400C4E6E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3W9Y8XVXQ9;
+				INFOPLIST_FILE = GIOEdemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.min.GIOEdemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GIOEdemo;
+			};
+			name = Debug;
+		};
+		42F30D2821F0939400C4E6E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3W9Y8XVXQ9;
+				INFOPLIST_FILE = GIOEdemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.min.GIOEdemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GIOEdemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42F30CEF21F0939300C4E6E9 /* Build configuration list for PBXProject "GIOEdemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42F30D1E21F0939400C4E6E9 /* Debug */,
+				42F30D1F21F0939400C4E6E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42F30D2021F0939400C4E6E9 /* Build configuration list for PBXNativeTarget "GIOEdemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42F30D2121F0939400C4E6E9 /* Debug */,
+				42F30D2221F0939400C4E6E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42F30D2321F0939400C4E6E9 /* Build configuration list for PBXNativeTarget "GIOEdemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42F30D2421F0939400C4E6E9 /* Debug */,
+				42F30D2521F0939400C4E6E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42F30D2621F0939400C4E6E9 /* Build configuration list for PBXNativeTarget "GIOEdemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42F30D2721F0939400C4E6E9 /* Debug */,
+				42F30D2821F0939400C4E6E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42F30CEC21F0939300C4E6E9 /* Project object */;
+}
