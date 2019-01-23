@@ -55,8 +55,8 @@
     musicImageSel3 = [musicImageSel3 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     
-    musicImage4 = [musicImage3 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    musicImageSel4 = [musicImageSel3 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    musicImage4 = [musicImage4 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    musicImageSel4 = [musicImageSel4 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     
     UITabBarItem* item = [self.tabBar.items objectAtIndex:0];
@@ -69,7 +69,7 @@
     item3 = [item3 initWithTitle:nil image:musicImage3 selectedImage:musicImageSel3];
 
     UITabBarItem* item4 = [self.tabBar.items objectAtIndex:3];
-    item4 = [item4 initWithTitle:nil image:musicImage4 selectedImage:musicImageSel3];
+    item4 = [item4 initWithTitle:nil image:musicImage4 selectedImage:musicImageSel4];
 
     
     item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
