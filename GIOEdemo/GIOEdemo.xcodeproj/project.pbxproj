@@ -44,6 +44,7 @@
 		42F30D7621F095A800C4E6E9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D7521F095A800C4E6E9 /* libsqlite3.0.tbd */; };
 		42F30D7821F095AE00C4E6E9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D7721F095AE00C4E6E9 /* CoreLocation.framework */; };
 		42F30D7A21F0962300C4E6E9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D7921F0962300C4E6E9 /* WebKit.framework */; };
+		AE82954A21F9D4E500AB8546 /* GrowingTouchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE82954921F9D4E500AB8546 /* GrowingTouchKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		42F30D7921F0962300C4E6E9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		42F30D7B21F096A100C4E6E9 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		42F30D7C21F096AE00C4E6E9 /* Growing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Growing.h; sourceTree = "<group>"; };
+		AE82954921F9D4E500AB8546 /* GrowingTouchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingTouchKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				42F30D7021F0959300C4E6E9 /* SystemConfiguration.framework in Frameworks */,
 				42F30D6E21F0958C00C4E6E9 /* CoreTelephony.framework in Frameworks */,
 				42F30D6C21F0958600C4E6E9 /* Security.framework in Frameworks */,
+				AE82954A21F9D4E500AB8546 /* GrowingTouchKit.framework in Frameworks */,
 				42F30D6A21F0958000C4E6E9 /* Foundation.framework in Frameworks */,
 				42F30D6821F0955B00C4E6E9 /* JavaScriptCore.framework in Frameworks */,
 				42F30D6521F0954800C4E6E9 /* GrowingAutoTrackKit.framework in Frameworks */,
@@ -170,6 +173,7 @@
 		42F30CEB21F0939300C4E6E9 = {
 			isa = PBXGroup;
 			children = (
+				AE82954921F9D4E500AB8546 /* GrowingTouchKit.framework */,
 				42F30D6421F0954800C4E6E9 /* GrowingAutoTrackKit.framework */,
 				42F30D6221F0954000C4E6E9 /* GrowingCoreKit.framework */,
 				42F30CF621F0939300C4E6E9 /* GIOEdemo */,
@@ -598,7 +602,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3W9Y8XVXQ9;
+				DEVELOPMENT_TEAM = D3PP6FB7HR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -620,7 +624,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3W9Y8XVXQ9;
+				DEVELOPMENT_TEAM = D3PP6FB7HR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -8,8 +8,9 @@
 
 #import "AppDelegate.h"
 #import "Growing.h"
+#import <GrowingTouchKit/GrowingTouch.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () <GrowingTouchEventPopupDelegate>
 
 @end
 
@@ -32,9 +33,36 @@
     [Growing registerRealtimeReportHandler:^(NSDictionary *eventObject) {
         NSLog(@"=registerRealtimeReportHandler> %@", eventObject);
     }];
+    
+    [Growing setUserId:@"GIOXiaoYing"];
+    [GrowingTouch setEventPopupDelegate:self];
+    [GrowingTouch setDebugEnable:YES];
+    [GrowingTouch setEventPopupEnable:YES];
+    [GrowingTouch setServerHost:@"http://k8s-marketing-automation-messages.growingio.com"];
+    [GrowingTouch start];
     return YES;
 }
 
+- (void)onEventPopupLoadSuccess:(NSString *)trackEventId eventType:(NSString *)eventType {
+    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
+}
+
+- (void)onEventPopupLoadFailed:(NSString *)trackEventId eventType:(NSString *)eventType withError:(NSError *)error {
+    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
+}
+
+- (BOOL)onClickedEventPopup:(NSString *)trackEventId eventType:(NSString *)eventType openUrl:(NSString *)openUrl {
+    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
+    return NO;
+}
+
+- (void)onCancelEventPopup:(NSString *)trackEventId eventType:(NSString *)eventType {
+    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
+}
+
+- (void)onTrackEventTimeout:(NSString *)trackEventId eventType:(NSString *)eventType {
+    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
