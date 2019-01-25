@@ -27,7 +27,7 @@
 
 -(void)layoutSubviews{
     _imageView.frame  = CGRectMake(self.bounds.size.width/2.0 - _width/2.0, 0, _width, _height) ;
-//    _imageView.center = CGPointMake(self.center.x, 0) ;
+    //    _imageView.center = CGPointMake(self.center.x, 0) ;
     _titleLabel.frame = CGRectMake(0, CGRectGetMaxY(_imageView.frame),  self.frame.size.width, self.frame.size.height - self.frame.size.width) ;
 }
 

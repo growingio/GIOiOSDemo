@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CashierDeskController : UIViewController
-
+@property(nonatomic ,strong) NSString *allPice ;
+@property(nonatomic ,strong) NSString *orderId_var;
 @end
 
 NS_ASSUME_NONNULL_END

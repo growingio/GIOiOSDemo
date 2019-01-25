@@ -71,7 +71,7 @@
                 break;
             case 3:
             {
-               [btn setTitle:@"已收货" forState:UIControlStateNormal];
+                [btn setTitle:@"已收货" forState:UIControlStateNormal];
             }
                 break;
             default:
@@ -127,9 +127,9 @@
     [self.dataArray removeAllObjects];
     switch (btn.tag) {
         case 0:
-            {
-                self.dataArray = [self.dataAllArrays mutableCopy];
-            }
+        {
+            self.dataArray = [self.dataAllArrays mutableCopy];
+        }
             break;
         case 1:
         {
@@ -150,6 +150,6 @@
         default:
             break;
     }
-   [self.tableView reloadData];
+    [self.tableView reloadData];
 }
 @end

@@ -12,6 +12,8 @@
 #import "LoopView.h"
 #import "SearchViewController.h"
 #import "OrderController.h"
+#import "Growing.h"
+#import "GoodsModel.h"
 @interface HomeController ()
 @property(nonatomic , strong)  UIScrollView *backScrollView ;
 @property(nonatomic , strong)  UIView *bannerView ;
@@ -19,6 +21,7 @@
 @property(nonatomic , strong)  UIView *backSeckillingView ;
 @property(nonatomic , strong)  UIView *recommendView ;
 @property(nonatomic , strong)  UIView *bestSaleView ;
+@property(nonatomic , strong)  NSMutableArray *allDataArray ;
 @end
 
 @implementation HomeController
@@ -30,12 +33,21 @@
     self.backScrollView.backgroundColor = [UIColor whiteColor];
     self.backScrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height + 300) ;
     [self.view addSubview:self.backScrollView];
-    
+    [self makeHomeData];
     [self makeBanner];
     [self makeUpview];
     [self makeSeckillingView];
     [self makeRecommendView];
 }
+
+//打点开始
+-(void)homePageGoodsImp{
+    [Growing track:@"homePageGoodsImp" withVariable:nil];
+}
+-(void)homePageGoodsClick:(NSDictionary *)dict{
+    [Growing track:@"homePageGoodsCLick" withVariable:dict];
+}
+//打点结束
 
 -(void)makeBanner{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
@@ -74,38 +86,38 @@
         cell.titleLabel.textAlignment = NSTextAlignmentCenter ;
         
         UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction2:)];
-    
+        
         [cell addGestureRecognizer:tapGesturRecognizer];
         
         switch (i) {
             case 0:
-                {
-                    cell.titleLabel.text  = @"商品分类" ;
-                    tapGesturRecognizer.view.tag = i ;
-                }
+            {
+                cell.titleLabel.text  = @"商品分类" ;
+                tapGesturRecognizer.view.tag = i ;
+            }
                 break;
             case 1:
             {
-                 cell.titleLabel.text  = @"精品推荐" ;
+                cell.titleLabel.text  = @"精品推荐" ;
                 tapGesturRecognizer.view.tag = i ;
             }
                 break;
             case 2:
             {
-                 cell.titleLabel.text  = @"购物车" ;
+                cell.titleLabel.text  = @"购物车" ;
                 tapGesturRecognizer.view.tag = i ;
             }
                 break;
             case 3:
             {
-                 cell.titleLabel.text  = @"查看订单" ;
+                cell.titleLabel.text  = @"查看订单" ;
                 tapGesturRecognizer.view.tag = i ;
             }
                 break;
             default:
                 break;
         }
-
+        
         
         UIView *divideView = [[UIView alloc] initWithFrame:CGRectMake(-20, self.upView.frame.size.height, self.view.frame.size.width, 0.5)];
         divideView.backgroundColor = [UIColor lightGrayColor];
@@ -118,40 +130,45 @@
 -(void)tapAction2:(id)sender{
       UITapGestureRecognizer *tap = (UITapGestureRecognizer*)sender;
       UIView *views = (UIView*) tap.view;
-      NSUInteger tag = views.tag;
-      switch (tag) {
+    NSUInteger tag = views.tag;
+    switch (tag) {
         case 0:
-            {
-                self.tabBarController.selectedIndex = 1 ;
-            }
+        {
+            self.tabBarController.selectedIndex = 1 ;
+        }
             break;
         case 1:
-          {
-              self.tabBarController.selectedIndex = 1 ;
-          }
-              break;
+        {
+            self.tabBarController.selectedIndex = 1 ;
+        }
+            break;
         case 2:
-          {
-              self.tabBarController.selectedIndex = 2 ;
-          }
-              break;
+        {
+            self.tabBarController.selectedIndex = 2 ;
+        }
+            break;
         case 3:
-          {
-              OrderController *VC = [[OrderController alloc] init];
-              VC.hidesBottomBarWhenPushed = YES ;
-              [self.navigationController pushViewController:VC animated:NO];
-          }
-              break;
+        {
+            OrderController *VC = [[OrderController alloc] init];
+            VC.hidesBottomBarWhenPushed = YES ;
+            [self.navigationController pushViewController:VC animated:NO];
+        }
+            break;
         default:
             break;
     }
 }
 
--(void)tapAction
+//跳转到详情页
+-(void)tapAction:(id)sender
 {
     GoodsDetailController *VC = [[GoodsDetailController alloc] init];
+    UITapGestureRecognizer *tap = (UITapGestureRecognizer*)sender;
+    UIView *view = (UIView*) tap.view;
+    VC.goodModel = self.allDataArray[view.tag] ;
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:YES];
+    [self homePageGoodsClick:[VC.goodModel modelTodic]];
 }
 
 
@@ -168,7 +185,8 @@
         HomeCell *cell = [[HomeCell alloc] initWithFrame:CGRectMake(10 * i +  i *  (self.view.bounds.size.width - 40 - 40)/3.0 + 20 ,40, (self.view.bounds.size.width - 40 - 40)/3.0 , 200 - 40 - 20 )];
         cell.width  = cell.bounds.size.width ;
         cell.height = cell.bounds.size.height ;
-        UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
+        cell.tag = i ;
+        UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
         [cell addGestureRecognizer:tapGesturRecognizer];
         cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"book%d",i+1]] ;
         cell.titleLabel.textAlignment = NSTextAlignmentCenter ;
@@ -184,8 +202,9 @@
     upLabel.text = @"GIO推荐" ;
     [self.recommendView addSubview:upLabel];
     self.recommendView.backgroundColor = [UIColor whiteColor];
-   HomeCell *cell = [[HomeCell alloc] initWithFrame:CGRectMake(0,40, (self.view.bounds.size.width - 40) , 200 - 40 - 20 )];
-    UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
+    HomeCell *cell = [[HomeCell alloc] initWithFrame:CGRectMake(0,40, (self.view.bounds.size.width - 40) , 200 - 40 - 20 )];
+    cell.tag = 4 ;
+    UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
     [cell addGestureRecognizer:tapGesturRecognizer];
     cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"suggest"]] ;
     cell.width  = cell.bounds.size.width ;
@@ -193,5 +212,20 @@
     [self.recommendView addSubview:cell];
     [self.backScrollView addSubview:self.recommendView];
 }
+
+-(void)makeHomeData{
+    NSMutableArray *allNameArray = [NSMutableArray arrayWithObjects:@"渠道流量分析",@"产品经理数据分析",@"增长黑客手册",@"GIO马克杯",@"GIO文化衫", nil];
+    NSMutableArray *priceArray = [NSMutableArray arrayWithObjects:@"59",@"39",@"36",@"59",@"89", nil];
+    self.allDataArray = [[NSMutableArray alloc] init];
+    for (int i = 0 ; i < 5 ; i ++ ) {
+        GoodsModel *model = [[GoodsModel alloc] init];
+        model.productId_var = [NSString stringWithFormat:@"00%d",i+1];
+        model.productName_var = allNameArray[i];
+        model.price_var = priceArray[i];
+        model.floor_var = @"首页" ;
+        [self.allDataArray addObject:model];
+    }
+}
+
 
 @end

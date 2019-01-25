@@ -34,19 +34,19 @@
 -(void)makeSure{
     self.tabBarController.selectedIndex = 0 ;
     [self.navigationController popToRootViewControllerAnimated:NO];
-
+    
 }
 
 -(void)makeUpview{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 84, self.view.bounds.size.width, 600)];
-//    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100,  200)];
-//    _imageView.image = [UIImage imageNamed:@"leftMoney"];
-//    [view addSubview:_imageView];
+    //    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100,  200)];
+    //    _imageView.image = [UIImage imageNamed:@"leftMoney"];
+    //    [view addSubview:_imageView];
     
     _numberLabel= [[UILabel alloc] initWithFrame: CGRectMake(10, 10 ,  self.view.frame.size.width - 100 - 20 , 30)];
     _numberLabel.textAlignment = NSTextAlignmentLeft ;
     _numberLabel.text = @"订单编号234241249023434124" ;
-
+    
     _payWayLabel= [[UILabel alloc] initWithFrame: CGRectMake(10, CGRectGetMaxY(_numberLabel.frame) + 10 ,  self.view.frame.size.width - 100 - 20 , 30)];
     _payWayLabel.textAlignment = NSTextAlignmentLeft ;
     _payWayLabel.text = @"支付方式: GIO支付" ;

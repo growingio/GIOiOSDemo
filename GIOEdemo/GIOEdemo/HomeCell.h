@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GoodsModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeCell : UIView
@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic , strong) UILabel *titleLabel ;
 @property(nonatomic , assign) int width ;
 @property(nonatomic , assign) int height ;
+@property(nonatomic , strong) GoodsModel *goodModel ;
 @end
 
 NS_ASSUME_NONNULL_END
