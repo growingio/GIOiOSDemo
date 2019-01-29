@@ -38,6 +38,7 @@
     [self makeUpview];
     [self makeSeckillingView];
     [self makeRecommendView];
+    [self homePageGoodsImp];
 }
 
 //打点开始
