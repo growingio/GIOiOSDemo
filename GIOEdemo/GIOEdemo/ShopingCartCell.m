@@ -54,7 +54,6 @@ alpha:alphaValue]
 -(void)layoutSubviews{
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.imageIcon.frame  =  CGRectMake(30, 10, 95 , 95);
-    self.imageIcon.image =[UIImage imageNamed:@"chore1"];;
     self.titleLabel.frame  =  CGRectMake(CGRectGetMaxX(self.imageIcon.frame) + 10 , 30, self.contentView.bounds.size.width - 60 -  CGRectGetMaxX(self.imageIcon.frame)  , 30);
     self.titleLabel.font = [UIFont fontWithName:@"PingFang SC" size:16];
     self.titleLabel.textAlignment = NSTextAlignmentLeft ;
@@ -62,7 +61,11 @@ alpha:alphaValue]
     self.divideLabel.frame  =  CGRectMake(CGRectGetMaxX(self.imageIcon.frame) + 10 , CGRectGetMaxY(self.titleLabel.frame) + 10 , self.contentView.bounds.size.width - 150, 20);
 }
 
-
+-(void)updataCell:(NSDictionary *)dict{
+    self.titleLabel.text = [dict objectForKey:@"productName_var"] ;
+    self.divideLabel.text = [dict objectForKey:@"price_var"] ;
+    self.imageIcon.image = [UIImage imageNamed:[dict objectForKey:@"productId_var"]] ;
+}
 
 
 @end

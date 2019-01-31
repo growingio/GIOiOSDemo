@@ -24,19 +24,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"我的订单" ;
     self.view.backgroundColor = [UIColor whiteColor];
     self.dataArray = [NSMutableArray array];
     self.dataAllArrays  = [NSMutableArray array];
     self.dataSendArrays  = [NSMutableArray array];
     self.dataPrePayArrays  = [NSMutableArray array];
     self.dataRecieveArrays  = [NSMutableArray array];
-    NSDictionary *dict = @{@"number":@"订单编号：6234542819",@"title":@"GIO 商品",@"monney":@"¥99.00",@"state":@"待付款",};
+    
+    
+    NSDictionary *dict = @{@"productId_var":@"订单编号：6234542819",@"productName_var":@"GIO 商品",@"price_var":@"¥99.00",@"state":@"待付款",};
     [self.dataAllArrays addObject:dict];
     [self.dataPrePayArrays addObject:dict];
-    NSDictionary *dict2 = @{@"number":@"订单编号：6234542234",@"title":@"GIO 商品",@"monney":@"¥59.00",@"state":@"配送中",};
+    NSDictionary *dict2 = @{@"productId_var":@"订单编号：6234542234",@"productName_var":@"GIO 商品",@"price_var":@"¥59.00",@"state":@"配送中",};
     [self.dataAllArrays addObject:dict2];
     [self.dataSendArrays addObject:dict2];
-    NSDictionary *dict3 = @{@"number":@"订单编号：62345421232",@"title":@"GIO 商品",@"monney":@"¥799.00",@"state":@"已收货",};
+    NSDictionary *dict3 = @{@"productId_var":@"订单编号：62345421232",@"productName_var":@"GIO 商品",@"price_var":@"¥799.00",@"state":@"已收货",};
     [self.dataRecieveArrays addObject:dict3];
     [self.dataAllArrays addObject:dict3];
     self.dataArray = [self.dataAllArrays mutableCopy];

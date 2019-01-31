@@ -101,8 +101,7 @@ alpha:alphaValue]
     ShopingCartCell *cell = [[ShopingCartCell alloc] init];
     cell.backgroundColor = [UIColor whiteColor];
     cell.divideLabel.textAlignment = NSTextAlignmentLeft ;
-    cell.titleLabel.text = [dict objectForKey:@"productName_var"] ;
-    cell.divideLabel.text = [dict objectForKey:@"price_var"] ;
+    [cell updataCell:dict];
     cell.selectionStyle =  UITableViewCellSelectionStyleNone ;
     UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(0,120, self.view.bounds.size.width , 0.5)];
     label6.backgroundColor = [UIColor lightGrayColor];

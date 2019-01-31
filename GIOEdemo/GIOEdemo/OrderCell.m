@@ -78,9 +78,9 @@ alpha:alphaValue]
 }
 
 -(void)updateCell:(NSDictionary *)dict{
-    self.numberLabel.text = [[dict objectForKey:@"number"] description];
-    self.titleLabel.text =  [[dict objectForKey:@"title"] description] ;
-    self.divideLabel.text = [[dict objectForKey:@"monney"] description];
+    self.numberLabel.text = [[dict objectForKey:@"productId_var"] description];
+    self.titleLabel.text =  [[dict objectForKey:@"productName_var"] description] ;
+    self.divideLabel.text = [[dict objectForKey:@"price_var"] description];
     [self.stateBtn setTitle:[[dict objectForKey:@"state"] description] forState:UIControlStateNormal];
     [self.stateBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.stateBtn.titleLabel.font = [UIFont fontWithName:@"PingFang SC" size:16];

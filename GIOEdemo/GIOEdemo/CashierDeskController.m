@@ -21,6 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"收银台" ;
     [self makeUpview];
     [self makeMiddleview];
     [self makeBottomview];

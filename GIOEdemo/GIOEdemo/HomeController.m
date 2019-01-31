@@ -14,9 +14,9 @@
 #import "OrderController.h"
 #import "Growing.h"
 #import "GoodsModel.h"
-@interface HomeController ()
+@interface HomeController ()<BannerViewDelegate>
 @property(nonatomic , strong)  UIScrollView *backScrollView ;
-@property(nonatomic , strong)  UIView *bannerView ;
+@property(nonatomic , strong)  LoopView *bannerView ;
 @property(nonatomic , strong)  UIView *upView ;
 @property(nonatomic , strong)  UIView *backSeckillingView ;
 @property(nonatomic , strong)  UIView *recommendView ;
@@ -64,12 +64,23 @@
     [view addSubview:btn];
     self.navigationItem.titleView = view ;
     
-    NSMutableArray *mutableArray = [NSMutableArray arrayWithObjects:@"11",@"12",@"13", nil] ;
+    NSMutableArray *mutableArray = [NSMutableArray arrayWithObjects:@"12",@"11", nil] ;
     self.bannerView = [[LoopView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width ,220) andImageArray:mutableArray];
-    UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
-    [self.bannerView addGestureRecognizer:tapGesturRecognizer];
+    self.bannerView.delegate = self ;
     [self.backScrollView addSubview:self.bannerView];
 }
+
+- (void)selectImage:(LoopView *)bannerView currentImage:(NSInteger)currentImage{
+    GoodsDetailController *VC = [[GoodsDetailController alloc] init];
+    VC.goodModel = self.allDataArray[currentImage + 3] ;
+    VC.hidesBottomBarWhenPushed = YES ;
+    [self.navigationController pushViewController:VC animated:YES];
+    [self homePageGoodsClick:[VC.goodModel modelTodic]];
+    
+}
+
+
+
 
 -(void)btnClick{
     SearchViewController *VC = [[SearchViewController alloc] init];

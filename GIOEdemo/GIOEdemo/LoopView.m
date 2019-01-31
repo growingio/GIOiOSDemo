@@ -32,7 +32,7 @@ UIScrollViewDelegate>{
     self = [super initWithFrame:frame];
     
     //判断是否是本类对象调用 并 外界传入的图片数量足够滚动
-    if (self && addImageArray.count > 2) {
+    if (self && addImageArray.count >= 2) {
         
         /**
          获取banNerView 的宽度

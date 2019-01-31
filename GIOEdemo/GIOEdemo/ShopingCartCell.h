@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , strong) UILabel *titleLabel ;
 @property (nonatomic , strong) UILabel *divideLabel ;
 @property (nonatomic , strong) UIImageView *imageIcon;
+-(void)updataCell:(NSDictionary *)dict;
 @end
 
 NS_ASSUME_NONNULL_END

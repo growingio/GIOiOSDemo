@@ -20,20 +20,17 @@ alpha:alphaValue]
 #import "Growing.h"
 #import "GoodsModel.h"
 @interface SearchViewController ()<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate,UISearchBarDelegate>
-@property (nonatomic ,strong) UIView *upView ;
-@property (nonatomic ,strong) UISearchBar *searchBar ;
-@property (nonatomic , strong)NSMutableArray *titleTipArray ;
-//@property (nonatomic , strong)NSArray *historyArray ;
-//@property (nonatomic , strong)UITableView *historytableView;
-@property (nonatomic , strong)UITableView *searchTable;
-//@property (nonatomic , strong)UIView *sepretView;
-@property (nonatomic , strong)UIView * backSearchView;
-@property (nonatomic , strong)UIImageView * imageviewBack;
-////存放搜索结果数组
+@property (nonatomic ,strong)  UIView *upView ;
+@property (nonatomic ,strong)  UISearchBar *searchBar ;
+@property (nonatomic , strong) NSMutableArray *titleTipArray ;
+@property (nonatomic , strong) NSMutableArray *allNameArray ;
+@property (nonatomic , strong) UITableView *searchTable;
+@property (nonatomic , strong) UIView * backSearchView;
+@property (nonatomic , strong) UIImageView * imageviewBack;
+//存放所有数据数组
 @property (nonatomic , strong)NSMutableArray *allDataArray;
-///** 页次*/
-//@property (nonatomic, assign) NSInteger pageIndex;
-//@property (nonatomic , strong)UIImageView * imageViewTip;
+//存放搜索结果数组
+@property (nonatomic , strong)NSMutableArray *searchArray ;
 @end
 //
 @implementation SearchViewController
@@ -90,21 +87,38 @@ alpha:alphaValue]
 //
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;
 {
+    self.searchArray = [NSMutableArray array];
+    for (int i = 0 ; i < self.allDataArray.count ; i ++ ) {
+        GoodsModel *model = self.allDataArray[i];
+        NSString *str = model.productName_var ;
+        if ([str containsString:searchBar.text]) {
+            [self.searchArray addObject:model];
+        }
+    }
+    [self.searchTable reloadData];
     self.upView.hidden = YES;
-    self.backSearchView.hidden = YES;
+    self.backSearchView.hidden = NO;
     [self.searchBar resignFirstResponder];
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-    dict[@"searchWord_var"] = searchBar.text;
-    [self searchNoResultView:dict];
+    if (self.searchArray.count) {
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+        dict[@"searchWord_var"] = searchBar.text;
+        [self searchResultView:dict];
+    }else{
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+        dict[@"searchWord_var"] = searchBar.text;
+        [self searchNoResultView:dict];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"未搜索到商品" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alert show];
+    }
 }
 
 #pragma tableview代理方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.allDataArray.count ;
+    return  self.searchArray.count ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    GoodsModel *model = self.allDataArray[indexPath.row] ;
+    GoodsModel *model = self.searchArray[indexPath.row] ;
     OrderCell *cell= [[OrderCell alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 150)];
     cell.imageIcon.image = [UIImage imageNamed:model.productId_var] ;
     UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(0,1, self.view.bounds.size.width , 0.5)];
@@ -124,7 +138,7 @@ alpha:alphaValue]
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     GoodsDetailController *VC = [[GoodsDetailController alloc] init];
     VC.hidesBottomBarWhenPushed = YES ;
-    VC.goodModel = self.allDataArray[indexPath.row] ;
+    VC.goodModel = self.searchArray[indexPath.row] ;
     [self.navigationController pushViewController:VC animated:YES];
     NSMutableDictionary *dict = [[VC.goodModel modelTodic] mutableCopy];
     dict[@"searchWord_var"] = VC.goodModel.productName_var ;
@@ -134,13 +148,30 @@ alpha:alphaValue]
 //大家搜索的按钮点击
 -(void)bntClick:(UIButton *)btn
 {
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[@"searchWord_var"] = btn.titleLabel.text ;
+    self.searchArray = [NSMutableArray array];
+    for (int i = 0 ; i < self.allDataArray.count ; i ++ ) {
+        GoodsModel *model = self.allDataArray[i];
+        NSString *str = model.productName_var ;
+        if ([str containsString:btn.titleLabel.text]) {
+            [self.searchArray addObject:model];
+        }
+    }
+    [self.searchTable reloadData];
     self.upView.hidden = YES;
     self.backSearchView.hidden = NO;
     [self.searchBar resignFirstResponder];
-    [self searchGoods:dict];
-    [self searchResultView:dict];
+    if (self.searchArray.count) {
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+        dict[@"searchWord_var"] = btn.titleLabel.text;
+        [self searchResultView:dict];
+    }else{
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+        dict[@"searchWord_var"] = btn.titleLabel.text;
+        [self searchNoResultView:dict];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"未搜索到商品" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alert show];  
+    }
+    
 }
 
 //打点开始
@@ -173,6 +204,7 @@ alpha:alphaValue]
         model.floor_var = @"首页" ;
         [self.allDataArray addObject:model];
     }
+    self.searchArray = self.allDataArray ;
     
     UIView *backSearchView = [[UIView alloc] initWithFrame:CGRectMake(0, 30 , SCREEN_WIDTH, SCREEN_HEIGHT)];
     UIImageView *imageviewBack = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2.0 - 50, 100 , 100, 100)];
