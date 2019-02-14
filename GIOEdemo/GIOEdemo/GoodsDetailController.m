@@ -14,6 +14,7 @@
 @interface GoodsDetailController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView *tableView ;
 @property (nonatomic , strong) NSMutableArray *dataArray ;
+@property (nonatomic , strong) NSMutableArray *suggestArray ;
 @property (nonatomic , strong) NSMutableArray *titleArray;
 @property (nonatomic , strong) UIView *shareView ;
 @end
@@ -30,7 +31,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone ;
     self.tableView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
-    
+    [self makeSuggestData];
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
     [btn setTitle:@"分享" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -218,6 +219,7 @@
 }
 
 -(void)btnRightCLick{
+    [self btnLeftCLick];
     self.tabBarController.selectedIndex = 2 ;
     self.goodModel.payAmount_var = self.goodModel.price_var ;
 //    [self checkOut:[self.goodModel modelTodic]];
@@ -306,8 +308,14 @@
         cell.width  = CGRectGetWidth(cell.frame) ;
         cell.height = CGRectGetHeight(cell.frame)  ;
         cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"suggest%d",i+1]];
-        UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
-        [cell addGestureRecognizer:tapGesturRecognizer];
+        if (i == 0) {
+            UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapActionLeft)];
+            [cell addGestureRecognizer:tapGesturRecognizer];
+        }else{
+            UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapActionRight)];
+            [cell addGestureRecognizer:tapGesturRecognizer];
+        }
+
         cell.titleLabel.textAlignment = NSTextAlignmentCenter ;
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0 , cell.frame.size.height , cell.frame.size.width , 60)];
@@ -322,14 +330,43 @@
 }
 
 
--(void)tapAction
+-(void)makeSuggestData{
+    NSMutableArray *allNameArray = [NSMutableArray arrayWithObjects:@"增长黑客手册",@"GIO文化衫", nil];
+    NSMutableArray *priceArray = [NSMutableArray arrayWithObjects:@"59",@"99", nil];
+    self.suggestArray = [[NSMutableArray alloc] init];
+    for (int i = 0 ; i < 2 ; i ++ ) {
+        GoodsModel *model = [[GoodsModel alloc] init];
+        if (i == 0) {
+            model.productId_var = @"003";
+        }else{
+            model.productId_var = @"005";
+        }
+        model.productName_var = allNameArray[i];
+        model.price_var = priceArray[i];
+        model.floor_var = @"推荐" ;
+        [self.suggestArray addObject:model];
+    }
+}
+
+
+
+-(void)tapActionLeft
 {
     GoodsDetailController *VC = [[GoodsDetailController alloc] init];
-    VC.hidesBottomBarWhenPushed = YES ;
-    VC.goodModel =  self.goodModel ;
+    VC.goodModel = [self.suggestArray firstObject];
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:YES];
 }
+
+
+-(void)tapActionRight
+{
+    GoodsDetailController *VC = [[GoodsDetailController alloc] init];
+    VC.goodModel = [self.suggestArray lastObject];
+    VC.hidesBottomBarWhenPushed = YES ;
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
 
 -(void)tapAction2
 {
@@ -337,5 +374,7 @@
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:NO];
 }
+
+
 
 @end
