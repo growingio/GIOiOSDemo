@@ -134,8 +134,8 @@
     for (int i = 0; i < self.cartArray.count ; i ++) {
         NSMutableDictionary *evars= [NSMutableDictionary dictionary];
         NSDictionary *dict = self.cartArray[i];
-        if ([dict objectForKey:@"floor_evar"]) {
-            evars[@"floor_evar"] = [dict objectForKey:@"floor_evar"];
+        if ([dict objectForKey:@"floor_var"]) {
+            evars[@"floor_evar"] = [dict objectForKey:@"floor_var"];
         }else{
             evars[@"searchWord_evar"] = [dict objectForKey:@"productName_var"];
         }
