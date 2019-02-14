@@ -8,9 +8,10 @@
 
 #import "AppDelegate.h"
 #import "Growing.h"
-#import <GrowingTouchKit/GrowingTouch.h>
+//#import <GrowingTouchKit/GrowingTouch.h>
 
-@interface AppDelegate () <GrowingTouchEventPopupDelegate>
+@interface AppDelegate ()
+//<GrowingTouchEventPopupDelegate>
 
 @end
 
@@ -21,25 +22,15 @@
     // Override point for customization after application launch.
     [Growing startWithAccountId:@"0a1b4118dd954ec3bcc69da5138bdb96"];
     [Growing setEnableLog:YES];
-    [Growing setDataHost:@"http://master-www.growingio.com"];
-    [Growing setGtaHost:@"http://master-gta.growingio.com"];
-    [Growing setEnableLog:NO];
-    [Growing registerDeeplinkHandler:^(NSDictionary *params, NSError *error) {
-        NSLog(@"params %@",params);
-    }];
-    ////    NSURL *URL = [NSURL URLWithString:@"https://gio.ren/u/APBD1RJE/dgBl0BX?link_id=dgBl0BX&click_id=12345678&tm_click=1531979338000&custom_params=%7b%22key1%22%3a%22value1%22%2c%22uri%22%3a%22test_uri%22%2c%22key2%22%3a%22value2%22%7d"];
-    NSURL *URL = [NSURL URLWithString:@"growing.381f196fdb69c861://growing?link_id=diostst&amp;click_id=158898270&amp;tm_click=1521614678063&amp;custom_params=%7b%22key1%22%3a%22value1%22%2c%22key2%22%3a%22value2%22%7d"];
-    [Growing handleUrl:URL];
-    [Growing registerRealtimeReportHandler:^(NSDictionary *eventObject) {
-        NSLog(@"=registerRealtimeReportHandler> %@", eventObject);
-    }];
-    
-    [Growing setUserId:@"GIOXiaoYing"];
-    [GrowingTouch setEventPopupDelegate:self];
-    [GrowingTouch setDebugEnable:YES];
-    [GrowingTouch setEventPopupEnable:YES];
-    [GrowingTouch setServerHost:@"http://k8s-marketing-automation-messages.growingio.com"];
-    [GrowingTouch start];
+//    [Growing setDataHost:@"http://master-www.growingio.com"];
+//    [Growing setGtaHost:@"http://master-gta.growingio.com"];
+ 
+//    [Growing setUserId:@"GIOXiaoYing"];
+//    [GrowingTouch setEventPopupDelegate:self];
+//    [GrowingTouch setDebugEnable:YES];
+//    [GrowingTouch setEventPopupEnable:YES];
+//    [GrowingTouch setServerHost:@"http://k8s-marketing-automation-messages.growingio.com"];
+//    [GrowingTouch start];
     return YES;
 }
 

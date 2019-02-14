@@ -21,6 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"填写订单";
     [self makeImageView];
     [self makeBottomview];
 }
@@ -95,7 +96,7 @@
     UILabel *label = [[UILabel alloc] init];
     label.frame  =  CGRectMake(10, 0, 160 , 60);
     label.textColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
-    label.text = [NSString stringWithFormat:@"实付款 ：¥%@",self.dataDict[@"allPrice"]];
+    label.text = [NSString stringWithFormat:@"合计金额 ：¥%@",self.dataDict[@"allPrice"]];
     [view addSubview:label];
     view.layer.cornerRadius = 5 ;
     view.layer.masksToBounds = YES;
@@ -121,12 +122,16 @@
 -(void)tapAction
 {
     CashierDeskController *VC = [[CashierDeskController alloc] init];
+    VC.cartArray = self.cartArray ;
     VC.allPice = self.dataDict[@"allPrice"];
     VC.orderId_var = self.dataDict[@"number"];
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:YES];
     [self payOrder:self.dataDict];
 }
+
+
+
 
 //打点开始
 -(void)payOrder:(NSDictionary *)dict{
@@ -137,6 +142,21 @@
     self.model.buyQuantity_var =  @"1" ;
     self.model.productId_var = self.dataDict[@"image"];
     [Growing track:@"payOrder" withVariable:[self.model modelTodic]];
+}
+
+
+-(void)paySPU{
+    for (int i = 0 ; i < self.cartArray.count; i ++) {
+        NSDictionary *dict = self.cartArray[i];
+        [Growing track:@"paySPU" withVariable:dict];
+    }
+}
+
+-(void)paySPUSucess{
+    for (int i = 0 ; i < self.cartArray.count; i ++) {
+        NSDictionary *dict = self.cartArray[i];
+        [Growing track:@"paySPUSucess" withVariable:dict];
+    }
 }
 
 //打点结束

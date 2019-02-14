@@ -103,14 +103,21 @@ alpha:alphaValue]
         NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
         dict[@"searchWord_var"] = searchBar.text;
         [self searchResultView:dict];
+        [self searchGoods:dict];
     }else{
         NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
         dict[@"searchWord_var"] = searchBar.text;
         [self searchNoResultView:dict];
+        [self searchGoods:dict];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"未搜索到商品" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];
     }
 }
+
+
+
+
+
 
 #pragma tableview代理方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -164,13 +171,16 @@ alpha:alphaValue]
         NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
         dict[@"searchWord_var"] = btn.titleLabel.text;
         [self searchResultView:dict];
+        [self searchGoods:dict];
     }else{
         NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
         dict[@"searchWord_var"] = btn.titleLabel.text;
         [self searchNoResultView:dict];
+        [self searchGoods:dict];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"未搜索到商品" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];  
     }
+    
     
 }
 

@@ -87,6 +87,51 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone ;
     self.tableView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
+    
+    
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 200)];
+    
+    UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(0,10, self.view.bounds.size.width , 0.5)];
+    label6.backgroundColor = [UIColor lightGrayColor];
+    [footerView addSubview:label6];
+    
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(label6.frame) + 20 , self.view.bounds.size.width, 20)];
+    titleLabel.text = @"物流信息" ;
+    [footerView addSubview:titleLabel];
+    self.tableView.tableFooterView = footerView ;
+    self.tableView.tableFooterView.hidden = YES ;
+    
+    UILabel *Label2 = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(titleLabel.frame) + 20 , self.view.bounds.size.width, 20)];
+    Label2.text = @"已经到达中转中心，预计明天开始配送" ;
+    [footerView addSubview:Label2];
+
+    UILabel *Label3 = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(Label2.frame) + 5, self.view.bounds.size.width, 20)];
+    Label3.text = @"2019.1.2" ;
+    Label3.textColor = [UIColor lightGrayColor];
+    Label3.font =[UIFont fontWithName:@"PingFang SC" size:12];
+    [footerView addSubview:Label3];
+    
+    UILabel *Label4 = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(Label3.frame) + 20 , self.view.bounds.size.width, 20)];
+    Label4.text = @"快递已经揽收" ;
+    [footerView addSubview:Label4];
+    
+    UILabel *Label5 = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(Label4.frame) + 5, self.view.bounds.size.width, 20)];
+    Label5.text = @"2019.1.1" ;
+    Label5.textColor = [UIColor lightGrayColor];
+    Label5.font =[UIFont fontWithName:@"PingFang SC" size:12];
+    [footerView addSubview:Label5];
+    
+    UILabel *Label6 = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(Label5.frame) + 20 , self.view.bounds.size.width, 20)];
+    Label6.text = @"已发货" ;
+    [footerView addSubview:Label6];
+    
+    UILabel *Label7 = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(Label6.frame) + 5, self.view.bounds.size.width, 20)];
+    Label7.text = @"2019.1.1" ;
+    Label7.textColor = [UIColor lightGrayColor];
+    Label7.font =[UIFont fontWithName:@"PingFang SC" size:12];
+    [footerView addSubview:Label7];
+    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -132,21 +177,25 @@
         case 0:
         {
             self.dataArray = [self.dataAllArrays mutableCopy];
+            self.tableView.tableFooterView.hidden = YES ;
         }
             break;
         case 1:
         {
             self.dataArray = [self.dataPrePayArrays mutableCopy] ;
+            self.tableView.tableFooterView.hidden = YES ;
         }
             break;
         case 2:
         {
             self.dataArray = [self.dataSendArrays mutableCopy];
+            self.tableView.tableFooterView.hidden = NO ;
         }
             break;
         case 3:
         {
             self.dataArray = [self.dataRecieveArrays mutableCopy];
+            self.tableView.tableFooterView.hidden = NO ;
         }
             break;
             

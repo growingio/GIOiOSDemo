@@ -38,12 +38,11 @@
     [self makeUpview];
     [self makeSeckillingView];
     [self makeRecommendView];
-    [self homePageGoodsImp];
 }
 
 //打点开始
--(void)homePageGoodsImp{
-    [Growing track:@"homePageGoodsImp" withVariable:nil];
+-(void)homePageGoodsImp:(NSMutableDictionary *)dict{
+    [Growing track:@"homePageGoodsImp" withVariable:dict];
 }
 -(void)homePageGoodsClick:(NSDictionary *)dict{
     [Growing track:@"homePageGoodsCLick" withVariable:dict];
@@ -236,6 +235,7 @@
         model.price_var = priceArray[i];
         model.floor_var = @"首页" ;
         [self.allDataArray addObject:model];
+        [self homePageGoodsImp:[model modelTodic]];
     }
 }
 

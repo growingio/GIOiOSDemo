@@ -15,7 +15,7 @@
 @property (nonatomic , strong) UITableView *tableView ;
 @property (nonatomic , strong) NSMutableArray *dataArray ;
 @property (nonatomic , strong) NSMutableArray *titleArray;
-
+@property (nonatomic , strong) UIView *shareView ;
 @end
 
 @implementation GoodsDetailController
@@ -63,13 +63,91 @@
     self.tableView.tableFooterView =  [self makeFooterView];
     [self makeBottomview];
     [self goodsDetailPageView:[self.goodModel modelTodic]];
+    
+    
+    
+    UIView *shareView = [[UIView alloc] initWithFrame:CGRectMake(20, 100,self.view.frame.size.width - 40, 160)];
+    shareView.backgroundColor = [UIColor whiteColor];
+    UIButton *btnClose = [[UIButton alloc] initWithFrame:CGRectMake(shareView.bounds.size.width - 60 , 10 , 40, 40)];
+    [btnClose setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+    [btnClose addTarget:self action:@selector(closeClick) forControlEvents:UIControlEventTouchUpInside];
+    [shareView addSubview:btnClose];
+    
+    UILabel *shareLabel = [[UILabel alloc] initWithFrame:CGRectMake(20 , 40 , 200, 40)];
+    shareLabel.text = @"分享商品" ;
+    [shareView addSubview:shareLabel];
+    
+    shareView.layer.masksToBounds = YES ;
+    shareView.layer.cornerRadius = 10 ;
+    
+    for (int i = 0; i < 4; i++) {
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((shareView.frame.size.width / 4.0) * i + 5 * i ,80, (shareView.frame.size.width - 50)/ 4.0 , 60)];
+        btn.tag = i ;
+        NSString *name = [NSString stringWithFormat:@"share%d",(int)btn.tag+1] ;
+        [btn setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(shareClick:) forControlEvents:UIControlEventTouchUpInside];
+        [shareView addSubview:btn];
+    }
+    self.shareView = shareView ;
+    shareView.hidden = YES ;
+    [self.view addSubview:shareView];
+}
+
+-(void)closeClick{
+    [UIView animateWithDuration:1
+                          delay:0
+         usingSpringWithDamping:.5
+          initialSpringVelocity:.5
+                        options:UIViewAnimationOptionLayoutSubviews
+                     animations:^{
+                         self.shareView.hidden = YES ;
+                     } completion:^(BOOL finished) {
+                     }];
 }
 
 -(void)btnClick{
+    [UIView animateWithDuration:1
+                          delay:0
+         usingSpringWithDamping:.5
+          initialSpringVelocity:.5
+                        options:UIViewAnimationOptionLayoutSubviews
+                     animations:^{
+                      self.shareView.hidden = NO ;
+                     } completion:^(BOOL finished) {
+                     }];
+}
+
+-(void)shareClick:(UIButton *)btn{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享成功" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
     [alert show];
-    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"GIO分享",@"sharechannel", nil];
-    [self shareActivity:dict] ;
+    switch (btn.tag) {
+        case 0:
+            {
+                NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"朋友圈",@"sharechannel", nil];
+                [self shareActivity:dict] ;
+            }
+            break;
+        case 1:
+        {
+            NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"微信",@"sharechannel", nil];
+            [self shareActivity:dict] ;
+        }
+            break;
+        case 2:
+        {
+            NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"微博",@"sharechannel", nil];
+            [self shareActivity:dict] ;
+        }
+            break;
+        case 3:
+        {
+            NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"qq",@"sharechannel", nil];
+            [self shareActivity:dict] ;
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 
@@ -93,11 +171,11 @@
 
 
 -(void)makeBottomview{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,self.view.bounds.size.height - 80, self.view.bounds.size.width , 80)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,self.view.bounds.size.height - 60, self.view.bounds.size.width , 60)];
     view.backgroundColor = [UIColor whiteColor];
     UIButton *btnLeft = [[UIButton alloc] init];
     btnLeft.backgroundColor = [UIColor whiteColor];
-    btnLeft.frame  = CGRectMake(0, 0, self.view.bounds.size.width /2.0 - 10, 60);
+    btnLeft.frame  = CGRectMake(40, 0, self.view.bounds.size.width /2.0 - 50, 40);
     btnLeft.titleLabel.textAlignment = NSTextAlignmentCenter ;
     btnLeft.layer.masksToBounds = YES ;
     btnLeft.layer.cornerRadius = 5 ;
@@ -110,7 +188,7 @@
     
     UIButton *btnRight = [[UIButton alloc] init];
     btnRight.backgroundColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
-    btnRight.frame  = CGRectMake(self.view.bounds.size.width /2.0 + 10 , 0, self.view.bounds.size.width /2.0  - 10, 60);
+    btnRight.frame  = CGRectMake(self.view.bounds.size.width /2.0 + 10 , 0, self.view.bounds.size.width /2.0  - 50, 40);
     btnRight.titleLabel.textColor = [UIColor whiteColor];
     btnRight.titleLabel.textAlignment = NSTextAlignmentCenter ;
     [btnRight setTitle:@"立即购买" forState:UIControlStateNormal];
@@ -142,7 +220,7 @@
 -(void)btnRightCLick{
     self.tabBarController.selectedIndex = 2 ;
     self.goodModel.payAmount_var = self.goodModel.price_var ;
-    [self checkOut:[self.goodModel modelTodic]];
+//    [self checkOut:[self.goodModel modelTodic]];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -220,14 +298,24 @@
     [footerView addSubview:upLabel];
     
     footerView.backgroundColor = [UIColor whiteColor];
+    NSMutableArray *titleArray = [NSMutableArray arrayWithObjects:@"增长黑客 \n ¥59",@"gio帽衫 \n ¥99", nil] ;
     for (int i = 0; i < 2; i ++) {
-        HomeCell *cell = [[HomeCell alloc] initWithFrame:CGRectMake(i *  (self.view.bounds.size.width - 40 - 40)/2.0 + 20 + i* 10 ,40, (self.view.bounds.size.width - 40 - 40)/2.0 , 200 - 40 - 20 )];
-        cell.height = 130 ;
-        cell.width  = 150 ;
+        HomeCell *cell = [[HomeCell alloc] initWithFrame:CGRectMake(20 + (self.view.frame.size.width - 60) * i /2  + 20 * i , 40 , (self.view.frame.size.width - 60)/2 , 100 )];
+        cell.layer.borderColor = [UIColor blueColor].CGColor;
+        cell.layer.borderWidth = 1 ;
+        cell.width  = CGRectGetWidth(cell.frame) ;
+        cell.height = CGRectGetHeight(cell.frame)  ;
         cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"suggest%d",i+1]];
         UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
         [cell addGestureRecognizer:tapGesturRecognizer];
         cell.titleLabel.textAlignment = NSTextAlignmentCenter ;
+        
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0 , cell.frame.size.height , cell.frame.size.width , 60)];
+        titleLabel.text =  titleArray[i];
+        titleLabel.numberOfLines = 0 ;
+        titleLabel.font = [UIFont fontWithName:@"PingFang SC" size:14];
+        titleLabel.textAlignment = NSTextAlignmentCenter ;
+        [cell addSubview:titleLabel];
         [footerView addSubview:cell];
     }
     return footerView ;
@@ -237,6 +325,8 @@
 -(void)tapAction
 {
     GoodsDetailController *VC = [[GoodsDetailController alloc] init];
+    VC.hidesBottomBarWhenPushed = YES ;
+    VC.goodModel =  self.goodModel ;
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:YES];
 }

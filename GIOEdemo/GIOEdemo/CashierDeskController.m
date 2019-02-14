@@ -108,8 +108,10 @@
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:YES];
     [self payOrderSuccess];
+    [self evar];
 }
 
+//打点开始
 -(void)payOrderSuccess{
     self.model = [[GoodsModel alloc] init];
     self.model.paymentMethod_var = @"GIO支付" ;
@@ -118,4 +120,20 @@
     self.model.orderId_var = self.orderId_var ;
     [Growing track:@"payOrderSuccess" withVariable:[self.model modelTodic]];
 }
+
+-(void)evar{
+    for (int i = 0; i < self.cartArray.count ; i ++) {
+        NSMutableDictionary *evars= [NSMutableDictionary dictionary];
+        NSDictionary *dict = self.cartArray[i];
+        if ([dict objectForKey:@"floor_evar"]) {
+            evars[@"floor_evar"] = [dict objectForKey:@"floor_evar"];
+        }else{
+            evars[@"searchWord_evar"] = [dict objectForKey:@"productName_var"];
+        }
+        [Growing setEvar:evars];
+    }
+}
+
+//打点结束
+
 @end

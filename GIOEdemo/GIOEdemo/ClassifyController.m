@@ -43,7 +43,7 @@
 }
 
 -(void)makeLeftView{
-    UIView *leftView  = [[UIView alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(self.navigationController.navigationBar.frame) + 100 , 100, self.view.bounds.size.height )];
+    UIView *leftView  = [[UIView alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(self.navigationController.navigationBar.frame) + 150 , 100, self.view.bounds.size.height )];
     leftView.backgroundColor = [UIColor whiteColor];
     UIView *divideView = [[UIView alloc] initWithFrame:CGRectMake(99, 0, 0.5, CGRectGetHeight(leftView.frame))];
     divideView.backgroundColor = [UIColor blackColor];
@@ -69,16 +69,31 @@
 }
 
 -(void)makeRightView{
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navigationController.navigationBar.frame), self.view.bounds.size.width , 100)];
-    imageView.image = [UIImage imageNamed:@"suggest"];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navigationController.navigationBar.frame), self.view.bounds.size.width , 150)];
+    imageView.image = [UIImage imageNamed:@"11"];
     [self.view addSubview:imageView];
+    
     self.rightView = [[UIView alloc] initWithFrame:CGRectMake(100, CGRectGetMaxY(imageView.frame), self.view.bounds.size.width - 100, self.view.bounds.size.height - 180)];
     UIView *cellView =  [self makeCellArray:self.allDataArray];
     cellView.frame = CGRectMake(0, 15,  self.view.bounds.size.width - 100, 420);
     [self.rightView addSubview:cellView];
     [self.view addSubview:self.rightView];
     
+    UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapActionHead)];
+    imageView.userInteractionEnabled = YES;
+    [imageView addGestureRecognizer:tapGesturRecognizer];
+    
 }
+
+-(void)tapActionHead
+{
+    GoodsDetailController *VC = [[GoodsDetailController alloc] init];
+    VC.goodModel = [self.allDataArray lastObject];
+    VC.hidesBottomBarWhenPushed = YES ;
+    [self.navigationController pushViewController:VC animated:YES];
+    [self listingPageGoodsClick:[VC.goodModel modelTodic]];
+}
+
 
 -(UIView *)makeCellArray:(NSArray *)array{
     UIView *view = [[UIView alloc] init];
@@ -115,7 +130,7 @@
     
     [self.rightView removeFromSuperview];
     self.rightView = nil ;
-    self.rightView =  [[UIView alloc] initWithFrame:CGRectMake(100, CGRectGetMaxY(self.navigationController.navigationBar.frame) + 100, self.view.bounds.size.width - 100, self.view.bounds.size.height - 180)];
+    self.rightView =  [[UIView alloc] initWithFrame:CGRectMake(100, CGRectGetMaxY(self.navigationController.navigationBar.frame) + 150, self.view.bounds.size.width - 100, self.view.bounds.size.height - 180)];
     [self.view addSubview:self.rightView];
     switch (btn.tag) {
         case 0:
@@ -123,6 +138,8 @@
             UIView *cellView =  [self makeCellArray:self.allDataArray];
             cellView.frame = CGRectMake(0 ,  10,  self.view.bounds.size.width - 100, 420);
             [self.rightView addSubview:cellView];
+            NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"为您推荐",@"productListType_pvar", nil];
+            [self productListType_pvar:dict];
         }
             break;
         case 1:
@@ -130,6 +147,8 @@
             UIView *cellView =  [self makeCellArray:self.dataArray1];
             cellView.frame = CGRectMake(0 , 10 ,  self.view.bounds.size.width - 100, 120);
             [self.rightView addSubview:cellView];
+            NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"电子产品",@"productListType_pvar", nil];
+            [self productListType_pvar:dict];
         }
             break;
         case 2:
@@ -137,6 +156,8 @@
             UIView *cellView =  [self makeCellArray:self.dataArray2];
             cellView.frame = CGRectMake(0,10 ,  self.view.bounds.size.width - 100, 120);
             [self.rightView addSubview:cellView];
+            NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"生活用品",@"productListType_pvar", nil];
+            [self productListType_pvar:dict];
         }
             break;
         case 3:
@@ -144,6 +165,8 @@
             UIView *cellView =  [self makeCellArray:self.dataArray3];
             cellView.frame = CGRectMake(0 ,10,  self.view.bounds.size.width - 100, 120);
             [self.rightView addSubview:cellView];
+            NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"服装",@"productListType_pvar", nil];
+            [self productListType_pvar:dict];
         }
             break;
         default:
@@ -169,8 +192,11 @@
     [Growing track:@"listingPageGoodsClick" withVariable:dict];
 }
 
-//打点结束
+-(void)productListType_pvar:(NSDictionary *)dict{
+  [Growing setPageVariable:dict toViewController:self];
+}
 
+//打点结束
 -(void)btnClick{
     SearchViewController *VC = [[SearchViewController alloc] init];
     VC.hidesBottomBarWhenPushed = YES ;

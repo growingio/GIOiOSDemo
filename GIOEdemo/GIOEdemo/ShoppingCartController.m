@@ -18,10 +18,12 @@ alpha:alphaValue]
 #import "ShoppingCartController.h"
 #import "ShopingCartCell.h"
 #import "CheckOrderController.h"
+#import "Growing.h"
 @interface ShoppingCartController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView *tableView ;
 @property (nonatomic , strong) NSMutableArray *cartArray ;
 @property (nonatomic , assign) int allPrice ;
+@property (nonatomic , strong) UILabel *allPriceLabel ;
 @end
 
 @implementation ShoppingCartController
@@ -35,12 +37,25 @@ alpha:alphaValue]
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone ;
     self.tableView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
+//    self.title = @"购物车" ;
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    label.text = @"购物车" ;
+    label.textColor = [UIColor blackColor];
+    label.textAlignment = NSTextAlignmentCenter ;
+    self.navigationItem.titleView = label ;
     [self getCartData];
     [self makeGoPay];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    int price = 0 ;
+    for (int i = 0 ; i < self.cartArray.count; i ++) {
+        NSDictionary *dict = self.cartArray[i] ;
+        price += [dict[@"price_var"] intValue];
+    }
+    self.allPrice = price ;
+    self.allPriceLabel.text = [NSString stringWithFormat:@"合计：%d",self.allPrice];
     [self getCartData];
     [self.tableView reloadData];
 }
@@ -51,6 +66,7 @@ alpha:alphaValue]
     UILabel *label = [[UILabel alloc] init];
     label.frame  =  CGRectMake(10, 0, 160 , 60);
     label.textColor = [UIColor blackColor];
+    self.allPriceLabel = label ;
     int price = 0 ;
     for (int i = 0 ; i < self.cartArray.count; i ++) {
         NSDictionary *dict = self.cartArray[i] ;
@@ -83,7 +99,13 @@ alpha:alphaValue]
 
 -(void)tapAction
 {
+    if (!self.cartArray.count) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请先添加商品" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
+        [alert show];
+        return ;
+    }
     CheckOrderController *VC = [[CheckOrderController alloc] init];
+    VC.cartArray = self.cartArray ;
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     dict[@"image"] = @"chore1" ;
     dict[@"number"] = [NSString stringWithFormat:@"%u",arc4random()%1000000000];
@@ -93,8 +115,14 @@ alpha:alphaValue]
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:YES];
 }
-
-
+//打点开始
+-(void)checkOut:(NSDictionary *)dict{
+    for (int i = 0 ; i < self.cartArray.count; i ++) {
+        NSDictionary *dict = self.cartArray[i];
+        [Growing track:@"checkOut" withVariable:dict];
+    }
+}
+//打点结束
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *dict = self.cartArray[indexPath.row];

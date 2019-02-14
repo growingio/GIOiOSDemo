@@ -60,9 +60,6 @@ alpha:alphaValue]
 -(void)layoutSubviews{
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.imageIcon.frame  =  CGRectMake(30, 30, 95 , 95);
-//    self.imageIcon.image =[UIImage imageNamed:@"palceImage"];;
-    
-    
     self.numberLabel.frame  =  CGRectMake(CGRectGetMaxX(self.imageIcon.frame) + 10 , 30, 200  , 20);
     self.numberLabel.textAlignment = NSTextAlignmentLeft ;
     self.titleLabel.frame  =  CGRectMake(CGRectGetMaxX(self.imageIcon.frame) + 10 , 60, self.contentView.bounds.size.width - 60 -  CGRectGetMaxX(self.imageIcon.frame)  , 30);

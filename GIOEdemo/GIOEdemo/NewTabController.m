@@ -42,7 +42,7 @@
     UIImage *musicImageSel3 = [UIImage imageNamed:@"cart_selected.png"];
     
     UIImage *musicImage4 = [UIImage imageNamed:@"profile.png"];
-    UIImage *musicImageSel4 = [UIImage imageNamed:@"profile_checked.png"];
+    UIImage *musicImageSel4 = [UIImage imageNamed:@"profile_selected.png"];
     
     musicImage = [musicImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     musicImageSel = [musicImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic , assign) int width ;
 @property(nonatomic , assign) int height ;
 @property(nonatomic , strong) GoodsModel *goodModel ;
+-(void)upDateFrame:(CGRect )frame ;
 @end
 
 NS_ASSUME_NONNULL_END

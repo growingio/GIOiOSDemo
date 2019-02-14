@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		426E80E921F84AC300EFD42A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 426E80E821F84AC300EFD42A /* main.m */; };
 		426E810721FB200B00EFD42A /* GoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426E810621FB200B00EFD42A /* GoodsModel.m */; };
+		42E25F302212BF6D00FE6E09 /* GrowingCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E25F2F2212BF6D00FE6E09 /* GrowingCoreKit.framework */; };
+		42E25F322212BF7A00FE6E09 /* GrowingAutoTrackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E25F312212BF7A00FE6E09 /* GrowingAutoTrackKit.framework */; };
 		42F30CF921F0939300C4E6E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30CF821F0939300C4E6E9 /* AppDelegate.m */; };
 		42F30CFC21F0939300C4E6E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30CFB21F0939300C4E6E9 /* ViewController.m */; };
 		42F30CFF21F0939300C4E6E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F30CFD21F0939300C4E6E9 /* Main.storyboard */; };
@@ -33,8 +35,6 @@
 		42F30D5E21F0942E00C4E6E9 /* JudgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D5021F0942E00C4E6E9 /* JudgeController.m */; };
 		42F30D5F21F0942E00C4E6E9 /* CheckOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D5221F0942E00C4E6E9 /* CheckOrderController.m */; };
 		42F30D6121F0946100C4E6E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F30D6021F0946100C4E6E9 /* Assets.xcassets */; };
-		42F30D6321F0954000C4E6E9 /* GrowingCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D6221F0954000C4E6E9 /* GrowingCoreKit.framework */; };
-		42F30D6521F0954800C4E6E9 /* GrowingAutoTrackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D6421F0954800C4E6E9 /* GrowingAutoTrackKit.framework */; };
 		42F30D6821F0955B00C4E6E9 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D6721F0955A00C4E6E9 /* JavaScriptCore.framework */; };
 		42F30D6A21F0958000C4E6E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D6921F0958000C4E6E9 /* Foundation.framework */; };
 		42F30D6C21F0958600C4E6E9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D6B21F0958600C4E6E9 /* Security.framework */; };
@@ -45,7 +45,6 @@
 		42F30D7621F095A800C4E6E9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D7521F095A800C4E6E9 /* libsqlite3.0.tbd */; };
 		42F30D7821F095AE00C4E6E9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D7721F095AE00C4E6E9 /* CoreLocation.framework */; };
 		42F30D7A21F0962300C4E6E9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F30D7921F0962300C4E6E9 /* WebKit.framework */; };
-		AE82954A21F9D4E500AB8546 /* GrowingTouchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE82954921F9D4E500AB8546 /* GrowingTouchKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +68,8 @@
 		426E80E821F84AC300EFD42A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		426E810521FB200B00EFD42A /* GoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsModel.h; sourceTree = "<group>"; };
 		426E810621FB200B00EFD42A /* GoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsModel.m; sourceTree = "<group>"; };
+		42E25F2F2212BF6D00FE6E09 /* GrowingCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingCoreKit.framework; sourceTree = "<group>"; };
+		42E25F312212BF7A00FE6E09 /* GrowingAutoTrackKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingAutoTrackKit.framework; sourceTree = "<group>"; };
 		42F30CF421F0939300C4E6E9 /* GIOEdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIOEdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F30CF721F0939300C4E6E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		42F30CF821F0939300C4E6E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -118,8 +119,6 @@
 		42F30D5121F0942E00C4E6E9 /* CashierDeskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashierDeskController.h; sourceTree = "<group>"; };
 		42F30D5221F0942E00C4E6E9 /* CheckOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckOrderController.m; sourceTree = "<group>"; };
 		42F30D6021F0946100C4E6E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		42F30D6221F0954000C4E6E9 /* GrowingCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingCoreKit.framework; sourceTree = "<group>"; };
-		42F30D6421F0954800C4E6E9 /* GrowingAutoTrackKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingAutoTrackKit.framework; sourceTree = "<group>"; };
 		42F30D6721F0955A00C4E6E9 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		42F30D6921F0958000C4E6E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		42F30D6B21F0958600C4E6E9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -132,7 +131,6 @@
 		42F30D7921F0962300C4E6E9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		42F30D7B21F096A100C4E6E9 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		42F30D7C21F096AE00C4E6E9 /* Growing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Growing.h; sourceTree = "<group>"; };
-		AE82954921F9D4E500AB8546 /* GrowingTouchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingTouchKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,13 +144,12 @@
 				42F30D7421F095A200C4E6E9 /* libicucore.tbd in Frameworks */,
 				42F30D7221F0959A00C4E6E9 /* AdSupport.framework in Frameworks */,
 				42F30D7021F0959300C4E6E9 /* SystemConfiguration.framework in Frameworks */,
+				42E25F302212BF6D00FE6E09 /* GrowingCoreKit.framework in Frameworks */,
 				42F30D6E21F0958C00C4E6E9 /* CoreTelephony.framework in Frameworks */,
 				42F30D6C21F0958600C4E6E9 /* Security.framework in Frameworks */,
-				AE82954A21F9D4E500AB8546 /* GrowingTouchKit.framework in Frameworks */,
 				42F30D6A21F0958000C4E6E9 /* Foundation.framework in Frameworks */,
+				42E25F322212BF7A00FE6E09 /* GrowingAutoTrackKit.framework in Frameworks */,
 				42F30D6821F0955B00C4E6E9 /* JavaScriptCore.framework in Frameworks */,
-				42F30D6521F0954800C4E6E9 /* GrowingAutoTrackKit.framework in Frameworks */,
-				42F30D6321F0954000C4E6E9 /* GrowingCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,9 +173,8 @@
 		42F30CEB21F0939300C4E6E9 = {
 			isa = PBXGroup;
 			children = (
-				AE82954921F9D4E500AB8546 /* GrowingTouchKit.framework */,
-				42F30D6421F0954800C4E6E9 /* GrowingAutoTrackKit.framework */,
-				42F30D6221F0954000C4E6E9 /* GrowingCoreKit.framework */,
+				42E25F312212BF7A00FE6E09 /* GrowingAutoTrackKit.framework */,
+				42E25F2F2212BF6D00FE6E09 /* GrowingCoreKit.framework */,
 				42F30CF621F0939300C4E6E9 /* GIOEdemo */,
 				42F30D0F21F0939400C4E6E9 /* GIOEdemoTests */,
 				42F30D1A21F0939400C4E6E9 /* GIOEdemoUITests */,
@@ -200,6 +196,7 @@
 		42F30CF621F0939300C4E6E9 /* GIOEdemo */ = {
 			isa = PBXGroup;
 			children = (
+				42F30D7B21F096A100C4E6E9 /* module.modulemap */,
 				426E810521FB200B00EFD42A /* GoodsModel.h */,
 				426E810621FB200B00EFD42A /* GoodsModel.m */,
 				42F30D2F21F093FF00C4E6E9 /* OrderController.h */,
@@ -207,7 +204,6 @@
 				42F30D4E21F0942E00C4E6E9 /* CashierDeskController.m */,
 				42F30D4521F0942D00C4E6E9 /* CheckOrderController.h */,
 				42F30D5221F0942E00C4E6E9 /* CheckOrderController.m */,
-				42F30D7B21F096A100C4E6E9 /* module.modulemap */,
 				42F30D7C21F096AE00C4E6E9 /* Growing.h */,
 				42F30D4021F0942D00C4E6E9 /* ClassifyController.h */,
 				42F30D3F21F0942D00C4E6E9 /* ClassifyController.m */,
