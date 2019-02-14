@@ -31,6 +31,8 @@
 //    [GrowingTouch setEventPopupEnable:YES];
 //    [GrowingTouch setServerHost:@"http://k8s-marketing-automation-messages.growingio.com"];
 //    [GrowingTouch start];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"1",@"vipLevel", nil];
+    [Growing setPeopleVariable:dict];
     return YES;
 }
 
