@@ -77,7 +77,7 @@ alpha:alphaValue]
 -(void)updateCell:(NSDictionary *)dict{
     self.numberLabel.text = [[dict objectForKey:@"productId_var"] description];
     if (!self.numberLabel.text.length) {
-        self.numberLabel.text = [[dict objectForKey:@"订单编号：number"] description];
+        self.numberLabel.text = [NSString stringWithFormat:@"订单编号：%@",[[dict objectForKey:@"number"] description]] ;
     }
     self.titleLabel.text =  [[dict objectForKey:@"productName_var"] description] ;
     self.divideLabel.text = [[dict objectForKey:@"price_var"] description];
