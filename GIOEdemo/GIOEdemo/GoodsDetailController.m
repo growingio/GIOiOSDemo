@@ -219,7 +219,19 @@
 }
 
 -(void)btnRightCLick{
-    [self btnLeftCLick];
+    //存储数据
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *cartArray ;
+    if ([defaults objectForKey:@"cartArray"]) {
+        cartArray = [[defaults objectForKey:@"cartArray"] mutableCopy];
+    }else{
+        cartArray = [NSMutableArray array];
+    }
+    if (![cartArray containsObject:[self.goodModel modelTodic]]) {
+        [cartArray addObject:[self.goodModel modelTodic]];
+        [defaults setObject:cartArray forKey:@"cartArray"];
+    }
+    [self addToCart:[self.goodModel modelTodic]];
     self.tabBarController.selectedIndex = 2 ;
     self.goodModel.payAmount_var = self.goodModel.price_var ;
 //    [self checkOut:[self.goodModel modelTodic]];

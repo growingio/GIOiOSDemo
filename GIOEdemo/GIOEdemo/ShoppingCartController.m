@@ -114,9 +114,10 @@ alpha:alphaValue]
     VC.dataDict = dict ;
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:YES];
+    [self checkOut];
 }
 //打点开始
--(void)checkOut:(NSDictionary *)dict{
+-(void)checkOut{
     for (int i = 0 ; i < self.cartArray.count; i ++) {
         NSDictionary *dict = self.cartArray[i];
         [Growing track:@"checkOut" withVariable:dict];

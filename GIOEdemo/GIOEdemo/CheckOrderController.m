@@ -128,6 +128,7 @@
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:YES];
     [self payOrder:self.dataDict];
+    [self paySPU];
 }
 
 
@@ -149,13 +150,6 @@
     for (int i = 0 ; i < self.cartArray.count; i ++) {
         NSDictionary *dict = self.cartArray[i];
         [Growing track:@"paySPU" withVariable:dict];
-    }
-}
-
--(void)paySPUSucess{
-    for (int i = 0 ; i < self.cartArray.count; i ++) {
-        NSDictionary *dict = self.cartArray[i];
-        [Growing track:@"paySPUSucess" withVariable:dict];
     }
 }
 
