@@ -211,7 +211,7 @@ alpha:alphaValue]
         model.productId_var = [NSString stringWithFormat:@"00%d",i+1];
         model.productName_var = allNameArray[i];
         model.price_var = priceArray[i];
-        model.floor_var = @"首页" ;
+//        model.floor_var = @"首页" ;
         [self.allDataArray addObject:model];
     }
     self.searchArray = self.allDataArray ;
