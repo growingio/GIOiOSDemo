@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		426E80E921F84AC300EFD42A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 426E80E821F84AC300EFD42A /* main.m */; };
 		426E810721FB200B00EFD42A /* GoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426E810621FB200B00EFD42A /* GoodsModel.m */; };
-		42E25F302212BF6D00FE6E09 /* GrowingCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E25F2F2212BF6D00FE6E09 /* GrowingCoreKit.framework */; };
-		42E25F322212BF7A00FE6E09 /* GrowingAutoTrackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E25F312212BF7A00FE6E09 /* GrowingAutoTrackKit.framework */; };
+		42E25F69221661D200FE6E09 /* GrowingAutoTrackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E25F68221661D200FE6E09 /* GrowingAutoTrackKit.framework */; };
+		42E25F6B221661DA00FE6E09 /* GrowingCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E25F6A221661DA00FE6E09 /* GrowingCoreKit.framework */; };
 		42F30CF921F0939300C4E6E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30CF821F0939300C4E6E9 /* AppDelegate.m */; };
 		42F30CFC21F0939300C4E6E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30CFB21F0939300C4E6E9 /* ViewController.m */; };
 		42F30CFF21F0939300C4E6E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F30CFD21F0939300C4E6E9 /* Main.storyboard */; };
@@ -68,8 +68,8 @@
 		426E80E821F84AC300EFD42A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		426E810521FB200B00EFD42A /* GoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsModel.h; sourceTree = "<group>"; };
 		426E810621FB200B00EFD42A /* GoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsModel.m; sourceTree = "<group>"; };
-		42E25F2F2212BF6D00FE6E09 /* GrowingCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingCoreKit.framework; sourceTree = "<group>"; };
-		42E25F312212BF7A00FE6E09 /* GrowingAutoTrackKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingAutoTrackKit.framework; sourceTree = "<group>"; };
+		42E25F68221661D200FE6E09 /* GrowingAutoTrackKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingAutoTrackKit.framework; sourceTree = "<group>"; };
+		42E25F6A221661DA00FE6E09 /* GrowingCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingCoreKit.framework; sourceTree = "<group>"; };
 		42F30CF421F0939300C4E6E9 /* GIOEdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIOEdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F30CF721F0939300C4E6E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		42F30CF821F0939300C4E6E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,11 +144,11 @@
 				42F30D7421F095A200C4E6E9 /* libicucore.tbd in Frameworks */,
 				42F30D7221F0959A00C4E6E9 /* AdSupport.framework in Frameworks */,
 				42F30D7021F0959300C4E6E9 /* SystemConfiguration.framework in Frameworks */,
-				42E25F302212BF6D00FE6E09 /* GrowingCoreKit.framework in Frameworks */,
+				42E25F6B221661DA00FE6E09 /* GrowingCoreKit.framework in Frameworks */,
 				42F30D6E21F0958C00C4E6E9 /* CoreTelephony.framework in Frameworks */,
+				42E25F69221661D200FE6E09 /* GrowingAutoTrackKit.framework in Frameworks */,
 				42F30D6C21F0958600C4E6E9 /* Security.framework in Frameworks */,
 				42F30D6A21F0958000C4E6E9 /* Foundation.framework in Frameworks */,
-				42E25F322212BF7A00FE6E09 /* GrowingAutoTrackKit.framework in Frameworks */,
 				42F30D6821F0955B00C4E6E9 /* JavaScriptCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,8 +173,8 @@
 		42F30CEB21F0939300C4E6E9 = {
 			isa = PBXGroup;
 			children = (
-				42E25F312212BF7A00FE6E09 /* GrowingAutoTrackKit.framework */,
-				42E25F2F2212BF6D00FE6E09 /* GrowingCoreKit.framework */,
+				42E25F6A221661DA00FE6E09 /* GrowingCoreKit.framework */,
+				42E25F68221661D200FE6E09 /* GrowingAutoTrackKit.framework */,
 				42F30CF621F0939300C4E6E9 /* GIOEdemo */,
 				42F30D0F21F0939400C4E6E9 /* GIOEdemoTests */,
 				42F30D1A21F0939400C4E6E9 /* GIOEdemoUITests */,
@@ -615,7 +615,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.min.GIOEdemo;
+				PRODUCT_BUNDLE_IDENTIFIER = GrowingIO.GrowingIOTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -637,7 +637,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.min.GIOEdemo;
+				PRODUCT_BUNDLE_IDENTIFIER = GrowingIO.GrowingIOTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
