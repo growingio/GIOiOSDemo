@@ -21,8 +21,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Growing startWithAccountId:@"0a1b4118dd954ec3bcc69da5138bdb96"];
     [Growing setEnableLog:YES];
-    //    [Growing setDataHost:@"http://k8s-mobile-www.growingio.com"];
-    //    [Growing setGtaHost:@"http://k8s-mobile-gta.growingio.com"];
+    [Growing setDataHost:@"https://demo1gta.growingio.com"];
+    [Growing setReportHost:@"https://demo1gta.growingio.com"];
+    [Growing setTrackerHost:@"https://apifwd.growingio.com"];
+    [Growing setGtaHost:@"https://demo1gta.growingio.com"];
+    [Growing setWsHost:@"wss://demo1gta.growingio.com"];
+    
     [Growing setEnableLog:NO];
     [Growing registerDeeplinkHandler:^(NSDictionary *params, NSError *error) {
         NSLog(@"params %@",params);
