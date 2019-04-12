@@ -154,15 +154,29 @@
 
 //打点开始
 -(void)goodsDetailPageView:(NSDictionary *)dict{
-    [Growing track:@"goodsDetailPageView" withVariable:dict];
+    NSMutableDictionary *mutDict = dict.mutableCopy;
+    [mutDict removeObjectForKey:@"floor_var"];
+    [mutDict removeObjectForKey:@"price_var"];
+    [Growing track:@"goodsDetailPageView" withVariable:mutDict];
 }
 
 -(void)addToCart:(NSDictionary *)dict{
-    [Growing track:@"addToCart" withVariable:dict];
+    NSMutableDictionary *mutDict = dict.mutableCopy;
+    [mutDict removeObjectForKey:@"floor_var"];
+    [mutDict removeObjectForKey:@"price_var"];
+    [mutDict removeObjectForKey:@"payAmount_var"];
+    mutDict[@"buyQuantity_var"] = @1;
+    [Growing track:@"addToCart" withVariable:mutDict];
 }
 
 -(void)checkOut:(NSDictionary *)dict{
-    [Growing track:@"checkOut" withVariable:dict];
+    
+    NSMutableDictionary *mutDict = dict.mutableCopy;
+    mutDict[@"buyQuantity_var"] = @1;
+    mutDict[@"payAmount_var"] = [NSNumber numberWithFloat:[dict[@"price_var"] floatValue]];
+    [mutDict removeObjectForKey:@"floor_var"];
+    [mutDict removeObjectForKey:@"price_var"];
+    [Growing track:@"checkOut" withVariable:mutDict];
 }
 
 -(void)shareActivity:(NSDictionary *)dict{
@@ -233,7 +247,7 @@
     }
     [self addToCart:[self.goodModel modelTodic]];
     self.tabBarController.selectedIndex = 2 ;
-    self.goodModel.payAmount_var = self.goodModel.price_var ;
+    self.goodModel.payAmount_var = [NSNumber numberWithFloat:[self.goodModel.price_var floatValue]];
 //    [self checkOut:[self.goodModel modelTodic]];
 }
 

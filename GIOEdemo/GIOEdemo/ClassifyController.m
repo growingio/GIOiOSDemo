@@ -189,7 +189,10 @@
 
 //打点开始
 -(void)listingPageGoodsClick:(NSDictionary *)dict{
-    [Growing track:@"listingPageGoodsClick" withVariable:dict];
+    NSMutableDictionary *mutDict = dict.mutableCopy;
+    [mutDict removeObjectForKey:@"floor_var"];
+    [mutDict removeObjectForKey:@"price_var"];
+    [Growing track:@"listingPageGoodsClick" withVariable:mutDict];
 }
 
 -(void)productListType_pvar:(NSDictionary *)dict{

@@ -140,16 +140,28 @@
     self.model.orderId_var =  [[self.dataDict objectForKey:@"number"] description];
     self.model.productName_var = @"订单商品" ;
     self.model.paymentMethod_var = @"GIO支付" ;
-    self.model.buyQuantity_var =  @"1" ;
+    self.model.buyQuantity_var =  @1;
     self.model.productId_var = self.dataDict[@"image"];
-    [Growing track:@"payOrder" withVariable:[self.model modelTodic]];
+    NSDictionary *dict1 = [self.model modelTodic];
+    NSMutableDictionary *mutDict = dict1.mutableCopy;
+    [mutDict removeObjectForKey:@"productId_var"];
+    [mutDict removeObjectForKey:@"productName_var"];
+    mutDict[@"payAmount_var"] = [NSNumber numberWithFloat:[self.dataDict[@"allPrice"] floatValue]];
+    [Growing track:@"payOrder" withVariable:mutDict];
 }
 
 
 -(void)paySPU{
     for (int i = 0 ; i < self.cartArray.count; i ++) {
         NSDictionary *dict = self.cartArray[i];
-        [Growing track:@"paySPU" withVariable:dict];
+        NSMutableDictionary *mutDict = dict.mutableCopy;
+        [mutDict removeObjectForKey:@"floor_var"];
+        [mutDict removeObjectForKey:@"price_var"];
+        mutDict[@"buyQuantity_var"] = @1;
+        mutDict[@"orderId_var"] = [[self.dataDict objectForKey:@"number"] description];
+        mutDict[@"paymentMethod_var"] = @"GIO支付";
+        mutDict[@"payAmount_var"] = [NSNumber numberWithFloat:[dict[@"price_var"] floatValue]];
+        [Growing track:@"paySPU" withVariable:mutDict];
     }
 }
 

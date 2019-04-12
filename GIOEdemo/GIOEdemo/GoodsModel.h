@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 //搜索词
 @property (nonatomic,strong)NSString *searchWord_var ;
 //购买数量
-@property (nonatomic,strong)NSString *buyQuantity_var ;
+@property (nonatomic,strong)NSNumber *buyQuantity_var ;
 //订单id
 @property (nonatomic,strong)NSString *orderId_var ;
 //订单金额
@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 //支付方式
 @property (nonatomic,strong)NSString *paymentMethod_var ;
 //实际支付金额
-@property (nonatomic,strong)NSString *payAmount_var ;
+@property (nonatomic,strong)NSNumber *payAmount_var ;
 //分享渠道
 @property (nonatomic,strong)NSString *sharechannel ;
 //价格

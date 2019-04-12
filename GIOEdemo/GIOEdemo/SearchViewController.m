@@ -198,7 +198,9 @@ alpha:alphaValue]
 }
 
 -(void)searchResultClick:(NSDictionary *)dict{
-    [Growing track:@"searchResultClick" withVariable:dict];
+    NSMutableDictionary *mutDict = dict.mutableCopy;
+    [mutDict removeObjectForKey:@"price_var"];
+    [Growing track:@"searchResultClick" withVariable:mutDict];
 }
 
 //打点结束

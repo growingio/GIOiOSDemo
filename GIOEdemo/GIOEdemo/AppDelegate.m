@@ -19,7 +19,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [Growing startWithAccountId:@"0a1b4118dd954ec3bcc69da5138bdb96"];
+    [Growing startWithAccountId:@"97fd6815651f25fb"];
     [Growing setEnableLog:YES];
     [Growing setDataHost:@"https://demo1gta.growingio.com"];
     [Growing setReportHost:@"https://demo1gta.growingio.com"];

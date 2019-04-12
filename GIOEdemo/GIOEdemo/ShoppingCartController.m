@@ -120,7 +120,12 @@ alpha:alphaValue]
 -(void)checkOut{
     for (int i = 0 ; i < self.cartArray.count; i ++) {
         NSDictionary *dict = self.cartArray[i];
-        [Growing track:@"checkOut" withVariable:dict];
+        NSMutableDictionary *mutDict = dict.mutableCopy;
+        mutDict[@"buyQuantity_var"] = @1;
+        mutDict[@"payAmount_var"] = [NSNumber numberWithFloat:[dict[@"price_var"] floatValue]];
+        [mutDict removeObjectForKey:@"floor_var"];
+        [mutDict removeObjectForKey:@"price_var"];
+        [Growing track:@"checkOut" withVariable:mutDict];
     }
 }
 //打点结束

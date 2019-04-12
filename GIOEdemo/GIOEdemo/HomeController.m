@@ -45,7 +45,9 @@
     [Growing track:@"homePageGoodsImp" withVariable:dict];
 }
 -(void)homePageGoodsClick:(NSDictionary *)dict{
-    [Growing track:@"homePageGoodsCLick" withVariable:dict];
+    NSMutableDictionary *mutDict = dict.mutableCopy;
+    [mutDict removeObjectForKey:@"price_var"];
+    [Growing track:@"homePageGoodsClick" withVariable:mutDict];
 }
 //打点结束
 

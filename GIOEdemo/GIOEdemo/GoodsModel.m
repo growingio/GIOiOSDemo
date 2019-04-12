@@ -36,7 +36,7 @@
         dict[@"paymentMethod_var"] = self.paymentMethod_var ;
     }
     if (self.payAmount_var ) {
-        dict[@"payAmount_var"] = self.payAmount_var ;
+        dict[@"payAmount_var"] = [self.payAmount_var isKindOfClass:[NSString class]] ? [NSNumber numberWithFloat:[self.payAmount_var floatValue]] : self.payAmount_var ;
     }
     if (self.sharechannel) {
         dict[@"sharechannel"] = self.sharechannel ;

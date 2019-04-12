@@ -115,7 +115,7 @@
 -(void)payOrderSuccess{
     self.model = [[GoodsModel alloc] init];
     self.model.paymentMethod_var = @"GIO支付" ;
-    self.model.buyQuantity_var =  @"1" ;
+    self.model.buyQuantity_var =  @1 ;
     self.model.payAmount_var = self.allPice ;
     self.model.orderId_var = self.orderId_var ;
     [Growing track:@"payOrderSuccess" withVariable:[self.model modelTodic]];
@@ -125,7 +125,14 @@
 -(void)paySPUSucess{
     for (int i = 0 ; i < self.cartArray.count; i ++) {
         NSDictionary *dict = self.cartArray[i];
-        [Growing track:@"paySPUSucess" withVariable:dict];
+        NSMutableDictionary *mutDict = dict.mutableCopy;
+        [mutDict removeObjectForKey:@"floor_var"];
+        [mutDict removeObjectForKey:@"price_var"];
+        mutDict[@"buyQuantity_var"] = self.model.buyQuantity_var;
+        mutDict[@"orderId_var"] = self.orderId_var;
+        mutDict[@"paymentMethod_var"] = self.model.paymentMethod_var;
+        mutDict[@"payAmount_var"] = [NSNumber numberWithFloat:[dict[@"price_var"] floatValue]];
+        [Growing track:@"paySPUSuccess" withVariable:mutDict];
     }
 }
 
