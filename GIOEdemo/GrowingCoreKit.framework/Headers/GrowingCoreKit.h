@@ -66,7 +66,7 @@ typedef NS_ENUM(NSInteger, GrowingAspectMode)
 
 
 // 以下函数设置后会覆盖原有设置
-// 并且只会在第一次安装后调用 以保证同一设备的设备ID相同
+// 此函数如果被定义,则为获取deviceID的第一优先级
 // 请在方法 startWithAccountId 之前调用
 // 使用自定义的ID 自定义ID长度不可大于64 否则会被抛弃 NSUUID的UUIDString长度为36
 // Example:
@@ -76,7 +76,7 @@ typedef NS_ENUM(NSInteger, GrowingAspectMode)
 /**
  deeplink广告落地页参数回调设置
 
- @param handler: deeplink广告落地页参数回调, params 为解析正确时反回调的参数, error 为解析错误时返回的参数.
+ @param handler deeplink广告落地页参数回调, params 为解析正确时反回调的参数, error 为解析错误时返回的参数.
                  handler 默认为空, 客户需要手动设置.
  */
 + (void)registerDeeplinkHandler:(void(^)(NSDictionary *params, NSError *error))handler;
@@ -114,6 +114,9 @@ typedef NS_ENUM(NSInteger, GrowingAspectMode)
 
 // 设置数据查看平台服务器地址
 + (void)setDataHost:(NSString*)host;
+
+// 一般放静态资源的服务（目前存放用户的圈选结果页）
++ (void)setAssetsHost:(NSString*)host;
 
 // 设置数据后台服务器地址
 + (void)setGtaHost:(NSString*)host;
