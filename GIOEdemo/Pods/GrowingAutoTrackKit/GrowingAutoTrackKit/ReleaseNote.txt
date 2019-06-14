@@ -1,0 +1,12 @@
+2.7.4 Release Note
+
+1.修复了GrowingAspectModeDynamicSwizzling Mode 下 WKWebView crash
+2.web圈app连接流畅度优化
+
+2.7.5 Release Note
+
+无
+
+2.7.6 Release Note
+
+1. 圈选增加对Hybrid元素的chng事件支持

@@ -1,0 +1,13 @@
+2.7.4 release note： 
+
+1.优化了mobile debugger的流畅度
+
+2.7.5 release note
+
+1.数据库优化
+2.打点参数规则修正
+3.对信鸽兼容
+
+2.7.6 release note
+1.兼容推送低版本API
+2.GrowingAspectModeSubClass下 hook更稳定

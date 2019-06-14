@@ -8,10 +8,10 @@
 
 #import "AppDelegate.h"
 #import "Growing.h"
+#import <GrowingTouchKit/GrowingTouchKit.h>
 //#import <GrowingTouchKit/GrowingTouch.h>
 
-@interface AppDelegate ()
-//<GrowingTouchEventPopupDelegate>
+@interface AppDelegate () <GrowingTouchEventPopupDelegate>
 
 @end
 
@@ -31,45 +31,37 @@
     [Growing registerDeeplinkHandler:^(NSDictionary *params, NSError *error) {
         NSLog(@"params %@",params);
     }];
-    ////    NSURL *URL = [NSURL URLWithString:@"https://gio.ren/u/APBD1RJE/dgBl0BX?link_id=dgBl0BX&click_id=12345678&tm_click=1531979338000&custom_params=%7b%22key1%22%3a%22value1%22%2c%22uri%22%3a%22test_uri%22%2c%22key2%22%3a%22value2%22%7d"];
-    NSURL *URL = [NSURL URLWithString:@"growing.381f196fdb69c861://growing?link_id=diostst&amp;click_id=158898270&amp;tm_click=1521614678063&amp;custom_params=%7b%22key1%22%3a%22value1%22%2c%22key2%22%3a%22value2%22%7d"];
-    [Growing handleUrl:URL];
     [Growing registerRealtimeReportHandler:^(NSDictionary *eventObject) {
         NSLog(@"=registerRealtimeReportHandler> %@", eventObject);
     }];
-    return YES;
- 
-//    [Growing setUserId:@"GIOXiaoYing"];
-//    [GrowingTouch setEventPopupDelegate:self];
-//    [GrowingTouch setDebugEnable:YES];
-//    [GrowingTouch setEventPopupEnable:YES];
-//    [GrowingTouch setServerHost:@"http://k8s-marketing-automation-messages.growingio.com"];
-//    [GrowingTouch start];
-//    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"1",@"vipLevel", nil];
-//    [Growing setPeopleVariable:dict];
+    [GrowingTouch setEventPopupDelegate:self];
+    [GrowingTouch setDebugEnable:YES];
+    [GrowingTouch setEventPopupEnable:YES];
+    [GrowingTouch start];
+
     return YES;
 }
 
-//- (void)onEventPopupLoadSuccess:(NSString *)trackEventId eventType:(NSString *)eventType {
-//    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
-//}
-//
-//- (void)onEventPopupLoadFailed:(NSString *)trackEventId eventType:(NSString *)eventType withError:(NSError *)error {
-//    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
-//}
-//
-//- (BOOL)onClickedEventPopup:(NSString *)trackEventId eventType:(NSString *)eventType openUrl:(NSString *)openUrl {
-//    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
-//    return NO;
-//}
-//
-//- (void)onCancelEventPopup:(NSString *)trackEventId eventType:(NSString *)eventType {
-//    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
-//}
-//
-//- (void)onTrackEventTimeout:(NSString *)trackEventId eventType:(NSString *)eventType {
-//    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
-//}
+- (void)onEventPopupLoadSuccess:(NSString *)trackEventId eventType:(NSString *)eventType {
+    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
+}
+
+- (void)onEventPopupLoadFailed:(NSString *)trackEventId eventType:(NSString *)eventType withError:(NSError *)error {
+    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
+}
+
+- (BOOL)onClickedEventPopup:(NSString *)trackEventId eventType:(NSString *)eventType openUrl:(NSString *)openUrl {
+    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
+    return NO;
+}
+
+- (void)onCancelEventPopup:(NSString *)trackEventId eventType:(NSString *)eventType {
+    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
+}
+
+- (void)onTrackEventTimeout:(NSString *)trackEventId eventType:(NSString *)eventType {
+    NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
+}
 //
 //- (void)applicationWillResignActive:(UIApplication *)application {
 //    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
