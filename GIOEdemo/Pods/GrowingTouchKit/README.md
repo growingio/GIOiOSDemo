@@ -1,1 +1,0 @@
-# GrowingSDK-iOS-GrowingTouchKit

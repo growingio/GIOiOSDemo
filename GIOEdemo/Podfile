@@ -3,6 +3,5 @@ use_frameworks!
 
 target 'GIOEdemo' do
 
-  pod 'GrowingTouchKit', '~> 0.1.5'
 
 end

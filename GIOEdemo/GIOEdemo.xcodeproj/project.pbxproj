@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		421750FB22B7B2DE000A16FE /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 421750FA22B7B2DE000A16FE /* NotificationService.m */; };
+		421750FF22B7B2DE000A16FE /* GIOEdemoServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 421750F722B7B2DE000A16FE /* GIOEdemoServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4230DEA522B38D8400E16688 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4230DEA422B38D8400E16688 /* libsqlite3.tbd */; };
 		4230DEA722B38D9D00E16688 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4230DEA622B38D9D00E16688 /* libicucore.tbd */; };
 		4230DEAD22B38E8A00E16688 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4230DEAC22B38E8A00E16688 /* Security.framework */; };
@@ -16,9 +18,6 @@
 		4230DEB522B38EA700E16688 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4230DEB422B38EA700E16688 /* CoreLocation.framework */; };
 		4230DEB722B38EAD00E16688 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4230DEB622B38EAD00E16688 /* JavaScriptCore.framework */; };
 		4230DEB922B38EB200E16688 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4230DEB822B38EB200E16688 /* WebKit.framework */; };
-		4230DEBB22B38F2600E16688 /* GrowingAutoTrackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4230DEBA22B38F2600E16688 /* GrowingAutoTrackKit.framework */; };
-		4230DEBD22B38F3300E16688 /* GrowingCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4230DEBC22B38F3300E16688 /* GrowingCoreKit.framework */; };
-		4230DEBF22B38F3F00E16688 /* GrowingTouchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4230DEBE22B38F3F00E16688 /* GrowingTouchKit.framework */; };
 		426E80E921F84AC300EFD42A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 426E80E821F84AC300EFD42A /* main.m */; };
 		426E810721FB200B00EFD42A /* GoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426E810621FB200B00EFD42A /* GoodsModel.m */; };
 		42F30CF921F0939300C4E6E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30CF821F0939300C4E6E9 /* AppDelegate.m */; };
@@ -45,10 +44,22 @@
 		42F30D5E21F0942E00C4E6E9 /* JudgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D5021F0942E00C4E6E9 /* JudgeController.m */; };
 		42F30D5F21F0942E00C4E6E9 /* CheckOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D5221F0942E00C4E6E9 /* CheckOrderController.m */; };
 		42F30D6121F0946100C4E6E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F30D6021F0946100C4E6E9 /* Assets.xcassets */; };
+		42FCD14F22B8D004004B23C8 /* GrowingAutoTrackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FCD14D22B8D002004B23C8 /* GrowingAutoTrackKit.framework */; };
+		42FCD15022B8D004004B23C8 /* GrowingCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FCD14E22B8D004004B23C8 /* GrowingCoreKit.framework */; };
+		42FCD15322B8D00E004B23C8 /* GrowingPushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FCD15122B8D00D004B23C8 /* GrowingPushKit.framework */; };
+		42FCD15422B8D00E004B23C8 /* GrowingTouchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FCD15222B8D00E004B23C8 /* GrowingTouchKit.framework */; };
+		42FCD15622B8D01D004B23C8 /* GrowingPushExtensionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FCD15522B8D01D004B23C8 /* GrowingPushExtensionKit.framework */; };
 		C324CE68C34C33A3B2A130C3 /* Pods_GIOEdemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F913A8C1195C65A59FFFBA8 /* Pods_GIOEdemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		421750FD22B7B2DE000A16FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42F30CEC21F0939300C4E6E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 421750F622B7B2DE000A16FE;
+			remoteInfo = GIOEdemoServiceExtension;
+		};
 		42F30D0D21F0939400C4E6E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 42F30CEC21F0939300C4E6E9 /* Project object */;
@@ -65,7 +76,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4217510322B7B2DE000A16FE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				421750FF22B7B2DE000A16FE /* GIOEdemoServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		421750F222B7AFF4000A16FE /* GIOEdemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GIOEdemo.entitlements; sourceTree = "<group>"; };
+		421750F722B7B2DE000A16FE /* GIOEdemoServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GIOEdemoServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		421750F922B7B2DE000A16FE /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		421750FA22B7B2DE000A16FE /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		421750FC22B7B2DE000A16FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4217510822B7B336000A16FE /* GIOEdemoServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GIOEdemoServiceExtension.entitlements; sourceTree = "<group>"; };
 		4230DEA422B38D8400E16688 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		4230DEA622B38D9D00E16688 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		4230DEAC22B38E8A00E16688 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -75,9 +106,6 @@
 		4230DEB422B38EA700E16688 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4230DEB622B38EAD00E16688 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		4230DEB822B38EB200E16688 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		4230DEBA22B38F2600E16688 /* GrowingAutoTrackKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GrowingAutoTrackKit.framework; path = Pods/GrowingAutoTrackKit/GrowingAutoTrackKit/GrowingAutoTrackKit.framework; sourceTree = "<group>"; };
-		4230DEBC22B38F3300E16688 /* GrowingCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GrowingCoreKit.framework; path = Pods/GrowingCoreKit/GrowingCoreKit/GrowingCoreKit.framework; sourceTree = "<group>"; };
-		4230DEBE22B38F3F00E16688 /* GrowingTouchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GrowingTouchKit.framework; path = Pods/GrowingTouchKit/GrowingTouchKit/GrowingTouchKit.framework; sourceTree = "<group>"; };
 		426E80E821F84AC300EFD42A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		426E810521FB200B00EFD42A /* GoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsModel.h; sourceTree = "<group>"; };
 		426E810621FB200B00EFD42A /* GoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsModel.m; sourceTree = "<group>"; };
@@ -130,22 +158,37 @@
 		42F30D5121F0942E00C4E6E9 /* CashierDeskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashierDeskController.h; sourceTree = "<group>"; };
 		42F30D5221F0942E00C4E6E9 /* CheckOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckOrderController.m; sourceTree = "<group>"; };
 		42F30D6021F0946100C4E6E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42FCD14D22B8D002004B23C8 /* GrowingAutoTrackKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingAutoTrackKit.framework; sourceTree = "<group>"; };
+		42FCD14E22B8D004004B23C8 /* GrowingCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingCoreKit.framework; sourceTree = "<group>"; };
+		42FCD15122B8D00D004B23C8 /* GrowingPushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingPushKit.framework; sourceTree = "<group>"; };
+		42FCD15222B8D00E004B23C8 /* GrowingTouchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingTouchKit.framework; sourceTree = "<group>"; };
+		42FCD15522B8D01D004B23C8 /* GrowingPushExtensionKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingPushExtensionKit.framework; sourceTree = "<group>"; };
+		42FCD15722B8D0B8004B23C8 /* Growing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Growing.h; sourceTree = "<group>"; };
 		6F913A8C1195C65A59FFFBA8 /* Pods_GIOEdemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GIOEdemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE45B8AB08300A4382E158F0 /* Pods-GIOEdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GIOEdemo.debug.xcconfig"; path = "Target Support Files/Pods-GIOEdemo/Pods-GIOEdemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FCB92E0828E114881938B28D /* Pods-GIOEdemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GIOEdemo.release.xcconfig"; path = "Target Support Files/Pods-GIOEdemo/Pods-GIOEdemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		421750F422B7B2DE000A16FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42FCD15622B8D01D004B23C8 /* GrowingPushExtensionKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42F30CF121F0939300C4E6E9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4230DEBF22B38F3F00E16688 /* GrowingTouchKit.framework in Frameworks */,
-				4230DEBD22B38F3300E16688 /* GrowingCoreKit.framework in Frameworks */,
-				4230DEBB22B38F2600E16688 /* GrowingAutoTrackKit.framework in Frameworks */,
+				42FCD15322B8D00E004B23C8 /* GrowingPushKit.framework in Frameworks */,
 				4230DEB922B38EB200E16688 /* WebKit.framework in Frameworks */,
 				4230DEB722B38EAD00E16688 /* JavaScriptCore.framework in Frameworks */,
+				42FCD15022B8D004004B23C8 /* GrowingCoreKit.framework in Frameworks */,
 				4230DEB522B38EA700E16688 /* CoreLocation.framework in Frameworks */,
+				42FCD15422B8D00E004B23C8 /* GrowingTouchKit.framework in Frameworks */,
+				42FCD14F22B8D004004B23C8 /* GrowingAutoTrackKit.framework in Frameworks */,
 				4230DEB322B38EA000E16688 /* AdSupport.framework in Frameworks */,
 				4230DEB122B38E9A00E16688 /* SystemConfiguration.framework in Frameworks */,
 				4230DEAF22B38E9400E16688 /* CoreTelephony.framework in Frameworks */,
@@ -173,12 +216,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		421750F822B7B2DE000A16FE /* GIOEdemoServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				42FCD15522B8D01D004B23C8 /* GrowingPushExtensionKit.framework */,
+				4217510822B7B336000A16FE /* GIOEdemoServiceExtension.entitlements */,
+				421750F922B7B2DE000A16FE /* NotificationService.h */,
+				421750FA22B7B2DE000A16FE /* NotificationService.m */,
+				421750FC22B7B2DE000A16FE /* Info.plist */,
+			);
+			path = GIOEdemoServiceExtension;
+			sourceTree = "<group>";
+		};
 		42F30CEB21F0939300C4E6E9 = {
 			isa = PBXGroup;
 			children = (
 				42F30CF621F0939300C4E6E9 /* GIOEdemo */,
 				42F30D0F21F0939400C4E6E9 /* GIOEdemoTests */,
 				42F30D1A21F0939400C4E6E9 /* GIOEdemoUITests */,
+				421750F822B7B2DE000A16FE /* GIOEdemoServiceExtension */,
 				42F30CF521F0939300C4E6E9 /* Products */,
 				42F30D6621F0955A00C4E6E9 /* Frameworks */,
 				95153C8D6835E19A16DE0630 /* Pods */,
@@ -191,6 +247,7 @@
 				42F30CF421F0939300C4E6E9 /* GIOEdemo.app */,
 				42F30D0C21F0939400C4E6E9 /* GIOEdemoTests.xctest */,
 				42F30D1721F0939400C4E6E9 /* GIOEdemoUITests.xctest */,
+				421750F722B7B2DE000A16FE /* GIOEdemoServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,6 +255,8 @@
 		42F30CF621F0939300C4E6E9 /* GIOEdemo */ = {
 			isa = PBXGroup;
 			children = (
+				42FCD15722B8D0B8004B23C8 /* Growing.h */,
+				421750F222B7AFF4000A16FE /* GIOEdemo.entitlements */,
 				426E810521FB200B00EFD42A /* GoodsModel.h */,
 				426E810621FB200B00EFD42A /* GoodsModel.m */,
 				42F30D2F21F093FF00C4E6E9 /* OrderController.h */,
@@ -268,9 +327,10 @@
 		42F30D6621F0955A00C4E6E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4230DEBE22B38F3F00E16688 /* GrowingTouchKit.framework */,
-				4230DEBC22B38F3300E16688 /* GrowingCoreKit.framework */,
-				4230DEBA22B38F2600E16688 /* GrowingAutoTrackKit.framework */,
+				42FCD15122B8D00D004B23C8 /* GrowingPushKit.framework */,
+				42FCD15222B8D00E004B23C8 /* GrowingTouchKit.framework */,
+				42FCD14D22B8D002004B23C8 /* GrowingAutoTrackKit.framework */,
+				42FCD14E22B8D004004B23C8 /* GrowingCoreKit.framework */,
 				4230DEB822B38EB200E16688 /* WebKit.framework */,
 				4230DEB622B38EAD00E16688 /* JavaScriptCore.framework */,
 				4230DEB422B38EA700E16688 /* CoreLocation.framework */,
@@ -297,6 +357,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		421750F622B7B2DE000A16FE /* GIOEdemoServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4217510022B7B2DE000A16FE /* Build configuration list for PBXNativeTarget "GIOEdemoServiceExtension" */;
+			buildPhases = (
+				421750F322B7B2DE000A16FE /* Sources */,
+				421750F422B7B2DE000A16FE /* Frameworks */,
+				421750F522B7B2DE000A16FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GIOEdemoServiceExtension;
+			productName = GIOEdemoServiceExtension;
+			productReference = 421750F722B7B2DE000A16FE /* GIOEdemoServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		42F30CF321F0939300C4E6E9 /* GIOEdemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42F30D2021F0939400C4E6E9 /* Build configuration list for PBXNativeTarget "GIOEdemo" */;
@@ -305,10 +382,12 @@
 				42F30CF021F0939300C4E6E9 /* Sources */,
 				42F30CF121F0939300C4E6E9 /* Frameworks */,
 				42F30CF221F0939300C4E6E9 /* Resources */,
+				4217510322B7B2DE000A16FE /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				421750FE22B7B2DE000A16FE /* PBXTargetDependency */,
 			);
 			name = GIOEdemo;
 			productName = GIOEdemo;
@@ -360,8 +439,27 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = M;
 				TargetAttributes = {
+					421750F622B7B2DE000A16FE = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.VPNLite = {
+								enabled = 0;
+							};
+						};
+					};
 					42F30CF321F0939300C4E6E9 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					42F30D0B21F0939400C4E6E9 = {
 						CreatedOnToolsVersion = 10.1;
@@ -389,11 +487,19 @@
 				42F30CF321F0939300C4E6E9 /* GIOEdemo */,
 				42F30D0B21F0939400C4E6E9 /* GIOEdemoTests */,
 				42F30D1621F0939400C4E6E9 /* GIOEdemoUITests */,
+				421750F622B7B2DE000A16FE /* GIOEdemoServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		421750F522B7B2DE000A16FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42F30CF221F0939300C4E6E9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -446,6 +552,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		421750F322B7B2DE000A16FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				421750FB22B7B2DE000A16FE /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42F30CF021F0939300C4E6E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -493,6 +607,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		421750FE22B7B2DE000A16FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 421750F622B7B2DE000A16FE /* GIOEdemoServiceExtension */;
+			targetProxy = 421750FD22B7B2DE000A16FE /* PBXContainerItemProxy */;
+		};
 		42F30D0E21F0939400C4E6E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 42F30CF321F0939300C4E6E9 /* GIOEdemo */;
@@ -525,6 +644,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4217510122B7B2DE000A16FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GIOEdemoServiceExtension/GIOEdemoServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GIOEdemoServiceExtension",
+				);
+				INFOPLIST_FILE = GIOEdemoServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gio.growingiodemo.GIOEdemoServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4217510222B7B2DE000A16FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GIOEdemoServiceExtension/GIOEdemoServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GIOEdemoServiceExtension",
+				);
+				INFOPLIST_FILE = GIOEdemoServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gio.growingiodemo.GIOEdemoServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		42F30D1E21F0939400C4E6E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -642,14 +809,17 @@
 			baseConfigurationReference = DE45B8AB08300A4382E158F0 /* Pods-GIOEdemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GIOEdemo/GIOEdemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SXBU677CPT;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Pods/GrowingAutoTrackKit/GrowingAutoTrackKit",
 					"$(PROJECT_DIR)/Pods/GrowingCoreKit/GrowingCoreKit",
 					"$(PROJECT_DIR)/Pods/GrowingTouchKit/GrowingTouchKit",
+					"$(PROJECT_DIR)/GIOEdemo",
 				);
 				INFOPLIST_FILE = GIOEdemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -659,7 +829,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gio.growingiodemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -668,14 +838,17 @@
 			baseConfigurationReference = FCB92E0828E114881938B28D /* Pods-GIOEdemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GIOEdemo/GIOEdemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SXBU677CPT;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Pods/GrowingAutoTrackKit/GrowingAutoTrackKit",
 					"$(PROJECT_DIR)/Pods/GrowingCoreKit/GrowingCoreKit",
 					"$(PROJECT_DIR)/Pods/GrowingTouchKit/GrowingTouchKit",
+					"$(PROJECT_DIR)/GIOEdemo",
 				);
 				INFOPLIST_FILE = GIOEdemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -685,7 +858,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gio.growingiodemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -766,6 +939,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4217510022B7B2DE000A16FE /* Build configuration list for PBXNativeTarget "GIOEdemoServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4217510122B7B2DE000A16FE /* Debug */,
+				4217510222B7B2DE000A16FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		42F30CEF21F0939300C4E6E9 /* Build configuration list for PBXProject "GIOEdemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

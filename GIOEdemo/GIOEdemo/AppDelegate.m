@@ -9,9 +9,11 @@
 #import "AppDelegate.h"
 #import "Growing.h"
 #import <GrowingTouchKit/GrowingTouchKit.h>
+#import <UserNotifications/UserNotifications.h>
+#import <GrowingPushKit/GrowingPushKit.h>
 //#import <GrowingTouchKit/GrowingTouch.h>
 
-@interface AppDelegate () <GrowingTouchEventPopupDelegate>
+@interface AppDelegate () <GrowingTouchEventPopupDelegate,UNUserNotificationCenterDelegate>
 
 @end
 
@@ -34,14 +36,50 @@
     [Growing registerRealtimeReportHandler:^(NSDictionary *eventObject) {
         NSLog(@"=registerRealtimeReportHandler> %@", eventObject);
     }];
+    
+    //GTouch
     [GrowingTouch setEventPopupDelegate:self];
     [GrowingTouch setDebugEnable:YES];
     [GrowingTouch setEventPopupEnable:YES];
     [GrowingTouch start];
 
+    //  GPush
+    [self registerRemoteNotification];
+    
     return YES;
 }
 
+/** 注册 APNs */
+- (void)registerRemoteNotification {
+    if (@available(iOS 10,*)) {
+        //  10以后的注册方式
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        center.delegate = self;
+        //监听回调事件
+        //iOS 10 使用以下方法注册，才能得到授权，注册通知以后，会自动注册 deviceToken，如果获取不到 deviceToken，Xcode8下要注意开启 Capability->Push Notification。
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionSound )
+                              completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                                  if (granted) {
+                                      
+                                      dispatch_async(dispatch_get_main_queue(), ^{
+                                          
+                                          [[UIApplication sharedApplication] registerForRemoteNotifications];
+                                      });
+                                  }
+                              }];
+        
+    } else if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        
+        UIUserNotificationType type =  UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:type
+                                                                                 categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+        
+    }
+}
+
+#pragma mark -GrowingTouchEventPopupDelegate
 - (void)onEventPopupLoadSuccess:(NSString *)trackEventId eventType:(NSString *)eventType {
     NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
 }
@@ -62,6 +100,58 @@
 - (void)onTrackEventTimeout:(NSString *)trackEventId eventType:(NSString *)eventType {
     NSLog(@"%s trackEventId = %@, eventType = %@", __func__, trackEventId, eventType);
 }
+
+/** 远程通知注册成功委托 */
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [Growing registerDeviceToken:deviceToken];
+    NSString *deviceTokenString2 = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<"withString:@""]
+                                     
+                                     stringByReplacingOccurrencesOfString:@">" withString:@""]
+                                    
+                                    stringByReplacingOccurrencesOfString:@" " withString:@""];
+
+    NSLog(@"Token 字符串：%@", deviceTokenString2);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"远程通知" message:@"点击一下呗" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alert addAction:action];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+}
+
+
+#pragma mark - UNUserNotificationCenterDelegate
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler
+{
+    NSDictionary *aps = notification.request.content.userInfo;
+    
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"远程通知1" message:@"点击一下呗" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alert addAction:action];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+    
+    
+}
+
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler
+{
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
+        
+        [[UIApplication sharedApplication] openURL:url];
+        
+    });
+    
+}
+
 //
 //- (void)applicationWillResignActive:(UIApplication *)application {
 //    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -1,6 +1,0 @@
-framework module GrowingTouchKit {
-  umbrella header "GrowingTouchKit.h"
-
-  export *
-  module * { export * }
-}
