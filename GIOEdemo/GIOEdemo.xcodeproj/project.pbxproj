@@ -44,11 +44,11 @@
 		42F30D5E21F0942E00C4E6E9 /* JudgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D5021F0942E00C4E6E9 /* JudgeController.m */; };
 		42F30D5F21F0942E00C4E6E9 /* CheckOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D5221F0942E00C4E6E9 /* CheckOrderController.m */; };
 		42F30D6121F0946100C4E6E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F30D6021F0946100C4E6E9 /* Assets.xcassets */; };
-		42FCD14F22B8D004004B23C8 /* GrowingAutoTrackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FCD14D22B8D002004B23C8 /* GrowingAutoTrackKit.framework */; };
-		42FCD15022B8D004004B23C8 /* GrowingCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FCD14E22B8D004004B23C8 /* GrowingCoreKit.framework */; };
-		42FCD15322B8D00E004B23C8 /* GrowingPushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FCD15122B8D00D004B23C8 /* GrowingPushKit.framework */; };
-		42FCD15422B8D00E004B23C8 /* GrowingTouchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FCD15222B8D00E004B23C8 /* GrowingTouchKit.framework */; };
-		42FCD15622B8D01D004B23C8 /* GrowingPushExtensionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FCD15522B8D01D004B23C8 /* GrowingPushExtensionKit.framework */; };
+		42FD83C722BA2AC800C08041 /* GrowingCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FD83C522BA2AC600C08041 /* GrowingCoreKit.framework */; };
+		42FD83C822BA2AC800C08041 /* GrowingAutoTrackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FD83C622BA2AC800C08041 /* GrowingAutoTrackKit.framework */; };
+		42FD83CB22BA2ACE00C08041 /* GrowingTouchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FD83C922BA2ACE00C08041 /* GrowingTouchKit.framework */; };
+		42FD83CC22BA2ACE00C08041 /* GrowingPushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FD83CA22BA2ACE00C08041 /* GrowingPushKit.framework */; };
+		42FD83CE22BA2AFA00C08041 /* GrowingPushExtensionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FD83CD22BA2AFA00C08041 /* GrowingPushExtensionKit.framework */; };
 		C324CE68C34C33A3B2A130C3 /* Pods_GIOEdemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F913A8C1195C65A59FFFBA8 /* Pods_GIOEdemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -158,12 +158,12 @@
 		42F30D5121F0942E00C4E6E9 /* CashierDeskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashierDeskController.h; sourceTree = "<group>"; };
 		42F30D5221F0942E00C4E6E9 /* CheckOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckOrderController.m; sourceTree = "<group>"; };
 		42F30D6021F0946100C4E6E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		42FCD14D22B8D002004B23C8 /* GrowingAutoTrackKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingAutoTrackKit.framework; sourceTree = "<group>"; };
-		42FCD14E22B8D004004B23C8 /* GrowingCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingCoreKit.framework; sourceTree = "<group>"; };
-		42FCD15122B8D00D004B23C8 /* GrowingPushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingPushKit.framework; sourceTree = "<group>"; };
-		42FCD15222B8D00E004B23C8 /* GrowingTouchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingTouchKit.framework; sourceTree = "<group>"; };
-		42FCD15522B8D01D004B23C8 /* GrowingPushExtensionKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingPushExtensionKit.framework; sourceTree = "<group>"; };
 		42FCD15722B8D0B8004B23C8 /* Growing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Growing.h; sourceTree = "<group>"; };
+		42FD83C522BA2AC600C08041 /* GrowingCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingCoreKit.framework; sourceTree = "<group>"; };
+		42FD83C622BA2AC800C08041 /* GrowingAutoTrackKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingAutoTrackKit.framework; sourceTree = "<group>"; };
+		42FD83C922BA2ACE00C08041 /* GrowingTouchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingTouchKit.framework; sourceTree = "<group>"; };
+		42FD83CA22BA2ACE00C08041 /* GrowingPushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingPushKit.framework; sourceTree = "<group>"; };
+		42FD83CD22BA2AFA00C08041 /* GrowingPushExtensionKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingPushExtensionKit.framework; sourceTree = "<group>"; };
 		6F913A8C1195C65A59FFFBA8 /* Pods_GIOEdemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GIOEdemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE45B8AB08300A4382E158F0 /* Pods-GIOEdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GIOEdemo.debug.xcconfig"; path = "Target Support Files/Pods-GIOEdemo/Pods-GIOEdemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FCB92E0828E114881938B28D /* Pods-GIOEdemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GIOEdemo.release.xcconfig"; path = "Target Support Files/Pods-GIOEdemo/Pods-GIOEdemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42FCD15622B8D01D004B23C8 /* GrowingPushExtensionKit.framework in Frameworks */,
+				42FD83CE22BA2AFA00C08041 /* GrowingPushExtensionKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,16 +182,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42FCD15322B8D00E004B23C8 /* GrowingPushKit.framework in Frameworks */,
+				42FD83C722BA2AC800C08041 /* GrowingCoreKit.framework in Frameworks */,
+				42FD83CC22BA2ACE00C08041 /* GrowingPushKit.framework in Frameworks */,
 				4230DEB922B38EB200E16688 /* WebKit.framework in Frameworks */,
 				4230DEB722B38EAD00E16688 /* JavaScriptCore.framework in Frameworks */,
-				42FCD15022B8D004004B23C8 /* GrowingCoreKit.framework in Frameworks */,
 				4230DEB522B38EA700E16688 /* CoreLocation.framework in Frameworks */,
-				42FCD15422B8D00E004B23C8 /* GrowingTouchKit.framework in Frameworks */,
-				42FCD14F22B8D004004B23C8 /* GrowingAutoTrackKit.framework in Frameworks */,
+				42FD83C822BA2AC800C08041 /* GrowingAutoTrackKit.framework in Frameworks */,
 				4230DEB322B38EA000E16688 /* AdSupport.framework in Frameworks */,
 				4230DEB122B38E9A00E16688 /* SystemConfiguration.framework in Frameworks */,
 				4230DEAF22B38E9400E16688 /* CoreTelephony.framework in Frameworks */,
+				42FD83CB22BA2ACE00C08041 /* GrowingTouchKit.framework in Frameworks */,
 				4230DEAD22B38E8A00E16688 /* Security.framework in Frameworks */,
 				4230DEA722B38D9D00E16688 /* libicucore.tbd in Frameworks */,
 				4230DEA522B38D8400E16688 /* libsqlite3.tbd in Frameworks */,
@@ -219,7 +219,7 @@
 		421750F822B7B2DE000A16FE /* GIOEdemoServiceExtension */ = {
 			isa = PBXGroup;
 			children = (
-				42FCD15522B8D01D004B23C8 /* GrowingPushExtensionKit.framework */,
+				42FD83CD22BA2AFA00C08041 /* GrowingPushExtensionKit.framework */,
 				4217510822B7B336000A16FE /* GIOEdemoServiceExtension.entitlements */,
 				421750F922B7B2DE000A16FE /* NotificationService.h */,
 				421750FA22B7B2DE000A16FE /* NotificationService.m */,
@@ -255,6 +255,10 @@
 		42F30CF621F0939300C4E6E9 /* GIOEdemo */ = {
 			isa = PBXGroup;
 			children = (
+				42FD83CA22BA2ACE00C08041 /* GrowingPushKit.framework */,
+				42FD83C922BA2ACE00C08041 /* GrowingTouchKit.framework */,
+				42FD83C622BA2AC800C08041 /* GrowingAutoTrackKit.framework */,
+				42FD83C522BA2AC600C08041 /* GrowingCoreKit.framework */,
 				42FCD15722B8D0B8004B23C8 /* Growing.h */,
 				421750F222B7AFF4000A16FE /* GIOEdemo.entitlements */,
 				426E810521FB200B00EFD42A /* GoodsModel.h */,
@@ -327,10 +331,6 @@
 		42F30D6621F0955A00C4E6E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				42FCD15122B8D00D004B23C8 /* GrowingPushKit.framework */,
-				42FCD15222B8D00E004B23C8 /* GrowingTouchKit.framework */,
-				42FCD14D22B8D002004B23C8 /* GrowingAutoTrackKit.framework */,
-				42FCD14E22B8D004004B23C8 /* GrowingCoreKit.framework */,
 				4230DEB822B38EB200E16688 /* WebKit.framework */,
 				4230DEB622B38EAD00E16688 /* JavaScriptCore.framework */,
 				4230DEB422B38EA700E16688 /* CoreLocation.framework */,
