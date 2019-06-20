@@ -18,7 +18,8 @@
 		4230DEB522B38EA700E16688 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4230DEB422B38EA700E16688 /* CoreLocation.framework */; };
 		4230DEB722B38EAD00E16688 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4230DEB622B38EAD00E16688 /* JavaScriptCore.framework */; };
 		4230DEB922B38EB200E16688 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4230DEB822B38EB200E16688 /* WebKit.framework */; };
-		424AAB5622BB4E0A008F8E75 /* GrowingPushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424AAB5522BB4E09008F8E75 /* GrowingPushKit.framework */; };
+		424AAB5F22BB57AA008F8E75 /* GrowingPushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424AAB5E22BB57AA008F8E75 /* GrowingPushKit.framework */; };
+		424AAB6122BB57B9008F8E75 /* GrowingPushExtensionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424AAB6022BB57B9008F8E75 /* GrowingPushExtensionKit.framework */; };
 		426E80E921F84AC300EFD42A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 426E80E821F84AC300EFD42A /* main.m */; };
 		426E810721FB200B00EFD42A /* GoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426E810621FB200B00EFD42A /* GoodsModel.m */; };
 		42F30CF921F0939300C4E6E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30CF821F0939300C4E6E9 /* AppDelegate.m */; };
@@ -48,7 +49,6 @@
 		42FD83C722BA2AC800C08041 /* GrowingCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FD83C522BA2AC600C08041 /* GrowingCoreKit.framework */; };
 		42FD83C822BA2AC800C08041 /* GrowingAutoTrackKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FD83C622BA2AC800C08041 /* GrowingAutoTrackKit.framework */; };
 		42FD83CB22BA2ACE00C08041 /* GrowingTouchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FD83C922BA2ACE00C08041 /* GrowingTouchKit.framework */; };
-		42FD83CE22BA2AFA00C08041 /* GrowingPushExtensionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FD83CD22BA2AFA00C08041 /* GrowingPushExtensionKit.framework */; };
 		C324CE68C34C33A3B2A130C3 /* Pods_GIOEdemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F913A8C1195C65A59FFFBA8 /* Pods_GIOEdemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,7 +106,8 @@
 		4230DEB422B38EA700E16688 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4230DEB622B38EAD00E16688 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		4230DEB822B38EB200E16688 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		424AAB5522BB4E09008F8E75 /* GrowingPushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingPushKit.framework; sourceTree = "<group>"; };
+		424AAB5E22BB57AA008F8E75 /* GrowingPushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingPushKit.framework; sourceTree = "<group>"; };
+		424AAB6022BB57B9008F8E75 /* GrowingPushExtensionKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingPushExtensionKit.framework; sourceTree = "<group>"; };
 		426E80E821F84AC300EFD42A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		426E810521FB200B00EFD42A /* GoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsModel.h; sourceTree = "<group>"; };
 		426E810621FB200B00EFD42A /* GoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsModel.m; sourceTree = "<group>"; };
@@ -163,7 +164,6 @@
 		42FD83C522BA2AC600C08041 /* GrowingCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingCoreKit.framework; sourceTree = "<group>"; };
 		42FD83C622BA2AC800C08041 /* GrowingAutoTrackKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingAutoTrackKit.framework; sourceTree = "<group>"; };
 		42FD83C922BA2ACE00C08041 /* GrowingTouchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingTouchKit.framework; sourceTree = "<group>"; };
-		42FD83CD22BA2AFA00C08041 /* GrowingPushExtensionKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingPushExtensionKit.framework; sourceTree = "<group>"; };
 		6F913A8C1195C65A59FFFBA8 /* Pods_GIOEdemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GIOEdemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE45B8AB08300A4382E158F0 /* Pods-GIOEdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GIOEdemo.debug.xcconfig"; path = "Target Support Files/Pods-GIOEdemo/Pods-GIOEdemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FCB92E0828E114881938B28D /* Pods-GIOEdemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GIOEdemo.release.xcconfig"; path = "Target Support Files/Pods-GIOEdemo/Pods-GIOEdemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42FD83CE22BA2AFA00C08041 /* GrowingPushExtensionKit.framework in Frameworks */,
+				424AAB6122BB57B9008F8E75 /* GrowingPushExtensionKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42FD83C722BA2AC800C08041 /* GrowingCoreKit.framework in Frameworks */,
-				424AAB5622BB4E0A008F8E75 /* GrowingPushKit.framework in Frameworks */,
+				424AAB5F22BB57AA008F8E75 /* GrowingPushKit.framework in Frameworks */,
 				4230DEB922B38EB200E16688 /* WebKit.framework in Frameworks */,
 				4230DEB722B38EAD00E16688 /* JavaScriptCore.framework in Frameworks */,
 				4230DEB522B38EA700E16688 /* CoreLocation.framework in Frameworks */,
@@ -219,7 +219,7 @@
 		421750F822B7B2DE000A16FE /* GIOEdemoServiceExtension */ = {
 			isa = PBXGroup;
 			children = (
-				42FD83CD22BA2AFA00C08041 /* GrowingPushExtensionKit.framework */,
+				424AAB6022BB57B9008F8E75 /* GrowingPushExtensionKit.framework */,
 				4217510822B7B336000A16FE /* GIOEdemoServiceExtension.entitlements */,
 				421750F922B7B2DE000A16FE /* NotificationService.h */,
 				421750FA22B7B2DE000A16FE /* NotificationService.m */,
@@ -255,7 +255,7 @@
 		42F30CF621F0939300C4E6E9 /* GIOEdemo */ = {
 			isa = PBXGroup;
 			children = (
-				424AAB5522BB4E09008F8E75 /* GrowingPushKit.framework */,
+				424AAB5E22BB57AA008F8E75 /* GrowingPushKit.framework */,
 				42FD83C922BA2ACE00C08041 /* GrowingTouchKit.framework */,
 				42FD83C622BA2AC800C08041 /* GrowingAutoTrackKit.framework */,
 				42FD83C522BA2AC600C08041 /* GrowingCoreKit.framework */,
@@ -650,6 +650,7 @@
 				CODE_SIGN_ENTITLEMENTS = GIOEdemoServiceExtension/GIOEdemoServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SXBU677CPT;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GIOEdemoServiceExtension",
@@ -674,6 +675,7 @@
 				CODE_SIGN_ENTITLEMENTS = GIOEdemoServiceExtension/GIOEdemoServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SXBU677CPT;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GIOEdemoServiceExtension",
