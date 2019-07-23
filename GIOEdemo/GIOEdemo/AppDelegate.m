@@ -10,8 +10,6 @@
 #import "Growing.h"
 #import <GrowingTouchKit/GrowingTouchKit.h>
 #import <UserNotifications/UserNotifications.h>
-#import <GrowingPushKit/GrowingPushKit.h>
-//#import <GrowingTouchKit/GrowingTouch.h>
 
 @interface AppDelegate () <GrowingTouchEventPopupDelegate,UNUserNotificationCenterDelegate>
 
@@ -103,7 +101,7 @@
 
 /** 远程通知注册成功委托 */
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [Growing registerDeviceToken:deviceToken];
+    [GrowingTouch registerDeviceToken:deviceToken];
     NSString *deviceTokenString2 = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<"withString:@""]
                                      
                                      stringByReplacingOccurrencesOfString:@">" withString:@""]
