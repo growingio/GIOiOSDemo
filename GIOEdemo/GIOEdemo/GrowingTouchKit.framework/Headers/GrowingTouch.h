@@ -84,4 +84,25 @@
 + (BOOL)isDebugEnabled;
 
 + (void)setServerHost:(NSString *)host;
+
+/**
+ 设置推送设备的deviceToken
+
+ @param deviceToken 设备的deviceToken
+ */
++ (void)registerDeviceToken:(NSData *)deviceToken;
+
+/**
+ 关闭推送
+ */
++ (void)unregisterForRemoteNotifications;
+
+/**
+ 推送消息点击跳转自定义处理
+
+ @param completionHandler 推送消息点击回调
+ */
++ (void)clickMessageWithCompletionHandler:(void (^)(NSDictionary *params))completionHandler;
+
+
 @end
