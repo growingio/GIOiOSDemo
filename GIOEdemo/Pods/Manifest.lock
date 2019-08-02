@@ -1,3 +1,37 @@
-PODFILE CHECKSUM: 6ed3948a3b81707c2baa94911f65f8811928020b
+PODS:
+  - Growing (2.8.0)
+  - GrowingAutoTrackKit (2.8.0):
+    - GrowingCoreKit (~> 2.8.0)
+  - GrowingCoreKit (2.8.0):
+    - Growing (~> 2.8.0)
+  - GrowingPushExtensionKit (0.2.1)
+  - GrowingPushKit (0.2.1):
+    - GrowingCoreKit (>= 2.8.0)
+  - GrowingTouchKit (0.2.1):
+    - GrowingAutoTrackKit (>= 2.8.0)
+    - GrowingPushKit (>= 0.2.1)
+
+DEPENDENCIES:
+  - GrowingPushExtensionKit (~> 0.2.1)
+  - GrowingTouchKit (~> 0.2.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Growing
+    - GrowingAutoTrackKit
+    - GrowingCoreKit
+    - GrowingPushExtensionKit
+    - GrowingPushKit
+    - GrowingTouchKit
+
+SPEC CHECKSUMS:
+  Growing: 6cae49b9d6452fc9fc2fa58923136701fc319509
+  GrowingAutoTrackKit: a3e00aea2e26065fb6eda85a13cd4943ffebfb96
+  GrowingCoreKit: 77da3221fa386d4e5cdbae642f4560fd16dafac1
+  GrowingPushExtensionKit: bde6b210738d30369725c2d4551ca0580dfaf61b
+  GrowingPushKit: ff68c9b9ed5cd9cbff2c1e674d97be5c1f4d0261
+  GrowingTouchKit: 01b6adb6d6ddd928639e1b03565a6b035e801a32
+
+PODFILE CHECKSUM: 03773befeb6ba64c7ca9f0941914cbb6df1c7885
 
 COCOAPODS: 1.6.2

@@ -215,6 +215,9 @@
 }
 
 -(void)btnLeftCLick{
+    
+    [Growing track:@"addToBag"];
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"添加购物车成功" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
     [alert show];
     //存储数据

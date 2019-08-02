@@ -1,5 +1,7 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/GrowingAutoTrackKit/GrowingAutoTrackKit" "${PODS_ROOT}/GrowingCoreKit/GrowingCoreKit" "${PODS_ROOT}/GrowingPushKit/GrowingPushKit" "${PODS_ROOT}/GrowingTouchKit/GrowingTouchKit"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Growing"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"icucore" -l"sqlite3" -framework "CoreLocation" -framework "CoreTelephony" -framework "Foundation" -framework "GrowingAutoTrackKit" -framework "GrowingCoreKit" -framework "GrowingPushKit" -framework "GrowingTouchKit" -framework "JavaScriptCore" -framework "Security" -framework "SystemConfiguration" -framework "WebKit"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

@@ -71,12 +71,16 @@
     [self.backScrollView addSubview:self.bannerView];
 }
 
+static void extracted(HomeController *object, GoodsDetailController *VC) {
+    [object homePageGoodsClick:[VC.goodModel modelTodic]];
+}
+
 - (void)selectImage:(LoopView *)bannerView currentImage:(NSInteger)currentImage{
     GoodsDetailController *VC = [[GoodsDetailController alloc] init];
     VC.goodModel = self.allDataArray[currentImage + 3] ;
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:YES];
-    [self homePageGoodsClick:[VC.goodModel modelTodic]];
+    extracted(self, VC);
     
 }
 
