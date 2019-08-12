@@ -11,6 +11,7 @@
 		421750FF22B7B2DE000A16FE /* GIOEdemoServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 421750F722B7B2DE000A16FE /* GIOEdemoServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		426E80E921F84AC300EFD42A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 426E80E821F84AC300EFD42A /* main.m */; };
 		426E810721FB200B00EFD42A /* GoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426E810621FB200B00EFD42A /* GoodsModel.m */; };
+		42B4B4CD22FD5C6B00C9F3B3 /* GrowingTouchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B4B4CC22FD5C6B00C9F3B3 /* GrowingTouchKit.framework */; };
 		42F30CF921F0939300C4E6E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30CF821F0939300C4E6E9 /* AppDelegate.m */; };
 		42F30CFC21F0939300C4E6E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30CFB21F0939300C4E6E9 /* ViewController.m */; };
 		42F30CFF21F0939300C4E6E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F30CFD21F0939300C4E6E9 /* Main.storyboard */; };
@@ -88,6 +89,7 @@
 		426E80E821F84AC300EFD42A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		426E810521FB200B00EFD42A /* GoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsModel.h; sourceTree = "<group>"; };
 		426E810621FB200B00EFD42A /* GoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsModel.m; sourceTree = "<group>"; };
+		42B4B4CC22FD5C6B00C9F3B3 /* GrowingTouchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GrowingTouchKit.framework; path = Pods/GrowingTouchKit/GrowingTouchKit.framework; sourceTree = "<group>"; };
 		42F30CF421F0939300C4E6E9 /* GIOEdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIOEdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F30CF721F0939300C4E6E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		42F30CF821F0939300C4E6E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B4B4CD22FD5C6B00C9F3B3 /* GrowingTouchKit.framework in Frameworks */,
 				F1C988FD77D58C40C10D06B8 /* libPods-GIOEdemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +291,7 @@
 		42F30D6621F0955A00C4E6E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42B4B4CC22FD5C6B00C9F3B3 /* GrowingTouchKit.framework */,
 				42072C6822E883FC0039A7BF /* libicucore.tbd */,
 				83DE3A29974D82DE55705D86 /* libPods-GIOEdemo.a */,
 				530583EF6C9C99920320F83E /* libPods-GIOEdemoServiceExtension.a */,
@@ -801,6 +805,7 @@
 					"$(PROJECT_DIR)/GIOEdemo",
 					"$(PROJECT_DIR)/Pods/GrowingCoreKit",
 					"$(PROJECT_DIR)/Pods/GrowingPushKit/GrowingPushKit",
+					"$(PROJECT_DIR)/Pods/GrowingTouchKit",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)/**",
@@ -857,6 +862,7 @@
 					"$(PROJECT_DIR)/GIOEdemo",
 					"$(PROJECT_DIR)/Pods/GrowingCoreKit",
 					"$(PROJECT_DIR)/Pods/GrowingPushKit/GrowingPushKit",
+					"$(PROJECT_DIR)/Pods/GrowingTouchKit",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)/**",

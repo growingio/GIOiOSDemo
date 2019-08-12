@@ -17,6 +17,9 @@
 @property (nonatomic , strong) NSMutableArray *suggestArray ;
 @property (nonatomic , strong) NSMutableArray *titleArray;
 @property (nonatomic , strong) UIView *shareView ;
+
+@property (nonatomic, copy) NSString *key;
+
 @end
 
 @implementation GoodsDetailController
@@ -25,6 +28,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    
+    
+    
+    
+    
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height - 64)];
     self.tableView.delegate = self ;
     self.tableView.dataSource = self;

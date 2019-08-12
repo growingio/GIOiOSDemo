@@ -38,6 +38,10 @@
     [self makeUpview];
     [self makeSeckillingView];
     [self makeRecommendView];
+    
+    
+    [Growing setVisitor:@{@"name":@"dddk"}];
+    [Growing setPeopleVariable:@{@"age":@"dddk"}];
 }
 
 //打点开始
