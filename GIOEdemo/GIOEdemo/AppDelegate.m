@@ -11,16 +11,27 @@
 #import <GrowingTouchKit/GrowingTouchKit.h>
 #import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate () <GrowingTouchEventPopupDelegate,UNUserNotificationCenterDelegate>
+@interface AppDelegate () <GrowingTouchEventPopupDelegate,UNUserNotificationCenterDelegate,CLLocationManagerDelegate>
+
+@property (nonatomic, strong) CLLocationManager *location;
 
 @end
 
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     [Growing startWithAccountId:@"97fd6815651f25fb"];
     [Growing setEnableLog:YES];
+    
+    self.location = [[CLLocationManager alloc] init];
+    self.location.delegate = self;
+    [self.location requestWhenInUseAuthorization];
+    
+    //  GPush
+    [self registerRemoteNotification];
 //    [Growing setDataHost:@"https://demo1gta.growingio.com"];
 //    [Growing setReportHost:@"https://demo1gta.growingio.com"];
 //    [Growing setTrackerHost:@"https://apifwd.growingio.com"];
@@ -34,18 +45,19 @@
     [Growing registerRealtimeReportHandler:^(NSDictionary *eventObject) {
         NSLog(@"=registerRealtimeReportHandler> %@", eventObject);
     }];
-    
     //GTouch
     [GrowingTouch setEventPopupDelegate:self];
     [GrowingTouch setDebugEnable:YES];
     [GrowingTouch setEventPopupEnable:YES];
     [GrowingTouch start];
 
-    //  GPush
-    [self registerRemoteNotification];
+    
+    
+
     
     return YES;
 }
+
 
 /** 注册 APNs */
 - (void)registerRemoteNotification {

@@ -14,6 +14,8 @@
 #import "OrderController.h"
 #import "Growing.h"
 #import "GoodsModel.h"
+#import "MainViewController.h"
+
 @interface HomeController ()<BannerViewDelegate>
 @property(nonatomic , strong)  UIScrollView *backScrollView ;
 @property(nonatomic , strong)  LoopView *bannerView ;
@@ -33,6 +35,7 @@
     self.backScrollView.backgroundColor = [UIColor whiteColor];
     self.backScrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height + 300) ;
     [self.view addSubview:self.backScrollView];
+    self.navigationController.navigationBar.translucent = NO;
     [self makeHomeData];
     [self makeBanner];
     [self makeUpview];
@@ -86,6 +89,10 @@ static void extracted(HomeController *object, GoodsDetailController *VC) {
     [self.navigationController pushViewController:VC animated:YES];
     extracted(self, VC);
     
+#pragma mark - banner 测试
+//    MainViewController *VC = [MainViewController new];
+//    VC.hidesBottomBarWhenPushed = YES ;
+//    [self.navigationController pushViewController:VC animated:YES];
 }
 
 

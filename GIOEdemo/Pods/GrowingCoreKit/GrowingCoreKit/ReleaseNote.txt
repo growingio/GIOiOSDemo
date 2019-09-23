@@ -1,3 +1,12 @@
+2.8.3 release note
+无
+
+2.8.2 release note
+修复已知问题
+
+2.8.1 release note
+无
+
 2.8.0 release note
 1.适配横屏中SDK中的UI
 2.修复在个别模拟器下crash的问题

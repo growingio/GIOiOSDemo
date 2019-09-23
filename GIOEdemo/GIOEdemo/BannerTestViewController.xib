@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BannerTestViewController">
+            <connections>
+                <outlet property="bannerField" destination="saA-0S-Kb6" id="vXl-sO-8TY"/>
+                <outlet property="bannerView" destination="nxx-vx-iau" id="F5O-8h-5EP"/>
+                <outlet property="handleClickField" destination="2EX-To-SGQ" id="rJu-KW-nKK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="988095c3a6e4ab45" borderStyle="roundedRect" placeholder="BannerKey" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="saA-0S-Kb6">
+                    <rect key="frame" x="20" y="260" width="200" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Lqn-PO-S6Y"/>
+                        <constraint firstAttribute="width" constant="200" id="ljc-5y-o8u"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dG-9V-LjH">
+                    <rect key="frame" x="294" y="260" width="100" height="50"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Mhx-3N-nxq"/>
+                        <constraint firstAttribute="width" constant="100" id="SRu-EE-w8W"/>
+                    </constraints>
+                    <state key="normal" title="加载数据"/>
+                    <connections>
+                        <action selector="loadBannerData:" destination="-1" eventType="touchUpInside" id="prB-dt-vef"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxx-vx-iau" customClass="GrowingTouchBannerView">
+                    <rect key="frame" x="0.0" y="40" width="414" height="200"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="EZw-3c-hFc"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAM-Kv-4mU">
+                    <rect key="frame" x="294" y="350" width="100" height="50"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="KEn-Yu-O57"/>
+                        <constraint firstAttribute="height" constant="50" id="wMw-Hb-AWD"/>
+                    </constraints>
+                    <state key="normal" title="自渲染模式"/>
+                    <connections>
+                        <action selector="customRender:" destination="-1" eventType="touchUpInside" id="Vys-3f-Uh2"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="是否自行处理点击" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2EX-To-SGQ">
+                    <rect key="frame" x="20" y="330" width="200" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="6qq-oL-QB2"/>
+                        <constraint firstAttribute="height" constant="50" id="lJu-QG-pbp"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="2EX-To-SGQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="24p-DI-f5f"/>
+                <constraint firstItem="saA-0S-Kb6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="4GM-Lu-qTN"/>
+                <constraint firstItem="yAM-Kv-4mU" firstAttribute="top" secondItem="4dG-9V-LjH" secondAttribute="bottom" constant="40" id="909-OK-FDN"/>
+                <constraint firstItem="nxx-vx-iau" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EAq-C3-ctM"/>
+                <constraint firstAttribute="trailing" secondItem="4dG-9V-LjH" secondAttribute="trailing" constant="20" id="XTx-SJ-uHT"/>
+                <constraint firstAttribute="trailing" secondItem="nxx-vx-iau" secondAttribute="trailing" id="fRC-T8-REN"/>
+                <constraint firstItem="2EX-To-SGQ" firstAttribute="top" secondItem="saA-0S-Kb6" secondAttribute="bottom" constant="20" id="gbF-kp-ZUC"/>
+                <constraint firstItem="nxx-vx-iau" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="hkJ-8F-rvd"/>
+                <constraint firstItem="4dG-9V-LjH" firstAttribute="top" secondItem="nxx-vx-iau" secondAttribute="bottom" constant="20" id="l26-Xx-1cY"/>
+                <constraint firstAttribute="trailing" secondItem="yAM-Kv-4mU" secondAttribute="trailing" constant="20" id="vnS-oL-mNN"/>
+                <constraint firstItem="saA-0S-Kb6" firstAttribute="top" secondItem="nxx-vx-iau" secondAttribute="bottom" constant="20" id="weP-kT-Z0j"/>
+            </constraints>
+            <point key="canvasLocation" x="47.826086956521742" y="37.5"/>
+        </view>
+    </objects>
+</document>

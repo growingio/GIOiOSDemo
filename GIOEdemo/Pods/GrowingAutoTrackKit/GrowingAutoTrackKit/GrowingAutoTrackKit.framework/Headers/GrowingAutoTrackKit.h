@@ -68,6 +68,27 @@
 + (void)setAppVariableWithKey:(NSString *)key andNumberValue:(NSNumber *)numberValue;
 @end
 
+@interface UIView(GrowingImpression)
+
+#warning 请在真机下校验数据
+// 以下为元素展示打点事件
+// 在元素展示前调用即可,GIO负责监听元素展示并触发事件
+// 事件类型为自定义事件(cstm)
+- (void)growingImpTrack:(NSString *)eventId;
+
+- (void)growingImpTrack:(NSString *)eventId withNumber:(NSNumber *)number;
+
+- (void)growingImpTrack:(NSString *)eventId withVariable:(NSDictionary<NSString *, id> *)variable;
+
+- (void)growingImpTrack:(NSString *)eventId withNumber:(NSNumber *)number andVariable:(NSDictionary<NSString *, id> *)variable;
+
+// 停止该元素展示追踪
+// 通常应用于列表中的重用元素
+// 例如您只想追踪列表中的第一行元素的展示,但当第四行出现时重用了第一行的元素,此时您可调用此函数避免事件触发
+- (void)growingStopImpTrack;
+
+@end
+
 // 该属性setter方法均使用 objc_setAssociatedObject实现
 // 如果是自定义的View建议优先使用重写getter方法来实现 以提高性能
 @interface UIView(GrowingAttributes)

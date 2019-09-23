@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="OGD-tA-Te9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hfJ-q8-cor">
+                    <rect key="frame" x="19" y="100" width="337.5" height="44"/>
+                    <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <accessibility key="accessibilityConfiguration" label="秀秀秀"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="hfJ-q8-cor" secondAttribute="height" multiplier="1:0.13" id="x7T-5a-I42"/>
+                    </constraints>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="删除所有数据">
+                                <attributes>
+                                    <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="clearDataButtonOnClick:" destination="-1" eventType="touchUpInside" id="yeW-aF-pAi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndQ-Ay-tlO">
+                    <rect key="frame" x="19" y="152" width="337.5" height="44"/>
+                    <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <accessibility key="accessibilityConfiguration" label="秀秀秀"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="切换账号为张三">
+                                <attributes>
+                                    <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="setUserZhangsanButtonOnClick:" destination="-1" eventType="touchUpInside" id="LpV-sF-u7p"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3e2-fM-Crb">
+                    <rect key="frame" x="19" y="204" width="337.5" height="43.5"/>
+                    <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <accessibility key="accessibilityConfiguration" label="秀秀秀"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="切换账号为李四">
+                                <attributes>
+                                    <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="setUserLisiButtonOnClick:" destination="-1" eventType="touchUpInside" id="6fx-6C-0zg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fMf-9u-G45">
+                    <rect key="frame" x="18" y="255.5" width="337.5" height="44"/>
+                    <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <accessibility key="accessibilityConfiguration" label="秀秀秀"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="清除账号">
+                                <attributes>
+                                    <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="clearUserButtonOnClick:" destination="-1" eventType="touchUpInside" id="FZP-qW-8Jd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="af5-gg-x4n">
+                    <rect key="frame" x="19" y="307.5" width="337.5" height="44"/>
+                    <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <accessibility key="accessibilityConfiguration" label="秀秀秀"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="触发一个埋点事件">
+                                <attributes>
+                                    <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="trackEventButtonOnClick:" destination="-1" eventType="touchUpInside" id="szM-ow-cbZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USH-Eu-Pbo">
+                    <rect key="frame" x="19" y="359.5" width="337.5" height="44"/>
+                    <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <accessibility key="accessibilityConfiguration" label="秀秀秀"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="关闭Gtouch">
+                                <attributes>
+                                    <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="disableGTouchButtonOnClick:" destination="-1" eventType="touchUpInside" id="bT0-6E-uGp"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JA8-xR-31B">
+                    <rect key="frame" x="19" y="411.5" width="337.5" height="43.5"/>
+                    <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <accessibility key="accessibilityConfiguration" label="秀秀秀"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="打开Gtouch">
+                                <attributes>
+                                    <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="enableGTouchButtonOnClick:" destination="-1" eventType="touchUpInside" id="5bp-Dg-mSH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oDZ-Uc-utv">
+                    <rect key="frame" x="19" y="463" width="337.5" height="44"/>
+                    <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <accessibility key="accessibilityConfiguration" label="秀秀秀"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="打开一个页面">
+                                <attributes>
+                                    <font key="NSFont" size="16" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="openPageButtonOnClick:" destination="-1" eventType="touchUpInside" id="o6x-AE-Vo6"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oDZ-Uc-utv" firstAttribute="width" secondItem="hfJ-q8-cor" secondAttribute="width" id="1cJ-c6-8Cc"/>
+                <constraint firstItem="fMf-9u-G45" firstAttribute="width" secondItem="hfJ-q8-cor" secondAttribute="width" id="2KG-K7-RAZ"/>
+                <constraint firstItem="fMf-9u-G45" firstAttribute="top" secondItem="3e2-fM-Crb" secondAttribute="bottom" constant="8" id="6jJ-le-2Vv"/>
+                <constraint firstItem="3e2-fM-Crb" firstAttribute="height" secondItem="hfJ-q8-cor" secondAttribute="height" id="7VK-1o-32Y"/>
+                <constraint firstItem="3e2-fM-Crb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9xU-43-LTw"/>
+                <constraint firstItem="ndQ-Ay-tlO" firstAttribute="top" secondItem="hfJ-q8-cor" secondAttribute="bottom" constant="8" id="CTZ-J2-HKx"/>
+                <constraint firstItem="af5-gg-x4n" firstAttribute="height" secondItem="hfJ-q8-cor" secondAttribute="height" id="DDI-Sg-GN2"/>
+                <constraint firstItem="oDZ-Uc-utv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Gqs-eY-e0v"/>
+                <constraint firstItem="USH-Eu-Pbo" firstAttribute="top" secondItem="af5-gg-x4n" secondAttribute="bottom" constant="8" id="IKC-pa-9Id"/>
+                <constraint firstItem="3e2-fM-Crb" firstAttribute="width" secondItem="hfJ-q8-cor" secondAttribute="width" id="K2a-aZ-JI9"/>
+                <constraint firstItem="oDZ-Uc-utv" firstAttribute="top" secondItem="JA8-xR-31B" secondAttribute="bottom" constant="8" id="MLn-L1-jrY"/>
+                <constraint firstItem="JA8-xR-31B" firstAttribute="height" secondItem="hfJ-q8-cor" secondAttribute="height" id="Ne4-9Q-156"/>
+                <constraint firstItem="3e2-fM-Crb" firstAttribute="top" secondItem="ndQ-Ay-tlO" secondAttribute="bottom" constant="8" id="PbC-i9-ouR"/>
+                <constraint firstItem="af5-gg-x4n" firstAttribute="top" secondItem="fMf-9u-G45" secondAttribute="bottom" constant="8" id="RQB-at-dLX"/>
+                <constraint firstItem="USH-Eu-Pbo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="S8g-um-sfj"/>
+                <constraint firstItem="hfJ-q8-cor" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="Soz-97-cn5"/>
+                <constraint firstItem="fMf-9u-G45" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TJC-dQ-hjQ"/>
+                <constraint firstItem="hfJ-q8-cor" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="UsD-Lu-nZz"/>
+                <constraint firstItem="JA8-xR-31B" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZZ4-cE-1bN"/>
+                <constraint firstItem="USH-Eu-Pbo" firstAttribute="height" secondItem="hfJ-q8-cor" secondAttribute="height" id="baW-dn-mto"/>
+                <constraint firstItem="JA8-xR-31B" firstAttribute="width" secondItem="hfJ-q8-cor" secondAttribute="width" id="dSw-QM-M2Q"/>
+                <constraint firstItem="af5-gg-x4n" firstAttribute="width" secondItem="hfJ-q8-cor" secondAttribute="width" id="e7U-xp-taS"/>
+                <constraint firstItem="ndQ-Ay-tlO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fob-6q-q5M"/>
+                <constraint firstItem="oDZ-Uc-utv" firstAttribute="height" secondItem="hfJ-q8-cor" secondAttribute="height" id="hBX-zR-mhN"/>
+                <constraint firstItem="hfJ-q8-cor" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.9" id="j7d-aW-bpF"/>
+                <constraint firstItem="USH-Eu-Pbo" firstAttribute="width" secondItem="hfJ-q8-cor" secondAttribute="width" id="jaR-cZ-EIU"/>
+                <constraint firstItem="ndQ-Ay-tlO" firstAttribute="height" secondItem="hfJ-q8-cor" secondAttribute="height" id="k8N-SU-eoz"/>
+                <constraint firstItem="af5-gg-x4n" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kdr-S6-SDh"/>
+                <constraint firstItem="oDZ-Uc-utv" firstAttribute="height" secondItem="hfJ-q8-cor" secondAttribute="height" id="mqc-W5-JVC"/>
+                <constraint firstItem="ndQ-Ay-tlO" firstAttribute="width" secondItem="hfJ-q8-cor" secondAttribute="width" id="nro-7U-B8K"/>
+                <constraint firstItem="JA8-xR-31B" firstAttribute="top" secondItem="USH-Eu-Pbo" secondAttribute="bottom" constant="8" id="oGV-bN-MnG"/>
+                <constraint firstItem="fMf-9u-G45" firstAttribute="height" secondItem="hfJ-q8-cor" secondAttribute="height" id="ovY-yf-Ob8"/>
+            </constraints>
+            <point key="canvasLocation" x="52.173913043478265" y="47.544642857142854"/>
+        </view>
+    </objects>
+</document>

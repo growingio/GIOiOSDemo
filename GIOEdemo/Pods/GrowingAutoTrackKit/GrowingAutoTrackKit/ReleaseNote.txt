@@ -1,3 +1,14 @@
+2.8.3 Release note
+修复iOS9 UIInputWindowController 在GrowingAspectModeSubClass crash的问题
+
+2.8.2 Release note
+无
+
+2.8.1 Release note
+1.增强SDK稳定性
+2.新增imp半自动打点功能
+3.修复web圈app在chrome环境有时断开链接的问题
+
 2.8.0 Release Note
 1.修复web圈app,web页面热图坐标错位的问题
 
