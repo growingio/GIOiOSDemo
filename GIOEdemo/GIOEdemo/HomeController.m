@@ -14,6 +14,7 @@
 #import "OrderController.h"
 #import "Growing.h"
 #import "GoodsModel.h"
+#import "GrowingTouchKit/GrowingTouchBannerView.h"
 @interface HomeController ()<BannerViewDelegate>
 @property(nonatomic , strong)  UIScrollView *backScrollView ;
 @property(nonatomic , strong)  LoopView *bannerView ;
@@ -22,10 +23,13 @@
 @property(nonatomic , strong)  UIView *recommendView ;
 @property(nonatomic , strong)  UIView *bestSaleView ;
 @property(nonatomic , strong)  NSMutableArray *allDataArray ;
+@property(nonatomic , strong)  GrowingTouchBannerView *bannerViews ;
+@property(nonatomic , strong)  UIImage *placeholderImage ;
 @end
 
 @implementation HomeController
 
+static NSString* bannerKey = @"8b7599453d41d05f";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -65,9 +69,13 @@
     [view addSubview:btn];
     self.navigationItem.titleView = view ;
     
-    NSMutableArray *mutableArray = [NSMutableArray arrayWithObjects:@"12",@"11", nil] ;
-    self.bannerView = [[LoopView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width ,220) andImageArray:mutableArray];
-    self.bannerView.delegate = self ;
+//    NSMutableArray *mutableArray = [NSMutableArray arrayWithObjects:@"12",@"11", nil] ;
+//    self.bannerView = [[LoopView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width ,220) andImageArray:mutableArray];
+    //触达banner
+    UIImage* placeholderImage = [UIImage imageNamed:@"12.jpg"];
+    self.bannerViews = [GrowingTouchBannerView bannerKey:bannerKey bannerFrame:CGRectMake(0, 0, self.view.bounds.size.width ,220) placeholderImage:placeholderImage];
+    //self.bannerViews.delegate = self ;
+    [self.bannerViews loadBannerWithDelegate:self];
     [self.backScrollView addSubview:self.bannerView];
 }
 
@@ -90,7 +98,7 @@
 }
 
 -(void)makeUpview{
-    self.upView =[[UIView alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(self.bannerView.frame) + 40 , self.view.bounds.size.width - 40, 120)];
+    self.upView =[[UIView alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(self.bannerViews.frame) + 40 , self.view.bounds.size.width - 40, 120)];
     for (int i = 0; i < 4; i ++) {
         HomeCell *cell = [[HomeCell alloc] initWithFrame:CGRectMake(i *  (self.view.bounds.size.width - 40)/4.0 ,0, (self.view.bounds.size.width - 40)/4.0 , 120)];
         cell.width = 40 ;
