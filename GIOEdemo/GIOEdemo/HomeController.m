@@ -31,7 +31,9 @@
 
 @implementation HomeController
 
+
 static NSString* bannerKey = @"9ad8cc83668bb9f0";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -79,6 +81,7 @@ static NSString* bannerKey = @"9ad8cc83668bb9f0";
 //    NSMutableArray *mutableArray = [NSMutableArray arrayWithObjects:@"12",@"11", nil] ;
 //    self.bannerView = [[LoopView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width ,220) andImageArray:mutableArray];
 //    self.bannerView.delegate = self ;
+
     //触达banner
     UIImage* placeholderImage = [UIImage imageNamed:@"12.jpg"];
     self.bannerViews = [GrowingTouchBannerView bannerKey:bannerKey bannerFrame:CGRectMake(0, 0, self.view.bounds.size.width ,220) placeholderImage:placeholderImage];
@@ -89,6 +92,7 @@ static NSString* bannerKey = @"9ad8cc83668bb9f0";
 
 static void extracted(HomeController *object, GoodsDetailController *VC) {
     [object homePageGoodsClick:[VC.goodModel modelTodic]];
+
 }
 
 - (void)selectImage:(LoopView *)bannerView currentImage:(NSInteger)currentImage{
