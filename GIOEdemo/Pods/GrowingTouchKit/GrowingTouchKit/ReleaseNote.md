@@ -48,3 +48,7 @@
 ### 0.4.0
 * [feature] 新增banner功能
 * [fix] 优化弹窗是否弹出规则
+
+### 0.4.1
+* [fix] 修复banner切换的bug
+* [fix] 修复banner数据改变时pageControl对应调整
