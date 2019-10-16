@@ -10,6 +10,7 @@
 #import "Growing.h"
 #import <GrowingTouchKit/GrowingTouchKit.h>
 #import <UserNotifications/UserNotifications.h>
+#import "NSObject+GrowingHelper.h"
 
 @interface AppDelegate () <GrowingTouchEventPopupDelegate,UNUserNotificationCenterDelegate,CLLocationManagerDelegate>
 
@@ -39,8 +40,34 @@
 //    [Growing setWsHost:@"wss://demo1gta.growingio.com"];
     
     [Growing setEnableLog:NO];
-    [Growing registerDeeplinkHandler:^(NSDictionary *params, NSError *error) {
-        NSLog(@"params %@",params);
+    [Growing registerDeeplinkHandler:^(NSDictionary *params, NSTimeInterval processTime, NSError *error) {
+        
+        //  处理 deeplink 的页面回调
+        if (!error) {
+            
+            NSString *deeplink = params[@"+deeplink_mechanism"];
+            NSString *jumpTo = params[@"jumpTo"];
+            if ([deeplink isEqualToString:@"universal_link"] && jumpTo.length) {
+                //  跳转到指定的页面
+                Class classJump = NSClassFromString(jumpTo);
+                if (classJump) {
+                    UIViewController *vc = (UIViewController *)[classJump new];
+                    if ([vc isKindOfClass:UIViewController.class]) {
+                        NSArray *inAppPagePropertyArray = [vc growingPushHelper_getAllProperties];
+                        for (NSString *key in params) {
+                            if ([inAppPagePropertyArray containsObject:key]) {
+                                [vc setValue:params[key] forKey:key];
+                            }
+                        }
+                        vc.hidesBottomBarWhenPushed = YES ;
+                        UINavigationController *nav =  [self findNavigationController];
+                        [nav pushViewController:vc animated:YES];
+                    }
+                }
+            }
+        }
+        
+        NSLog(@"回调链接params %@",params);
     }];
     [Growing registerRealtimeReportHandler:^(NSDictionary *eventObject) {
         NSLog(@"=registerRealtimeReportHandler> %@", eventObject);
@@ -58,6 +85,18 @@
     return YES;
 }
 
+- (UINavigationController *)findNavigationController {
+    UIWindow *window = [[UIApplication sharedApplication].delegate window];
+    if ([window.rootViewController isKindOfClass:[UINavigationController class]]) {
+        return (UINavigationController *) window.rootViewController;
+    } else if ([window.rootViewController isKindOfClass:[UITabBarController class]]) {
+        UIViewController *selectVc = [((UITabBarController *) window.rootViewController) selectedViewController];
+        if ([selectVc isKindOfClass:[UINavigationController class]]) {
+            return (UINavigationController *) selectVc;
+        }
+    }
+    return nil;
+}
 
 /** 注册 APNs */
 - (void)registerRemoteNotification {
@@ -201,5 +240,9 @@
     return NO;
 }
 
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler {
+    [Growing handleUrl:userActivity.webpageURL];
+       return YES;
+}
 
 @end

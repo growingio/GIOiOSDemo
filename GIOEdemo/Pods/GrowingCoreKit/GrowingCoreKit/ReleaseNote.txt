@@ -1,3 +1,7 @@
+2.8.4 release note
+1.deeplink短链支持
+2.优化setUserId性能问题
+
 2.8.3 release note
 无
 

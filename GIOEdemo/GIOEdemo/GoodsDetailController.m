@@ -20,6 +20,12 @@
 
 @property (nonatomic, copy) NSString *key;
 
+//  商品参数
+@property (nonatomic, copy) NSString *productId_var;
+@property (nonatomic, copy) NSString *productName_var;
+@property (nonatomic, copy) NSString *price_var;
+
+
 @end
 
 @implementation GoodsDetailController
@@ -29,10 +35,11 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    
-    
-    
-    
+    if (self.goodModel) {
+        self.productId_var = self.goodModel.productId_var;
+        self.productName_var = self.goodModel.productName_var;
+        self.price_var = self.goodModel.price_var;
+    }
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height - 64)];
     self.tableView.delegate = self ;
@@ -52,16 +59,16 @@
     headerView.backgroundColor = [UIColor whiteColor];
     
     UIImageView  *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 400)];
-    imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@big",self.goodModel.productId_var]];
+    imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@big",self.productId_var]];
     [headerView addSubview:imageView];
     
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(imageView.frame) + 10, 150 , 30)];
-    titleLabel.text = self.goodModel.productName_var ;
+    titleLabel.text = self.productName_var ;
     [headerView addSubview:titleLabel];
     
     UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(titleLabel.frame) , 150 , 30)];
-    priceLabel.text = self.goodModel.price_var ;
+    priceLabel.text = self.price_var ;
     priceLabel.textColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
     [headerView addSubview:priceLabel];
     
@@ -259,7 +266,7 @@
     }
     [self addToCart:[self.goodModel modelTodic]];
     self.tabBarController.selectedIndex = 2 ;
-    self.goodModel.payAmount_var = [NSNumber numberWithFloat:[self.goodModel.price_var floatValue]];
+    self.goodModel.payAmount_var = [NSNumber numberWithFloat:[self.price_var floatValue]];
 //    [self checkOut:[self.goodModel modelTodic]];
 }
 

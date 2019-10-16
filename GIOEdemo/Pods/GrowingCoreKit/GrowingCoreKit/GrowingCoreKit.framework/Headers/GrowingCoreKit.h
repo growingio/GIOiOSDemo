@@ -76,10 +76,10 @@ typedef NS_ENUM(NSInteger, GrowingAspectMode)
 /**
  deeplink广告落地页参数回调设置
 
- @param handler deeplink广告落地页参数回调, params 为解析正确时反回调的参数, error 为解析错误时返回的参数.
+ @param handler deeplink广告落地页参数回调, params 为解析正确时回调的参数, processTime为从app被deeplink唤起到handler回调的时间(单位秒), error 为解析错误时返回的参数.
                  handler 默认为空, 客户需要手动设置.
  */
-+ (void)registerDeeplinkHandler:(void(^)(NSDictionary *params, NSError *error))handler;
++ (void)registerDeeplinkHandler:(void(^)(NSDictionary *params, NSTimeInterval processTime, NSError *error))handler;
 
 /**
   + 注册实时发送数据的回调

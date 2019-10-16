@@ -1,3 +1,6 @@
+2.8.4 Release note
+1.imp半自动打点 自动取v
+
 2.8.3 Release note
 修复iOS9 UIInputWindowController 在GrowingAspectModeSubClass crash的问题
 

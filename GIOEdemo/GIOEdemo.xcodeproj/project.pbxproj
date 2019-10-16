@@ -17,6 +17,7 @@
 		4201E4A02320FD70008993B1 /* BannerCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4201E49E2320FD70008993B1 /* BannerCustomViewController.m */; };
 		4201E4A12320FD70008993B1 /* BannerCustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4201E49F2320FD70008993B1 /* BannerCustomViewController.xib */; };
 		4201E4A423210179008993B1 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4201E4A323210179008993B1 /* CustomCollectionViewCell.m */; };
+		4209E3FC2356F6D50005FCE9 /* NSObject+GrowingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4209E3FB2356F6D50005FCE9 /* NSObject+GrowingHelper.m */; };
 		421750FB22B7B2DE000A16FE /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 421750FA22B7B2DE000A16FE /* NotificationService.m */; };
 		421750FF22B7B2DE000A16FE /* GIOEdemoServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 421750F722B7B2DE000A16FE /* GIOEdemoServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		426E80E921F84AC300EFD42A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 426E80E821F84AC300EFD42A /* main.m */; };
@@ -107,6 +108,8 @@
 		4201E4A223210179008993B1 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
 		4201E4A323210179008993B1 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
 		42072C6822E883FC0039A7BF /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		4209E3FA2356F6D50005FCE9 /* NSObject+GrowingHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+GrowingHelper.h"; sourceTree = "<group>"; };
+		4209E3FB2356F6D50005FCE9 /* NSObject+GrowingHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GrowingHelper.m"; sourceTree = "<group>"; };
 		421750F222B7AFF4000A16FE /* GIOEdemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GIOEdemo.entitlements; sourceTree = "<group>"; };
 		421750F722B7B2DE000A16FE /* GIOEdemoServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GIOEdemoServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		421750F922B7B2DE000A16FE /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 				42F30CF821F0939300C4E6E9 /* AppDelegate.m */,
 				42F30CFA21F0939300C4E6E9 /* ViewController.h */,
 				42F30CFB21F0939300C4E6E9 /* ViewController.m */,
+				4209E3FA2356F6D50005FCE9 /* NSObject+GrowingHelper.h */,
+				4209E3FB2356F6D50005FCE9 /* NSObject+GrowingHelper.m */,
 				42F30D6021F0946100C4E6E9 /* Assets.xcassets */,
 				42F30CFD21F0939300C4E6E9 /* Main.storyboard */,
 				42F30D0221F0939400C4E6E9 /* LaunchScreen.storyboard */,
@@ -604,6 +609,7 @@
 				42F30D3921F093FF00C4E6E9 /* PayResultController.m in Sources */,
 				42F30D5E21F0942E00C4E6E9 /* JudgeController.m in Sources */,
 				42F30D3721F093FF00C4E6E9 /* ShopingCartCell.m in Sources */,
+				4209E3FC2356F6D50005FCE9 /* NSObject+GrowingHelper.m in Sources */,
 				42F30D5D21F0942E00C4E6E9 /* CashierDeskController.m in Sources */,
 				42F30CF921F0939300C4E6E9 /* AppDelegate.m in Sources */,
 				42F30D5B21F0942E00C4E6E9 /* HomeController.m in Sources */,
