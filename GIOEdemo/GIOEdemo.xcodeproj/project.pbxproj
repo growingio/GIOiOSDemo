@@ -18,6 +18,7 @@
 		4201E4A12320FD70008993B1 /* BannerCustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4201E49F2320FD70008993B1 /* BannerCustomViewController.xib */; };
 		4201E4A423210179008993B1 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4201E4A323210179008993B1 /* CustomCollectionViewCell.m */; };
 		4209E3FC2356F6D50005FCE9 /* NSObject+GrowingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4209E3FB2356F6D50005FCE9 /* NSObject+GrowingHelper.m */; };
+		4209E454235E78250005FCE9 /* GrowingMonitorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4209E453235E78250005FCE9 /* GrowingMonitorKit.framework */; };
 		421750FB22B7B2DE000A16FE /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 421750FA22B7B2DE000A16FE /* NotificationService.m */; };
 		421750FF22B7B2DE000A16FE /* GIOEdemoServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 421750F722B7B2DE000A16FE /* GIOEdemoServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		426E80E921F84AC300EFD42A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 426E80E821F84AC300EFD42A /* main.m */; };
@@ -110,6 +111,7 @@
 		42072C6822E883FC0039A7BF /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		4209E3FA2356F6D50005FCE9 /* NSObject+GrowingHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+GrowingHelper.h"; sourceTree = "<group>"; };
 		4209E3FB2356F6D50005FCE9 /* NSObject+GrowingHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GrowingHelper.m"; sourceTree = "<group>"; };
+		4209E453235E78250005FCE9 /* GrowingMonitorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GrowingMonitorKit.framework; sourceTree = "<group>"; };
 		421750F222B7AFF4000A16FE /* GIOEdemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GIOEdemo.entitlements; sourceTree = "<group>"; };
 		421750F722B7B2DE000A16FE /* GIOEdemoServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GIOEdemoServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		421750F922B7B2DE000A16FE /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4209E454235E78250005FCE9 /* GrowingMonitorKit.framework in Frameworks */,
 				DC59ABA4F1992F519E9DC8F1 /* libPods-GIOEdemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +249,7 @@
 		42F30CF621F0939300C4E6E9 /* GIOEdemo */ = {
 			isa = PBXGroup;
 			children = (
+				4209E453235E78250005FCE9 /* GrowingMonitorKit.framework */,
 				4201E48F2320E180008993B1 /* DataHelper.h */,
 				4201E49B2320EC5D008993B1 /* default_b.jpg */,
 				4201E4942320E183008993B1 /* DataHelper.m */,
