@@ -29,6 +29,7 @@ typedef NS_ENUM (NSInteger, GrowingTouchBannerViewPageControlStyle){
  */
 @protocol GrowingTouchBannerViewDelegate <NSObject>
 
+@optional
 /**
  banner 加载成功
  

@@ -52,3 +52,8 @@
 ### 0.4.1
 * [fix] 修复banner切换的bug
 * [fix] 修复banner数据改变时pageControl对应调整
+
+### 1.0.0
+* [feature] 新增弹窗 A/B 测试功能
+* [fix] 修复切换用户弹窗配置重新请求的bug
+* [fix] 弹窗优化

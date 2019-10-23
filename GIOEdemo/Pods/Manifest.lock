@@ -5,11 +5,11 @@ PODS:
   - GrowingCoreKit (2.8.4):
     - Growing (= 2.8.4)
   - GrowingPushExtensionKit (0.3.2)
-  - GrowingPushKit (0.4.1):
+  - GrowingPushKit (1.0.0):
     - GrowingCoreKit (>= 2.8.0)
-  - GrowingTouchKit (0.4.1):
+  - GrowingTouchKit (1.0.0):
     - GrowingAutoTrackKit (>= 2.8.0)
-    - GrowingPushKit (= 0.4.1)
+    - GrowingPushKit (= 1.0.0)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
   - SDWebImage (5.2.3):
@@ -27,7 +27,7 @@ PODS:
 
 DEPENDENCIES:
   - GrowingPushExtensionKit (~> 0.3.0)
-  - GrowingTouchKit (~> 0.4.1)
+  - GrowingTouchKit (~> 1.0.0)
   - SDCycleScrollView (~> 1.80)
   - YYImage (~> 1.0.4)
   - YYImage/WebP
@@ -52,14 +52,14 @@ SPEC CHECKSUMS:
   GrowingAutoTrackKit: 6c6cd54608d6528858ec92a8e955b38898775a14
   GrowingCoreKit: e800b5486116829d5d151b6df072d627036ac357
   GrowingPushExtensionKit: dab248e72e7543e8d0e5e55dc1911fddbdede264
-  GrowingPushKit: 417ac065bfe0928914283eeba714f75b64450544
-  GrowingTouchKit: 3cd60cab78b18ff132fdc03990bbfab85d85cdfb
+  GrowingPushKit: 8ba000ddc90f531369a20cd14b91ba07f6fb1d51
+  GrowingTouchKit: 183321fb76c1e17850899c8356a5a024d3b2b72f
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 5773a0dbd6e9c69aec86d3cbabc256079476817c
+PODFILE CHECKSUM: 5bdeaa53aad03fcc8cfc8a9dee6b178bd027f070
 
 COCOAPODS: 1.6.2
