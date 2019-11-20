@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9489353D45C1F4A86810EE4FFE7FAD12"
+               BlueprintIdentifier = "BD19CA4C81EC9FD7D345F5FB14FC298D"
                BuildableName = "libPods-GIOEdemoServiceExtension.a"
                BlueprintName = "Pods-GIOEdemoServiceExtension"
                ReferencedContainer = "container:Pods.xcodeproj">

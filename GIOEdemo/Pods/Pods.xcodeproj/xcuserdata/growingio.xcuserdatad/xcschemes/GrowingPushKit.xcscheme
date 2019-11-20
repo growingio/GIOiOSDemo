@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B7051C462D0434D3EB7925D2D4D506AC"
+               BlueprintIdentifier = "8C51416AAEC38157C80AF57239D3E9C2"
                BuildableName = "GrowingPushKit"
                BlueprintName = "GrowingPushKit"
                ReferencedContainer = "container:Pods.xcodeproj">

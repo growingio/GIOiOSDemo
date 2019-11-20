@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3198F739A347E8F560F5784EF9C49F4F"
+               BlueprintIdentifier = "A6A7E1CEEF6DB1DB53553FC420BC3EC2"
                BuildableName = "GrowingAutoTrackKit"
                BlueprintName = "GrowingAutoTrackKit"
                ReferencedContainer = "container:Pods.xcodeproj">

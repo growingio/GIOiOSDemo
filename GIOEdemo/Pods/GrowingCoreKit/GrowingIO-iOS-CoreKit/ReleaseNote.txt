@@ -1,0 +1,48 @@
+2.8.6 release note
+1.增加地理位置信息采集的开关
+2.多线程防护
+
+2.8.5 release note
+1.延迟深度链接
+
+2.8.4 release note
+1.deeplink短链支持
+2.优化setUserId性能问题
+
+2.8.3 release note
+无
+
+2.8.2 release note
+修复已知问题
+
+2.8.1 release note
+无
+
+2.8.0 release note
+1.适配横屏中SDK中的UI
+2.修复在个别模拟器下crash的问题
+
+2.7.8 release note
+1.修复mobiledebugger可能出现数据少显示的问题
+
+2.7.7 release note
+1.修复地理位置相关的多线程问题
+2.修复访问用户ID可能为0的问题
+3.修复首次安装app可能会影响statusbar展示方向问题
+
+2.7.6 release note
+1.兼容推送低版本API
+2.GrowingAspectModeSubClass下 hook更稳定
+
+2.7.5 release note
+1.数据库优化
+2.打点参数规则修正
+3.对信鸽兼容
+
+2.7.4 release note： 
+1.优化了mobile debugger的流畅度
+
+
+
+
+
