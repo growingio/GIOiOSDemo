@@ -10,8 +10,8 @@
 #import "SDCycleScrollView.h"
 #import "CustomCollectionViewCell.h"
 #import <YYWebImage/UIImageView+YYWebImage.h>
-#import <GrowingTouchKit/GrowingTouchBannerData.h>
-#import <GrowingTouchKit/GrowingTouchKit.h>
+#import <GrowingTouchCoreKit/GrowingTouchBannerData.h>
+#import <GrowingTouchCoreKit/GrowingTouchKit.h>
 
 @interface BannerCustomViewController ()<SDCycleScrollViewDelegate>
 

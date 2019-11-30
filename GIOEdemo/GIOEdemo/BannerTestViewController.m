@@ -7,7 +7,7 @@
 //
 
 #import "BannerTestViewController.h"
-#import <GrowingTouchKit/GrowingTouchBannerView.h>
+#import <GrowingTouchCoreKit/GrowingTouchBannerView.h>
 #import "BannerCustomViewController.h"
 
 @interface BannerTestViewController ()<GrowingTouchBannerViewDelegate>

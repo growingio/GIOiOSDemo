@@ -245,4 +245,11 @@ typedef NS_ENUM(NSInteger, GrowingAspectMode)
  */
 + (void)setVisitor:(NSDictionary<NSString *, NSObject *> *)variable;
 
+/**
+ 是否开启SDK的crash监控，默认是开启的，建议在 startWithAccountId: 或 startWithAccountId: withSampling: 接口之后设置。
+ 
+ @param uploadExceptionEnable 是否开启SDK的crash监控上报
+ */
++ (void)setUploadExceptionEnable:(BOOL)uploadExceptionEnable;
+
 @end

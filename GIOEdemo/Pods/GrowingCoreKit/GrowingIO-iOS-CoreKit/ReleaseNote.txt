@@ -1,3 +1,6 @@
+2.8.7 release note
+1.无
+
 2.8.6 release note
 1.增加地理位置信息采集的开关
 2.多线程防护

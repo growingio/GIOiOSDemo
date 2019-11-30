@@ -10,7 +10,7 @@
 #import "DataHelper.h"
 #import "TestPageViewController.h"
 #import <GrowingCoreKit/GrowingCoreKit.h>
-#import <GrowingTouchKit/GrowingTouch.h>
+#import <GrowingTouchCoreKit/GrowingTouch.h>
 #import "BannerTestViewController.h"
 #import <WebKit/WebKit.h>
 

@@ -1,6 +1,0 @@
-framework module GrowingPushExtensionKit {
-  umbrella header "GrowingPushExtensionKit.h"
-
-  export *
-  module * { export * }
-}

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -907,8 +907,6 @@
 					"-framework",
 					"\"GrowingCoreKit\"",
 					"-framework",
-					"\"GrowingPushKit\"",
-					"-framework",
 					"\"GrowingTouchKit\"",
 					"-framework",
 					"\"JavaScriptCore\"",
@@ -966,8 +964,6 @@
 					"\"GrowingAutoTrackKit\"",
 					"-framework",
 					"\"GrowingCoreKit\"",
-					"-framework",
-					"\"GrowingPushKit\"",
 					"-framework",
 					"\"GrowingTouchKit\"",
 					"-framework",

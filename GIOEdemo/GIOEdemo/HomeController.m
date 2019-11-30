@@ -15,7 +15,7 @@
 #import "Growing.h"
 #import "GoodsModel.h"
 #import "MainViewController.h"
-#import "GrowingTouchKit/GrowingTouchBannerView.h"
+#import "GrowingTouchCoreKit/GrowingTouchBannerView.h"
 
 @interface HomeController ()<BannerViewDelegate>
 @property(nonatomic , strong)  UIScrollView *backScrollView ;
