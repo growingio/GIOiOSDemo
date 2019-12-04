@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Growing.h"
-#import <GrowingTouchCoreKit/GrowingTouchKit.h>
+#import <GrowingTouchCoreKit/GrowingTouchCoreKit.h>
 #import <UserNotifications/UserNotifications.h>
 #import "NSObject+GrowingHelper.h"
 

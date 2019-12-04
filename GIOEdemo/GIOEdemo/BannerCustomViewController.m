@@ -11,7 +11,7 @@
 #import "CustomCollectionViewCell.h"
 #import <YYWebImage/UIImageView+YYWebImage.h>
 #import <GrowingTouchCoreKit/GrowingTouchBannerData.h>
-#import <GrowingTouchCoreKit/GrowingTouchKit.h>
+#import <GrowingTouchCoreKit/GrowingTouchCoreKit.h>
 
 @interface BannerCustomViewController ()<SDCycleScrollViewDelegate>
 
