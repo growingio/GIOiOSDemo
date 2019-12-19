@@ -78,12 +78,17 @@
     [GrowingTouch setEventPopupEnable:YES];
     [GrowingTouch start];
 
-    
+    //  自定义协议的跳转逻辑
+    [GrowingTouch clickMessageWithCompletionHandler:^(NSDictionary *params) {
+        NSLog(@"欢迎使用GIO自定义协议的跳转逻辑，不需要可以不用此方法");
+        
+    }];
     
 
     
     return YES;
 }
+
 
 - (UINavigationController *)findNavigationController {
     UIWindow *window = [[UIApplication sharedApplication].delegate window];
@@ -173,6 +178,10 @@
 
 
 #pragma mark - UNUserNotificationCenterDelegate
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler NS_AVAILABLE_IOS(7_0);{
+    
+}
+
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler
 {
     NSDictionary *aps = notification.request.content.userInfo;
