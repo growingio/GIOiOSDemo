@@ -28,7 +28,7 @@
         NSLog(@"回调信息是%@",response);
         
         // Modify the notification content here...
-        self.bestAttemptContent.title = [NSString stringWithFormat:@"%@ [modified]", self.bestAttemptContent.title];
+        self.bestAttemptContent.title = [NSString stringWithFormat:@"%@ [PushExtensionKit集成成功]", self.bestAttemptContent.title];
         
         self.contentHandler(self.bestAttemptContent);
 
