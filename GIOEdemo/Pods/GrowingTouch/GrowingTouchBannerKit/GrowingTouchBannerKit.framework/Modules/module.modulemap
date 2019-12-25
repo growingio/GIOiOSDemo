@@ -1,0 +1,6 @@
+framework module GrowingTouchBannerKit {
+  umbrella header "GrowingTouchBannerKit.h"
+
+  export *
+  module * { export * }
+}
