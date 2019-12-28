@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a2ab94cc4c11ae79" borderStyle="roundedRect" placeholder="BannerKey" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEM-Zm-nMb">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9ad8cc83668bb9f0" borderStyle="roundedRect" placeholder="BannerKey" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEM-Zm-nMb">
                     <rect key="frame" x="20" y="250" width="200" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="CFR-Lf-uMJ"/>
