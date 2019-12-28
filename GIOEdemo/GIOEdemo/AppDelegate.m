@@ -83,7 +83,7 @@
         NSLog(@"欢迎使用GIO自定义协议的跳转逻辑，不需要可以不用此方法");
         
     }];
-    // 登陆用户属性 注册至今 需设置CreateAt，值必须用YYYYMMDD 的方式上传，否则无法生效  要求SDK1.2.0及以上
+    // 登陆用户属性 注册至今 需设置CreateAt，值必须用YYYYMMDD 的方式上传，否则无法生效  要求SDK1.2.1及以上
     [Growing setUserId:@"zhangsan"];
     [Growing setPeopleVariable:@{@"CreateAt":@"20191219"}];
 

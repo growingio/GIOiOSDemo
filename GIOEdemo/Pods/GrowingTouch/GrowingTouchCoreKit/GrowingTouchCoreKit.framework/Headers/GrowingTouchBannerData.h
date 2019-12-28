@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface GrowingTouchBannerItem : NSObject
 
@@ -16,6 +17,13 @@
 @property (nonatomic, copy) NSString *imageUrl;
 /** Item的索引，从0开始 */
 @property (nonatomic, assign) NSUInteger index;
+
+/**
+item 绑定视图
+@param itemView item绑定的视图
+@param completedBlock 绑定视图点击的回调
+*/
+- (void)bindItemDataToClickView:(UIView *)itemView selectCompleted:(void(^)(NSString *openUrl, NSError *error)) completedBlock;
 
 @end
 

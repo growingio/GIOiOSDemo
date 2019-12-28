@@ -4,14 +4,14 @@ PODS:
     - GrowingCoreKit (= 2.8.8)
   - GrowingCoreKit (2.8.8):
     - Growing (= 2.8.8)
-  - GrowingTouch/GrowingPushExtensionKit (1.2.0)
-  - GrowingTouch/GrowingPushKit (1.2.0):
+  - GrowingTouch/GrowingPushExtensionKit (1.2.1)
+  - GrowingTouch/GrowingPushKit (1.2.1):
     - GrowingTouch/GrowingTouchCoreKit
-  - GrowingTouch/GrowingTouchBannerKit (1.2.0):
+  - GrowingTouch/GrowingTouchBannerKit (1.2.1):
     - GrowingTouch/GrowingTouchCoreKit
-  - GrowingTouch/GrowingTouchCoreKit (1.2.0):
+  - GrowingTouch/GrowingTouchCoreKit (1.2.1):
     - GrowingCoreKit (>= 2.8.8)
-  - GrowingTouch/GrowingTouchKit (1.2.0):
+  - GrowingTouch/GrowingTouchKit (1.2.1):
     - GrowingTouch/GrowingTouchCoreKit
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
@@ -30,10 +30,10 @@ PODS:
 
 DEPENDENCIES:
   - GrowingAutoTrackKit (= 2.8.8)
-  - GrowingTouch/GrowingPushExtensionKit (~> 1.2.0)
-  - GrowingTouch/GrowingPushKit (~> 1.2.0)
-  - GrowingTouch/GrowingTouchBannerKit (~> 1.2.0)
-  - GrowingTouch/GrowingTouchKit (~> 1.2.0)
+  - GrowingTouch/GrowingPushExtensionKit (~> 1.2.1)
+  - GrowingTouch/GrowingPushKit (~> 1.2.1)
+  - GrowingTouch/GrowingTouchBannerKit (~> 1.2.1)
+  - GrowingTouch/GrowingTouchKit (~> 1.2.1)
   - SDCycleScrollView (~> 1.80)
   - YYImage (~> 1.0.4)
   - YYImage/WebP
@@ -56,13 +56,13 @@ SPEC CHECKSUMS:
   Growing: 30f5b2e1268936d81dfd80cddafeb94ef468f943
   GrowingAutoTrackKit: cf6fa2fb93107d83cc0ca0cb354721240fc73390
   GrowingCoreKit: 6ed1395ef987aeaaf2f0ffe9fc7ee3b5c80eebeb
-  GrowingTouch: 8176a6317f687fe544bf84f01851c09fb6df28c8
+  GrowingTouch: aa7787fb7170d22d48da9f3d807d9a1958c11b55
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 9f020eb2fb01723b4996e757478422221ebb963e
+PODFILE CHECKSUM: 8e6076263548909fddb7c0a1f509b0567540960c
 
 COCOAPODS: 1.8.4

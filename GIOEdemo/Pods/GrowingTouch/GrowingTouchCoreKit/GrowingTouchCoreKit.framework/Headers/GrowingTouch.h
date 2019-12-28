@@ -99,15 +99,16 @@
  @param failure 请求失败消息
  */
 + (void)growingTouchBannerDataTaskBannerKey:(NSString*) bannerKey success:(void(^)(GrowingTouchBannerData *)) bannerData failure:(void(^)(NSError*))failure;
-/**
- 自渲染视图与Item的绑定，以及点击回调
 
+/**
+ 请用 “bindItemDataToClickView:selectCompleted:” 方法替换视图与item的绑定
+ 
  @param bannerKey banner的唯一标识
  @param bannerView item对应的视图
  @param item banner的单个数据item
  @param completedBlock 点击的回调，返回跳转参数
  */
-+ (void)growingTouchBannerDataTaskBannerKey:(NSString*) bannerKey bannerView:(UIView *)bannerView bannerItem:(GrowingTouchBannerItem *)item selectCompleted:(void(^)(NSString *openUrl, NSError *error)) completedBlock;
++ (void)growingTouchBannerDataTaskBannerKey:(NSString*) bannerKey bannerView:(UIView *)bannerView bannerItem:(GrowingTouchBannerItem *)item selectCompleted:(void(^)(NSString *openUrl, NSError *error)) completedBlock NS_DEPRECATED_IOS(2_0, 2_0, "Use bindItemDataToClickView:selectCompleted: instead.");
 
 
 #pragma mark - GrowingPushKit SDK
