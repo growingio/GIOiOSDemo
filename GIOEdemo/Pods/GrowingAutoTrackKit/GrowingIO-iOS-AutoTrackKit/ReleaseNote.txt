@@ -1,3 +1,6 @@
+2.8.9 Release note
+1.fix web圈app 特殊字符不能圈选
+
 2.8.8 Release note
 1.无
 

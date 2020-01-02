@@ -132,10 +132,10 @@
 + (void)clickMessageWithCompletionHandler:(void (^)(NSDictionary *params))completionHandler;
 
 /**
- 是否开启触达sdk的crash监控
+ 即将弃用！请用 GrowingCoreKit.h 中的 “setUploadExceptionEnable:” 方法代替
  
- @param uploadExceptionEnable 是否开启触达sdk的crash监控上报
+ @param uploadExceptionEnable 是否开启触达sdk的crash监控上报，请在 startWithAccountId: 或 startWithAccountId: withSampling: 接口之前设置。
  */
-+ (void)setUploadExceptionEnable:(BOOL)uploadExceptionEnable;
++ (void)setUploadExceptionEnable:(BOOL)uploadExceptionEnable NS_DEPRECATED_IOS(2_0, 2_0, "Use  setUploadExceptionEnable: in GrowingCoreKit.h instead.");
 
 @end

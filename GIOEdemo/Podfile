@@ -5,10 +5,10 @@ target 'GIOEdemo' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   #use_frameworks!
 
-  pod 'GrowingTouch/GrowingTouchKit', '~> 1.2.1'
-  pod 'GrowingTouch/GrowingPushKit', '~> 1.2.1'
-  pod 'GrowingTouch/GrowingTouchBannerKit', '~> 1.2.1'
-  pod 'GrowingAutoTrackKit', '2.8.8'
+  pod 'GrowingTouch/GrowingTouchKit', '~> 1.2.2'
+  pod 'GrowingTouch/GrowingPushKit', '~> 1.2.2'
+  pod 'GrowingTouch/GrowingTouchBannerKit', '~> 1.2.2'
+  pod 'GrowingAutoTrackKit', '2.8.9'
   pod 'YYImage', '~> 1.0.4'
   pod 'YYWebImage', '~> 1.0.5'
   pod 'YYImage/WebP'
@@ -20,6 +20,6 @@ target 'GIOEdemoServiceExtension' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
-  pod 'GrowingTouch/GrowingPushExtensionKit', '~> 1.2.1'
+  pod 'GrowingTouch/GrowingPushExtensionKit', '~> 1.2.2'
 
 end

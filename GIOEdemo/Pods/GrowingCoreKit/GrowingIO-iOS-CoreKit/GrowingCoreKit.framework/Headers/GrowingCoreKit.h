@@ -15,6 +15,7 @@
 @import Security;
 @import CFNetwork;
 @import CoreLocation;
+@import WebKit;
 #endif
 
 typedef NS_ENUM(NSInteger, GrowingAspectMode)
@@ -246,7 +247,7 @@ typedef NS_ENUM(NSInteger, GrowingAspectMode)
 + (void)setVisitor:(NSDictionary<NSString *, NSObject *> *)variable;
 
 /**
- 是否开启SDK的crash监控，默认是开启的，建议在 startWithAccountId: 或 startWithAccountId: withSampling: 接口之后设置。
+ 是否开启SDK的crash监控，默认是开启的，请在 startWithAccountId: 或 startWithAccountId: withSampling: 接口之前设置。
  
  @param uploadExceptionEnable 是否开启SDK的crash监控上报
  */

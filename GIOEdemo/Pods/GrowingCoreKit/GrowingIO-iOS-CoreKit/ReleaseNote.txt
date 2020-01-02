@@ -1,3 +1,6 @@
+2.8.9 release note
+1.网络性能提高
+
 2.8.8 release note
 1.网络控制能力增强
 
