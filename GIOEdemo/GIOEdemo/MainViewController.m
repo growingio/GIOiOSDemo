@@ -26,7 +26,7 @@
     //  触达启动配置
 //    [GrowingTouch setEventPopupDelegate:self];
 //    [GrowingTouch setDebugEnable:YES];
-    [GrowingTouch setEventPopupEnable:[DataHelper getGTouchEnableState]];
+  //  [GrowingTouch setEventPopupEnable:[DataHelper getGTouchEnableState]];
     //    [GrowingTouch setServerHost:@"http://k8s-marketing-automation-messages.growingio.com"];
 //    [GrowingTouch start];
 }
