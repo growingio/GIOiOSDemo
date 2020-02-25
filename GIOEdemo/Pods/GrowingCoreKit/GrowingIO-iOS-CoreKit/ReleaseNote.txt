@@ -1,3 +1,8 @@
+2.8.10 release note
+1.短链deeplink增加对query的统计
+2.冷启动app,sessionId一定变更
+3.deeplink增加手动处理url接口
+
 2.8.9 release note
 1.网络性能提高
 

@@ -1,3 +1,6 @@
+2.8.10 Release note
+无
+
 2.8.9 Release note
 1.fix web圈app 特殊字符不能圈选
 

@@ -76,6 +76,8 @@
     [GrowingTouch setEventPopupDelegate:self];
     [GrowingTouch setDebugEnable:YES];
     [GrowingTouch setEventPopupEnable:YES];
+   long long a =  [GrowingTouch getEventPopupShowTimeoutMillis];
+    NSLog(@"PopupShowTimeoutMillis  %lld",a);
     [GrowingTouch start];
 
     //  自定义协议的跳转逻辑

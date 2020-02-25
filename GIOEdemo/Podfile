@@ -8,7 +8,7 @@ target 'GIOEdemo' do
   pod 'GrowingTouch/GrowingTouchKit', '~> 1.2.4'
   pod 'GrowingTouch/GrowingPushKit', '~> 1.2.4'
   pod 'GrowingTouch/GrowingTouchBannerKit', '~> 1.2.4'
-  pod 'GrowingAutoTrackKit', '2.8.9'
+  pod 'GrowingAutoTrackKit', '2.8.10'
   pod 'YYImage', '~> 1.0.4'
   pod 'YYWebImage', '~> 1.0.5'
   pod 'YYImage/WebP'

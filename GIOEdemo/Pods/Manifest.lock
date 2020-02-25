@@ -1,9 +1,9 @@
 PODS:
-  - Growing (2.8.9)
-  - GrowingAutoTrackKit (2.8.9):
-    - GrowingCoreKit (= 2.8.9)
-  - GrowingCoreKit (2.8.9):
-    - Growing (= 2.8.9)
+  - Growing (2.8.10)
+  - GrowingAutoTrackKit (2.8.10):
+    - GrowingCoreKit (= 2.8.10)
+  - GrowingCoreKit (2.8.10):
+    - Growing (= 2.8.10)
   - GrowingTouch/GrowingPushExtensionKit (1.2.4)
   - GrowingTouch/GrowingPushKit (1.2.4):
     - GrowingTouch/GrowingTouchCoreKit
@@ -29,7 +29,7 @@ PODS:
     - YYImage
 
 DEPENDENCIES:
-  - GrowingAutoTrackKit (= 2.8.9)
+  - GrowingAutoTrackKit (= 2.8.10)
   - GrowingTouch/GrowingPushExtensionKit (~> 1.2.4)
   - GrowingTouch/GrowingPushKit (~> 1.2.4)
   - GrowingTouch/GrowingTouchBannerKit (~> 1.2.4)
@@ -52,9 +52,9 @@ SPEC REPOS:
     - YYWebImage
 
 SPEC CHECKSUMS:
-  Growing: 01a609709b92606cf5f23a1892f38696faacf163
-  GrowingAutoTrackKit: 5ad4ae4f8a63db7545c353ba9514db7d6126ac25
-  GrowingCoreKit: ad95f500cb6d648d8bade3aa595e5eba241cca00
+  Growing: d04ac268e700f37a7fb5eb298f27a492870f6b52
+  GrowingAutoTrackKit: cb3244d5c90919b27fbd6423f4cee36b61bfbf10
+  GrowingCoreKit: eaec1959650b1f67c9df918d262a1beffa2cbd53
   GrowingTouch: 39d2a02ce7fc1201ba3d777f37f9b7caa70da34c
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
@@ -62,6 +62,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: d43967f59958fb286eef0153fd790dc0b9f336b1
+PODFILE CHECKSUM: e55e2a10d8b58195bb37d9a339a07c7ca0489f0f
 
 COCOAPODS: 1.8.4

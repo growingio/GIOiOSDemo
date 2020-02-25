@@ -87,6 +87,26 @@ typedef NS_ENUM(NSInteger, GrowingAspectMode)
  */
 + (void)registerDeeplinkHandler:(void(^)(NSDictionary *params, NSTimeInterval processTime, NSError *error))handler;
 
+
+/**
+ 判断链接是否为deeplink链接
+
+ @param url 传入的网址
+ @return YES:是deeplink链接 NO:不是deeplink链接
+*/
++ (BOOL)isDeeplinkUrl:(NSURL *)url;
+
+/**
+ 手动处理deeplink链接
+
+ @param url 传入的网址
+ @param callback deeplink广告落地页参数回调, params 为解析正确时回调的参数, processTime为从app被deeplink唤起到handler回调的时间(单位秒), error 为解析错误时返回的参数.
+ callback若传nil:回调结果将从method <registerDeeplinkHandler:>中设置的handler返回
+ callback若不为nil:回调结果只从当前的callback中返回
+ @return YES:是deeplink链接 NO:不是deeplink链接
+*/
++ (BOOL)doDeeplinkByUrl:(NSURL *)url callback:(void(^)(NSDictionary *params, NSTimeInterval processTime, NSError *error))callback;
+
 /**
   + 注册实时发送数据的回调
   +
