@@ -11,13 +11,16 @@
 #import "SearchViewController.h"
 #import "GoodsDetailController.h"
 #import "Growing.h"
+
 @interface ClassifyController ()
+
 @property (nonatomic ,strong) UIView *rightView ;
 @property (nonatomic ,strong) UIButton *chooseBtn ;
 @property (nonatomic ,strong) NSMutableArray *allDataArray;
 @property (nonatomic ,strong) NSMutableArray *dataArray1;
 @property (nonatomic ,strong) NSMutableArray *dataArray2;
 @property (nonatomic ,strong) NSMutableArray *dataArray3;
+
 @end
 
 @implementation ClassifyController

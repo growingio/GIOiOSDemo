@@ -26,6 +26,7 @@
     
     [Growing startWithAccountId:@"97fd6815651f25fb"];
     [Growing setEnableLog:YES];
+    [Growing setUploadExceptionEnable:NO];
     
     self.location = [[CLLocationManager alloc] init];
     self.location.delegate = self;

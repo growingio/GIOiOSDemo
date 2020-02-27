@@ -11,8 +11,7 @@
 static NSTimer * mv_timer;
 
 
-@interface LoopView () <
-UIScrollViewDelegate>{
+@interface LoopView () <UIScrollViewDelegate> {
     CGFloat mv_width;
     CGFloat mv_height;
 }

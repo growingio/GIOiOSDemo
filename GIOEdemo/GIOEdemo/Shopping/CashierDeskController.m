@@ -10,9 +10,12 @@
 #import "PayResultController.h"
 #import "GoodsModel.h"
 #import "Growing.h"
+
 @interface CashierDeskController ()
+
 @property(nonatomic ,strong) UIView *upView ;
 @property(nonatomic ,strong) GoodsModel *model ;
+
 @end
 
 @implementation CashierDeskController

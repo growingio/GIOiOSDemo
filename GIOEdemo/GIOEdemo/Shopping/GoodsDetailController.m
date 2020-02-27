@@ -11,7 +11,9 @@
 #import "HomeCell.h"
 #import "JudgeController.h"
 #import "Growing.h"
+
 @interface GoodsDetailController ()<UITableViewDelegate,UITableViewDataSource>
+
 @property (nonatomic , strong) UITableView *tableView ;
 @property (nonatomic , strong) NSMutableArray *dataArray ;
 @property (nonatomic , strong) NSMutableArray *suggestArray ;
@@ -24,7 +26,6 @@
 @property (nonatomic, copy) NSString *productId_var;
 @property (nonatomic, copy) NSString *productName_var;
 @property (nonatomic, copy) NSString *price_var;
-
 
 @end
 

@@ -19,7 +19,9 @@ alpha:alphaValue]
 #import "GoodsDetailController.h"
 #import "Growing.h"
 #import "GoodsModel.h"
+
 @interface SearchViewController ()<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate,UISearchBarDelegate>
+
 @property (nonatomic ,strong)  UIView *upView ;
 @property (nonatomic ,strong)  UISearchBar *searchBar ;
 @property (nonatomic , strong) NSMutableArray *titleTipArray ;
@@ -31,6 +33,7 @@ alpha:alphaValue]
 @property (nonatomic , strong)NSMutableArray *allDataArray;
 //存放搜索结果数组
 @property (nonatomic , strong)NSMutableArray *searchArray ;
+
 @end
 //
 @implementation SearchViewController

@@ -11,8 +11,11 @@
 #import "OrderCell.h"
 #import "Growing.h"
 #import "GoodsModel.h"
+
 @interface CheckOrderController ()
+
 @property(nonatomic,strong) GoodsModel *model;
+
 @end
 
 @implementation CheckOrderController
