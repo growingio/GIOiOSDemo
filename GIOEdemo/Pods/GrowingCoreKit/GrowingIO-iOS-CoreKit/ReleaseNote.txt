@@ -1,3 +1,6 @@
+2.8.11 release note
+无
+
 2.8.10 release note
 1.短链deeplink增加对query的统计
 2.冷启动app,sessionId一定变更
