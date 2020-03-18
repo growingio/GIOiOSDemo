@@ -1,9 +1,9 @@
 PODS:
-  - Growing (2.8.11)
-  - GrowingAutoTrackKit (2.8.11):
-    - GrowingCoreKit (= 2.8.11)
-  - GrowingCoreKit (2.8.11):
-    - Growing (= 2.8.11)
+  - Growing (2.8.12)
+  - GrowingAutoTrackKit (2.8.12):
+    - GrowingCoreKit (= 2.8.12)
+  - GrowingCoreKit (2.8.12):
+    - Growing (= 2.8.12)
   - GrowingTouch/GrowingPushExtensionKit (1.2.5)
   - GrowingTouch/GrowingPushKit (1.2.5):
     - GrowingTouch/GrowingTouchCoreKit
@@ -15,9 +15,9 @@ PODS:
     - GrowingTouch/GrowingTouchCoreKit
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
-  - SDWebImage (5.5.2):
-    - SDWebImage/Core (= 5.5.2)
-  - SDWebImage/Core (5.5.2)
+  - SDWebImage (5.6.1):
+    - SDWebImage/Core (= 5.6.1)
+  - SDWebImage/Core (5.6.1)
   - YYCache (1.0.4)
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
@@ -29,7 +29,7 @@ PODS:
     - YYImage
 
 DEPENDENCIES:
-  - GrowingAutoTrackKit (= 2.8.11)
+  - GrowingAutoTrackKit (= 2.8.12)
   - GrowingTouch/GrowingPushExtensionKit (~> 1.2.5)
   - GrowingTouch/GrowingPushKit (~> 1.2.5)
   - GrowingTouch/GrowingTouchBannerKit (~> 1.2.5)
@@ -52,16 +52,16 @@ SPEC REPOS:
     - YYWebImage
 
 SPEC CHECKSUMS:
-  Growing: 62a990eb7258008b828f923f931f1c5e8b722739
-  GrowingAutoTrackKit: 2c8470e1deaaeecea8d5052787370079678f7736
-  GrowingCoreKit: 9020fec20e3958aeb3144cf7f24652abf9020273
+  Growing: 2eaacefc41b5084f24c07b399dd462e2360699a7
+  GrowingAutoTrackKit: ae3735a62c8813ecce78498f49b2f181d6a78524
+  GrowingCoreKit: 481ed0db2b896f48f702bb9bf2b3f53ea2202097
   GrowingTouch: 258345e1b0dd6c30c1107276ce03b2be5b793853
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
-  SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
+  SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: e6c864224136fad40211ca5ba63a30ae0dbc55e0
+PODFILE CHECKSUM: 704564271a454f4418794c40bf258e385b55baeb
 
 COCOAPODS: 1.8.4

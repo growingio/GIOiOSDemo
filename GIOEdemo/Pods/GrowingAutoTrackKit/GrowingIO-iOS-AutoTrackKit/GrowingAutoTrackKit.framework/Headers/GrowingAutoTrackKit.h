@@ -22,7 +22,7 @@
 // 设置数据后台服务器地址
 + (void)setHybridJSSDKUrlPrefix:(NSString*)urlPrefix;
 
-// 设置为 NO，可以不采集任何关于 UIWebView / WKWebView 的统计信息
+// 设置为 NO，可以不采集任何关于 WKWebView 的统计信息
 + (void)enableAllWebViews:(BOOL)enable;
 // 设置为 YES, 将启用 HashTag
 + (void)enableHybridHashTag:(BOOL)enable;
@@ -81,7 +81,8 @@
 
 // imp半自动打点
 @interface UIView(GrowingImpression)
-#warning 请在真机下校验数据
+
+#pragma mark - Warning: 请在真机下校验数据
 
 // 设置该节点被认定为可见的比例
 // 节点在屏幕中展示的面积 >= 节点面积 * scale 则判定该节点可见,反之不可见
