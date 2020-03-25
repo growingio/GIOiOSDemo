@@ -6,7 +6,7 @@ target 'GIOEdemo' do
   #use_frameworks!
 
   pod 'GrowingTouch/GrowingTouchKit', '~> 1.3.0' #弹窗SDK
-  pod 'GrowingTouch/GrowingPushKit', '~> 1.3.0' #推送SDK
+  pod 'GrowingTouch/GrowingPushKit', '~> 1.3.0' #推送SDK(不含数据上报)
   pod 'GrowingTouch/GrowingTouchBannerKit', '~> 1.3.0' #bannerSDK
   pod 'GrowingAutoTrackKit', '2.8.12'
   pod 'YYImage', '~> 1.0.4'
