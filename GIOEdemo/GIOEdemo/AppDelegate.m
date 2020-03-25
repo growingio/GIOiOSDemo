@@ -26,7 +26,7 @@
     
     [Growing setUploadExceptionEnable:NO];
     [Growing startWithAccountId:@"97fd6815651f25fb"];
-    [Growing setEnableLog:YES];
+ //   [Growing setEnableLog:YES];
     
     self.location = [[CLLocationManager alloc] init];
     self.location.delegate = self;
@@ -40,7 +40,6 @@
 //    [Growing setGtaHost:@"https://demo1gta.growingio.com"];
 //    [Growing setWsHost:@"wss://demo1gta.growingio.com"];
     
-    [Growing setEnableLog:NO];
     [Growing registerDeeplinkHandler:^(NSDictionary *params, NSTimeInterval processTime, NSError *error) {
         
         //  处理 deeplink 的页面回调
@@ -68,20 +67,18 @@
             }
         }
         
-        NSLog(@"回调链接params %@",params);
+   //     NSLog(@"回调链接params %@",params);
     }];
     [Growing registerRealtimeReportHandler:^(NSDictionary *eventObject) {
-        NSLog(@"=registerRealtimeReportHandler> %@", eventObject);
+  //      NSLog(@"=registerRealtimeReportHandler> %@", eventObject);
     }];
     //GTouch
     [GrowingTouch setEventPopupDelegate:self];
-    [GrowingTouch setDebugEnable:YES];
+//    [GrowingTouch setDebugEnable:YES];
     [GrowingTouch setEventPopupEnable:YES];
-   long long a =  [GrowingTouch getEventPopupShowTimeoutMillis];
-    NSLog(@"PopupShowTimeoutMillis  %lld",a);
     [GrowingTouch start];
 
-    //  自定义协议的跳转逻辑
+    //  推送的自定义协议的跳转逻辑
     [GrowingTouch clickMessageWithCompletionHandler:^(NSDictionary *params) {
         NSLog(@"欢迎使用GIO自定义协议的跳转逻辑，不需要可以不用此方法");
         
