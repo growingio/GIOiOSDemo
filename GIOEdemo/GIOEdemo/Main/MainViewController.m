@@ -24,9 +24,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     //  触达启动配置
-//    [GrowingTouch setEventPopupDelegate:self];
-//    [GrowingTouch setDebugEnable:YES];
-  //  [GrowingTouch setEventPopupEnable:[DataHelper getGTouchEnableState]];
+    [GrowingTouch setEventPopupDelegate:self];
+    [GrowingTouch setDebugEnable:YES];
+    [GrowingTouch setEventPopupEnable:YES];
     //    [GrowingTouch setServerHost:@"http://k8s-marketing-automation-messages.growingio.com"];
 //    [GrowingTouch start];
 }
@@ -57,6 +57,9 @@
 
 - (IBAction)trackEventButtonOnClick:(UIButton *)sender {
     [Growing track:@"touch1"];
+//  [Growing track:@"WinSuccess" withVariable:@{@"round_num":@"5"}];
+//  [Growing track:@"payOrderSuccess" withVariable:@{@"payAmount_var":@99.9}];
+//  [Growing track:@"闯关成功" withVariable:@{@"关卡数":@"1"}];
 }
 
 - (IBAction)disableGTouchButtonOnClick:(UIButton *)sender {
