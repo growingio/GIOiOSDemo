@@ -7,6 +7,7 @@
 	<key>com.apple.developer.associated-domains</key>
 	<array>
 		<string>applinks:gio.ren</string>
+		<string>applinks:datayi.cn</string>
 	</array>
 </dict>
 </plist>

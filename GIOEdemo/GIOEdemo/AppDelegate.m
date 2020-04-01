@@ -161,13 +161,14 @@
 /** 远程通知注册成功委托 */
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [GrowingTouch registerDeviceToken:deviceToken];
-    NSString *deviceTokenString2 = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<"withString:@""]
-                                     
-                                     stringByReplacingOccurrencesOfString:@">" withString:@""]
-                                    
-                                    stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSMutableString *deviceTokenString = [NSMutableString string];
+    const char *bytes = deviceToken.bytes;
+    NSInteger count = deviceToken.length;
+    for (NSInteger i = 0; i < count; i++) {
+        [deviceTokenString appendFormat:@"%02x", bytes[i] & 0xff];
+    }
 
-    NSLog(@"Token 字符串：%@", deviceTokenString2);
+    NSLog(@"推送Token 字符串：%@", deviceTokenString);
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
