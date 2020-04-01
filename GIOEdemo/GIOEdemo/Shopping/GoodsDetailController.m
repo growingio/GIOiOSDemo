@@ -40,6 +40,11 @@
         self.productId_var = self.goodModel.productId_var;
         self.productName_var = self.goodModel.productName_var;
         self.price_var = self.goodModel.price_var;
+    } else {
+        self.goodModel = [[GoodsModel alloc] init];
+        self.goodModel.productId_var = self.productId_var;
+        self.goodModel.productName_var = self.productName_var;
+        self.goodModel.price_var = self.price_var;
     }
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height - 64)];
