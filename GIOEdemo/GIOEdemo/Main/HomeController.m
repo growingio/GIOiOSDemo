@@ -83,7 +83,7 @@ static NSString* bannerKey = @"9ad8cc83668bb9f0";
 //    self.bannerView.delegate = self ;
 
     //触达banner
-    UIImage* placeholderImage = [UIImage imageNamed:@"default_bgit.jpg"];
+    UIImage* placeholderImage = [UIImage imageNamed:@"default_b.jpg"];
     self.bannerViews = [GrowingTouchBannerView bannerKey:bannerKey bannerFrame:CGRectMake(0, 0, self.view.bounds.size.width ,220) placeholderImage:placeholderImage];
     //self.bannerViews.delegate = self ;
     [self.bannerViews loadBannerWithDelegate:self];
