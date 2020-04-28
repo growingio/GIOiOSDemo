@@ -1,3 +1,7 @@
+2.8.15 Release Note
+1. 新增 setSessionInterval:(NSTimeInterval)interval 接口
+2. 优化代码性能
+
 2.8.14 Release Note
 1.对广告采集敏感数据进行加密，加强数据安全
 

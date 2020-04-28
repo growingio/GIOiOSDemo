@@ -136,6 +136,10 @@ typedef NS_ENUM(NSInteger, GrowingAspectMode)
 + (void)setFlushInterval:(NSTimeInterval)interval;
 + (NSTimeInterval)getFlushInterval;
 
+// 设置从后台进入前台重置sessionID的时间间隔 (单位为秒)
++ (void)setSessionInterval:(NSTimeInterval)interval;
++ (NSTimeInterval)getSessionInterval;
+
 // 设置每天使用数据网络（2G、3G、4G）上传的数据量的上限（单位是 KB）
 + (void)setDailyDataLimit:(NSUInteger)numberOfKiloByte;
 + (NSUInteger)getDailyDataLimit;
