@@ -23,7 +23,7 @@
     if (self.searchWord_var) {
         dict[@"searchWord_var"] = self.searchWord_var ;
     }
-    if (self.buyQuantity_var ) {
+    if (self.buyQuantity_var != nil) {
         dict[@"buyQuantity_var"] = self.buyQuantity_var ;
     }
     if (self.orderId_var ) {
@@ -35,7 +35,7 @@
     if (self.paymentMethod_var) {
         dict[@"paymentMethod_var"] = self.paymentMethod_var ;
     }
-    if (self.payAmount_var ) {
+    if (self.payAmount_var != nil) {
         dict[@"payAmount_var"] = [self.payAmount_var isKindOfClass:[NSString class]] ? [NSNumber numberWithFloat:[self.payAmount_var floatValue]] : self.payAmount_var ;
     }
     if (self.sharechannel) {

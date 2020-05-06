@@ -12,10 +12,6 @@
 
 @interface MineController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic ,strong) UIView *view1;
-@property (nonatomic ,strong) UIView *view2;
-@property (nonatomic ,strong) UIView *view3;
-@property (nonatomic ,strong) UIView *view4;
 @property (nonatomic ,strong) NSArray *dataArray ;
 @property(nonatomic ,strong) UITableView *tableView;
 @property (nonatomic, strong) UIView *tableHeaderView;
