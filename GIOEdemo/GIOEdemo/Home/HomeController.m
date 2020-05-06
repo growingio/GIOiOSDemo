@@ -9,7 +9,6 @@
 #import "HomeController.h"
 #import "HomeCell.h"
 #import "GoodsDetailController.h"
-#import "LoopView.h"
 #import "SearchViewController.h"
 #import "OrderController.h"
 #import "Growing.h"
@@ -17,9 +16,8 @@
 #import "MainViewController.h"
 #import "GrowingTouchCoreKit/GrowingTouchBannerView.h"
 
-@interface HomeController ()<BannerViewDelegate>
+@interface HomeController ()
 @property(nonatomic , strong)  UIScrollView *backScrollView ;
-@property(nonatomic , strong)  LoopView *bannerView ;
 @property(nonatomic , strong)  UIView *upView ;
 @property(nonatomic , strong)  UIView *backSeckillingView ;
 @property(nonatomic , strong)  UIView *recommendView ;
@@ -36,12 +34,12 @@ static NSString* bannerKey = @"9ad8cc83668bb9f0";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.navigationItem.title = @"主页";
     self.backScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     self.backScrollView.backgroundColor = [UIColor whiteColor];
     self.backScrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height + 300) ;
     [self.view addSubview:self.backScrollView];
-    self.navigationController.navigationBar.translucent = NO;
     [self makeHomeData];
     [self makeBanner];
     [self makeUpview];
@@ -64,24 +62,21 @@ static NSString* bannerKey = @"9ad8cc83668bb9f0";
 }
 //打点结束
 
--(void)makeBanner{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
+-(void)makeBanner {
+    UIView *searchBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(40, 0,220, 20)];
     [btn setTitle:@"GIO 马克杯" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [btn setTitleEdgeInsets:UIEdgeInsetsMake(0,0,0,120)];
-    [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
     
     UIImageView *imaview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     imaview.image = [UIImage imageNamed:@"搜索"];
-    [view addSubview:imaview];
-    [view addSubview:btn];
-    self.navigationItem.titleView = view ;
+    [searchBar addSubview:imaview];
+    [searchBar addSubview:btn];
+    self.navigationItem.titleView = searchBar ;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchBarTapAction:)];
+    [searchBar addGestureRecognizer:tap];
     
-//    NSMutableArray *mutableArray = [NSMutableArray arrayWithObjects:@"12",@"11", nil] ;
-//    self.bannerView = [[LoopView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width ,220) andImageArray:mutableArray];
-//    self.bannerView.delegate = self ;
-
     //触达banner
     UIImage* placeholderImage = [UIImage imageNamed:@"default_b.jpg"];
     self.bannerViews = [GrowingTouchBannerView bannerKey:bannerKey bannerFrame:CGRectMake(0, 0, self.view.bounds.size.width ,220) placeholderImage:placeholderImage];
@@ -90,28 +85,7 @@ static NSString* bannerKey = @"9ad8cc83668bb9f0";
     [self.backScrollView addSubview:self.bannerViews];
 }
 
-static void extracted(HomeController *object, GoodsDetailController *VC) {
-    [object homePageGoodsClick:[VC.goodModel modelTodic]];
-
-}
-
-- (void)selectImage:(LoopView *)bannerView currentImage:(NSInteger)currentImage{
-    GoodsDetailController *VC = [[GoodsDetailController alloc] init];
-    VC.goodModel = self.allDataArray[currentImage + 3] ;
-    VC.hidesBottomBarWhenPushed = YES ;
-    [self.navigationController pushViewController:VC animated:YES];
-    extracted(self, VC);
-    
-#pragma mark - banner 测试
-//    MainViewController *VC = [MainViewController new];
-//    VC.hidesBottomBarWhenPushed = YES ;
-//    [self.navigationController pushViewController:VC animated:YES];
-}
-
-
-
-
--(void)btnClick{
+-(void)searchBarTapAction:(UIGestureRecognizer *)tap {
     SearchViewController *VC = [[SearchViewController alloc] init];
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC  animated:NO];
@@ -126,8 +100,7 @@ static void extracted(HomeController *object, GoodsDetailController *VC) {
         cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d",i+1]] ;
         cell.titleLabel.textAlignment = NSTextAlignmentCenter ;
         
-        UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction2:)];
-        
+        UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTapAction:)];
         [cell addGestureRecognizer:tapGesturRecognizer];
         
         switch (i) {
@@ -168,10 +141,8 @@ static void extracted(HomeController *object, GoodsDetailController *VC) {
     [self.backScrollView addSubview:self.upView];
 }
 
--(void)tapAction2:(id)sender{
-      UITapGestureRecognizer *tap = (UITapGestureRecognizer*)sender;
-      UIView *views = (UIView*) tap.view;
-    NSUInteger tag = views.tag;
+-(void)cellTapAction:(UIGestureRecognizer *)tapGesture{
+    NSUInteger tag = tapGesture.view.tag;
     switch (tag) {
         case 0:
         {

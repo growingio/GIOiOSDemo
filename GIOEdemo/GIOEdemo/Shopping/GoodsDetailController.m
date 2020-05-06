@@ -12,6 +12,8 @@
 #import "JudgeController.h"
 #import "Growing.h"
 
+static NSInteger const kBottomViewHeight = 60;
+
 @interface GoodsDetailController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic , strong) UITableView *tableView ;
@@ -33,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationItem.title = @"商品详情";
     self.view.backgroundColor = [UIColor whiteColor];
     
     if (self.goodModel) {
@@ -47,97 +49,30 @@
         self.goodModel.price_var = self.price_var;
     }
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height - 64)];
-    self.tableView.delegate = self ;
-    self.tableView.dataSource = self;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone ;
-    self.tableView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
-    [self makeSuggestData];
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
-    [btn setTitle:@"分享" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn]; ;
-    [self setData];
-    
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 500)];
-    headerView.backgroundColor = [UIColor whiteColor];
-    
-    UIImageView  *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 400)];
-    imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@big",self.productId_var]];
-    [headerView addSubview:imageView];
-    
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(imageView.frame) + 10, 150 , 30)];
-    titleLabel.text = self.productName_var ;
-    [headerView addSubview:titleLabel];
-    
-    UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(titleLabel.frame) , 150 , 30)];
-    priceLabel.text = self.price_var ;
-    priceLabel.textColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
-    [headerView addSubview:priceLabel];
-    
-    
-    UILabel *addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(priceLabel.frame) , 150 , 30)];
-    addressLabel.text = @"送至北京市 朝阳区" ;
-    [headerView addSubview:addressLabel];
-    self.tableView.tableHeaderView = headerView;
-    self.tableView.tableFooterView =  [self makeFooterView];
     [self makeBottomview];
+   
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithTitle:@"分享"
+                                                                  style:UIBarButtonItemStylePlain
+                                                                 target:self
+                                                                 action:@selector(showShareViewAction:)];
+    self.navigationItem.rightBarButtonItem = shareItem;
+    
     [self goodsDetailPageView:[self.goodModel modelTodic]];
     
-    
-    
-    UIView *shareView = [[UIView alloc] initWithFrame:CGRectMake(20, 100,self.view.frame.size.width - 40, 160)];
-    shareView.backgroundColor = [UIColor whiteColor];
-    UIButton *btnClose = [[UIButton alloc] initWithFrame:CGRectMake(shareView.bounds.size.width - 60 , 10 , 40, 40)];
-    [btnClose setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
-    [btnClose addTarget:self action:@selector(closeClick) forControlEvents:UIControlEventTouchUpInside];
-    [shareView addSubview:btnClose];
-    
-    UILabel *shareLabel = [[UILabel alloc] initWithFrame:CGRectMake(20 , 40 , 200, 40)];
-    shareLabel.text = @"分享商品" ;
-    [shareView addSubview:shareLabel];
-    
-    shareView.layer.masksToBounds = YES ;
-    shareView.layer.cornerRadius = 10 ;
-    
-    for (int i = 0; i < 4; i++) {
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((shareView.frame.size.width / 4.0) * i + 5 * i ,80, (shareView.frame.size.width - 50)/ 4.0 , 60)];
-        btn.tag = i ;
-        NSString *name = [NSString stringWithFormat:@"share%d",(int)btn.tag+1] ;
-        [btn setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(shareClick:) forControlEvents:UIControlEventTouchUpInside];
-        [shareView addSubview:btn];
-    }
-    self.shareView = shareView ;
-    shareView.hidden = YES ;
-    [self.view addSubview:shareView];
+    [self.view addSubview:self.shareView];
 }
 
--(void)closeClick{
-    [UIView animateWithDuration:1
-                          delay:0
-         usingSpringWithDamping:.5
-          initialSpringVelocity:.5
-                        options:UIViewAnimationOptionLayoutSubviews
-                     animations:^{
-                         self.shareView.hidden = YES ;
-                     } completion:^(BOOL finished) {
-                     }];
+-(void)closeShareViewAction:(UIButton *)sender {
+    [UIView animateWithDuration:0.3 animations:^{
+        self.shareView.alpha = .0f;
+    }];
 }
 
--(void)btnClick{
-    [UIView animateWithDuration:1
-                          delay:0
-         usingSpringWithDamping:.5
-          initialSpringVelocity:.5
-                        options:UIViewAnimationOptionLayoutSubviews
-                     animations:^{
-                      self.shareView.hidden = NO ;
-                     } completion:^(BOOL finished) {
-                     }];
+-(void)showShareViewAction:(UIButton *)sender {
+    [UIView animateWithDuration:0.3 animations:^{
+        self.shareView.alpha = 1.0f;
+    }];
 }
 
 -(void)shareClick:(UIButton *)btn{
@@ -208,8 +143,8 @@
 
 
 -(void)makeBottomview{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,self.view.bounds.size.height - 60, self.view.bounds.size.width , 60)];
-    view.backgroundColor = [UIColor whiteColor];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,self.view.bounds.size.height - kBottomViewHeight, self.view.bounds.size.width , kBottomViewHeight)];
+    
     UIButton *btnLeft = [[UIButton alloc] init];
     btnLeft.backgroundColor = [UIColor whiteColor];
     btnLeft.frame  = CGRectMake(40, 0, self.view.bounds.size.width /2.0 - 50, 40);
@@ -220,7 +155,7 @@
     btnLeft.layer.borderWidth = 1 ;
     [btnLeft setTitle:@"加入购物车" forState:UIControlStateNormal];
     [btnLeft setTitleColor: [UIColor blackColor] forState:UIControlStateNormal];
-    [btnLeft addTarget:self action:@selector(btnLeftCLick) forControlEvents:UIControlEventTouchUpInside];
+    [btnLeft addTarget:self action:@selector(addShoppingCartAction:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btnLeft];
     
     UIButton *btnRight = [[UIButton alloc] init];
@@ -231,12 +166,12 @@
     [btnRight setTitle:@"立即购买" forState:UIControlStateNormal];
     btnRight.layer.masksToBounds = YES ;
     btnRight.layer.cornerRadius = 5 ;
-    [btnRight addTarget:self action:@selector(btnRightCLick) forControlEvents:UIControlEventTouchUpInside];
+    [btnRight addTarget:self action:@selector(purchaseAction:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btnRight];
     [self.view addSubview:view];
 }
 
--(void)btnLeftCLick{
+-(void)addShoppingCartAction:(UIButton *)sender {
     
     [Growing track:@"addToBag"];
     
@@ -257,7 +192,7 @@
     [self addToCart:[self.goodModel modelTodic]];
 }
 
--(void)btnRightCLick{
+-(void)purchaseAction:(UIButton *)sender {
     //存储数据
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *cartArray ;
@@ -273,7 +208,7 @@
     [self addToCart:[self.goodModel modelTodic]];
     self.tabBarController.selectedIndex = 2 ;
     self.goodModel.payAmount_var = [NSNumber numberWithFloat:[self.price_var floatValue]];
-//    [self checkOut:[self.goodModel modelTodic]];
+    [self checkOut:[self.goodModel modelTodic]];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -312,12 +247,6 @@
     label4.text = @"外观非常漂亮，使用起来也很流畅，大品牌非常好用，送货也很及时，包装很好" ;
     [view addSubview:label4];
     
-    
-    
-    UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction2)];
-    [view addGestureRecognizer:tapGesturRecognizer];
-    
-    
     cell.selectionStyle =  UITableViewCellSelectionStyleNone ;
     [cell addSubview:view];
     return cell  ;
@@ -327,18 +256,12 @@
     return 1 ;
 }
 
--(void)setData{
-    self.dataArray =[NSMutableArray arrayWithObjects:@"GIO 商品",@"GIO 商品",@"GIO 商品",@"GIO 商品",nil];
-    self.titleArray = [NSMutableArray arrayWithObjects:@"¥599.00", @"¥5,799.00", @"¥59.00",@"¥599.00",@"¥59.00",nil] ;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    JudgeController *VC = [[JudgeController alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 180 ;
-}
-
-
-
--(UIView *)makeFooterView{
+-(UIView *)makeTableFooterView{
     UIView * footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 100 , self.view.bounds.size.width , 260)];
     
     UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(10, 1, self.view.bounds.size.width - 20 , 0.5)];
@@ -380,27 +303,6 @@
     return footerView ;
 }
 
-
--(void)makeSuggestData{
-    NSMutableArray *allNameArray = [NSMutableArray arrayWithObjects:@"增长黑客手册",@"GIO文化衫", nil];
-    NSMutableArray *priceArray = [NSMutableArray arrayWithObjects:@"59",@"99", nil];
-    self.suggestArray = [[NSMutableArray alloc] init];
-    for (int i = 0 ; i < 2 ; i ++ ) {
-        GoodsModel *model = [[GoodsModel alloc] init];
-        if (i == 0) {
-            model.productId_var = @"003";
-        }else{
-            model.productId_var = @"005";
-        }
-        model.productName_var = allNameArray[i];
-        model.price_var = priceArray[i];
-        model.floor_var = @"推荐" ;
-        [self.suggestArray addObject:model];
-    }
-}
-
-
-
 -(void)tapActionLeft
 {
     GoodsDetailController *VC = [[GoodsDetailController alloc] init];
@@ -408,7 +310,6 @@
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:YES];
 }
-
 
 -(void)tapActionRight
 {
@@ -418,14 +319,119 @@
     [self.navigationController pushViewController:VC animated:YES];
 }
 
-
--(void)tapAction2
-{
-    JudgeController *VC = [[JudgeController alloc] init];
-    VC.hidesBottomBarWhenPushed = YES ;
-    [self.navigationController pushViewController:VC animated:NO];
+- (UIView *)makeTableHeaderView {
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 500)];
+    headerView.backgroundColor = [UIColor whiteColor];
+    
+    UIImageView  *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 400)];
+    imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@big",self.productId_var]];
+    [headerView addSubview:imageView];
+    
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(imageView.frame) + 10, 150 , 30)];
+    titleLabel.text = self.productName_var ;
+    [headerView addSubview:titleLabel];
+    
+    UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(titleLabel.frame) , 150 , 30)];
+    priceLabel.text = self.price_var ;
+    priceLabel.textColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
+    [headerView addSubview:priceLabel];
+    
+    
+    UILabel *addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(priceLabel.frame) , 150 , 30)];
+    addressLabel.text = @"送至北京市 朝阳区" ;
+    [headerView addSubview:addressLabel];
+    return headerView;
 }
 
+#pragma mark Lazy Load
 
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height - kBottomViewHeight)];
+        _tableView.delegate = self ;
+        _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone ;
+        _tableView.backgroundColor = [UIColor whiteColor];
+        _tableView.rowHeight = 180;
+        _tableView.tableHeaderView = [self makeTableHeaderView];
+        _tableView.tableFooterView = [self makeTableFooterView];
+    }
+    return _tableView;
+}
+
+- (NSMutableArray *)dataArray {
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray arrayWithObjects:@"GIO 商品",@"GIO 商品",@"GIO 商品",@"GIO 商品",nil];
+    }
+    return _dataArray;
+}
+
+- (NSMutableArray *)titleArray {
+    if (!_titleArray) {
+        _titleArray = [NSMutableArray arrayWithObjects:@"¥599.00", @"¥5,799.00", @"¥59.00",@"¥599.00",@"¥59.00",nil];
+    }
+    return _titleArray;
+}
+
+- (NSMutableArray *)suggestArray {
+    if (!_suggestArray) {
+        NSMutableArray *allNameArray = [NSMutableArray arrayWithObjects:@"增长黑客手册",@"GIO文化衫", nil];
+        NSMutableArray *priceArray = [NSMutableArray arrayWithObjects:@"59",@"99", nil];
+        _suggestArray = [[NSMutableArray alloc] init];
+        for (int i = 0 ; i < 2 ; i ++ ) {
+            GoodsModel *model = [[GoodsModel alloc] init];
+            if (i == 0) {
+                model.productId_var = @"003";
+            }else{
+                model.productId_var = @"005";
+            }
+            model.productName_var = allNameArray[i];
+            model.price_var = priceArray[i];
+            model.floor_var = @"推荐" ;
+            [_suggestArray addObject:model];
+        }
+    }
+    return _suggestArray;
+}
+
+- (UIView *)shareView {
+    if (!_shareView) {
+        
+        CGFloat shareViewW = self.view.bounds.size.width - 40;
+        CGFloat shareViewH = 150;
+        _shareView = [[UIView alloc] initWithFrame:CGRectMake(20, 100, shareViewW, shareViewH)];
+        _shareView.backgroundColor = [UIColor clearColor];
+        _shareView.alpha = 0.0f;
+        
+        UIButton *btnClose = [[UIButton alloc] initWithFrame:CGRectMake(shareViewW - 60 , 20 , 40, 40)];
+        [btnClose setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+        [btnClose addTarget:self action:@selector(closeShareViewAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_shareView addSubview:btnClose];
+        
+        UILabel *shareLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 200, 40)];
+        shareLabel.text = @"分享商品" ;
+        [_shareView addSubview:shareLabel];
+        
+        _shareView.layer.masksToBounds = YES ;
+        _shareView.layer.cornerRadius = 10 ;
+                
+        for (int i = 0; i < 4; i++) {
+            UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((shareViewW / 4.0) * i + 5 * i ,80, (shareViewW - 50)/ 4.0 , 60)];
+            btn.tag = i ;
+            NSString *name = [NSString stringWithFormat:@"share%d",(int)btn.tag+1] ;
+            [btn setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(shareClick:) forControlEvents:UIControlEventTouchUpInside];
+            [_shareView addSubview:btn];
+        }
+        
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        UIVisualEffectView *blurView = [[UIVisualEffectView alloc]initWithEffect:blurEffect];
+        blurView.frame = CGRectMake(0, 0, shareViewW, shareViewH);
+        [_shareView insertSubview:blurView atIndex:0];
+
+    }
+    return _shareView;
+}
 
 @end

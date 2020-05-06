@@ -27,20 +27,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationItem.title = @"分类";
     self.view.backgroundColor = [UIColor whiteColor];
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(40, 0,220, 20)];
-    [btn setTitle:@"GIO 马克杯" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [btn setTitleEdgeInsets:UIEdgeInsetsMake(0,0,0,120)];
-    [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    
     [self makeData];
-    UIImageView *imaview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    imaview.image = [UIImage imageNamed:@"搜索"];
-    [view addSubview:imaview];
-    [view addSubview:btn];
-    self.navigationItem.titleView = view ;
     [self  makeLeftView];
     [self makeRightView];
 }
@@ -73,7 +63,7 @@
 
 -(void)makeRightView{
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navigationController.navigationBar.frame), self.view.bounds.size.width , 150)];
-    imageView.image = [UIImage imageNamed:@"11"];
+    imageView.image = [UIImage imageNamed:@"sweater_banner"];
     [self.view addSubview:imageView];
     
     self.rightView = [[UIView alloc] initWithFrame:CGRectMake(100, CGRectGetMaxY(imageView.frame), self.view.bounds.size.width - 100, self.view.bounds.size.height - 180)];
@@ -116,8 +106,6 @@
     }
     return view ;
 }
-
-
 
 -(void)btnCLick:(UIButton *)btn{
     for (UIView *label in self.chooseBtn.subviews) {
@@ -201,14 +189,6 @@
 -(void)productListType_pvar:(NSDictionary *)dict{
   [Growing setPageVariable:dict toViewController:self];
 }
-
-//打点结束
--(void)btnClick{
-    SearchViewController *VC = [[SearchViewController alloc] init];
-    VC.hidesBottomBarWhenPushed = YES ;
-    [self.navigationController pushViewController:VC  animated:NO];
-}
-
 
 -(void)makeData{
     NSMutableArray *allNameArray = [NSMutableArray arrayWithObjects:@"渠道流量分析",@"产品经理数据分析",@"增长黑客手册",@"GIO马克杯",@"GIO文化衫", nil];

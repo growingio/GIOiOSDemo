@@ -117,11 +117,6 @@ alpha:alphaValue]
     }
 }
 
-
-
-
-
-
 #pragma tableview代理方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return  self.searchArray.count ;

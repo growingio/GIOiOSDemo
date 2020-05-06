@@ -21,7 +21,6 @@
 @implementation AppDelegate
 
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [Growing setUploadExceptionEnable:NO];
@@ -90,7 +89,6 @@
     // 登陆用户属性 注册至今 需设置CreateAt，值必须用YYYYMMDD 的方式上传，否则无法生效  要求SDK1.2.1及以上
     [Growing setUserId:name];
     [Growing setPeopleVariable:@{@"CreateAt":@"20191219"}];
-
 
     
     return YES;
@@ -193,60 +191,19 @@
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler
 {
     NSDictionary *aps = notification.request.content.userInfo;
-    
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"远程通知1" message:@"点击一下呗" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    NSLog(@"aps = %@", aps);
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"远程通知1"
+                                                                   message:@"点击一下呗"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定"
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:^(UIAlertAction * _Nonnull action) {
         [alert dismissViewControllerAnimated:YES completion:nil];
     }];
     [alert addAction:action];
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
     
-    
 }
-
-
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler
-{
-    
-    
-}
-
-//
-//- (void)applicationWillResignActive:(UIApplication *)application {
-//    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-//    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-//    NSLog(@"App Will Resign Actvie");
-//
-//    if (application.applicationState == UIApplicationStateInactive) {
-//        NSLog(@"App is not Actvie now");
-//    }
-//}
-//
-//
-//- (void)applicationDidEnterBackground:(UIApplication *)application {
-//    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-//    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-//    NSLog(@"App did enter Background");
-//}
-//
-//
-//- (void)applicationWillEnterForeground:(UIApplication *)application {
-//    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-//    NSLog(@"App will enter Background");
-//}
-//
-//
-//- (void)applicationDidBecomeActive:(UIApplication *)application {
-//    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-//    NSLog(@"App did become Active");
-//}
-//
-//
-//- (void)applicationWillTerminate:(UIApplication *)application {
-//    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-//    NSLog(@"App will Terminate");
-//}
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {

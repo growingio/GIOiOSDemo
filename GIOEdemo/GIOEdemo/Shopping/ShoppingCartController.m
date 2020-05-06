@@ -37,12 +37,8 @@ alpha:alphaValue]
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone ;
     self.tableView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
-//    self.title = @"购物车" ;
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-    label.text = @"购物车" ;
-    label.textColor = [UIColor blackColor];
-    label.textAlignment = NSTextAlignmentCenter ;
-    self.navigationItem.titleView = label ;
+    
+    self.navigationItem.title = @"购物车" ;
     [self getCartData];
     [self makeGoPay];
 }
@@ -61,8 +57,8 @@ alpha:alphaValue]
 }
 
 -(void)makeGoPay{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,self.view.bounds.size.height - 49 - CGRectGetMaxY(self.navigationController.navigationBar.frame), self.view.bounds.size.width, 60)];
-    //    view.backgroundColor = [UIColor blackColor];
+    CGFloat checkViewH = 60;
+    UIView *checkView = [[UIView alloc] initWithFrame:CGRectMake(0,self.view.bounds.size.height - checkViewH - CGRectGetMaxY(self.navigationController.navigationBar.frame), self.view.bounds.size.width, checkViewH)];
     UILabel *label = [[UILabel alloc] init];
     label.frame  =  CGRectMake(10, 0, 160 , 60);
     label.textColor = [UIColor blackColor];
@@ -74,9 +70,7 @@ alpha:alphaValue]
     }
     self.allPrice = price ;
     label.text = [NSString stringWithFormat:@"合计：%d",price];
-    [view addSubview:label];
-    view.layer.cornerRadius = 5 ;
-    view.layer.masksToBounds = YES;
+    [checkView addSubview:label];
     
     UILabel *label2 = [[UILabel alloc] init];
     label2.frame  =  CGRectMake(self.view.bounds.size.width - 110, 10, 100 , 40);
@@ -86,14 +80,14 @@ alpha:alphaValue]
     label2.layer.cornerRadius = 5 ;
     label2.layer.masksToBounds = YES ;
     label2.backgroundColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
-    [view addSubview:label2];
+    [checkView addSubview:label2];
     UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
-    [view addGestureRecognizer:tapGesturRecognizer];
+    [checkView addGestureRecognizer:tapGesturRecognizer];
     
     UIView *divideView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 0.5)];
     divideView.backgroundColor = [UIColor lightGrayColor];
-    [view addSubview:divideView];
-    [self.view addSubview:view];
+    [checkView addSubview:divideView];
+    [self.view addSubview:checkView];
 }
 
 
@@ -165,4 +159,5 @@ alpha:alphaValue]
     }
     self.cartArray = cartArray ;
 }
+
 @end

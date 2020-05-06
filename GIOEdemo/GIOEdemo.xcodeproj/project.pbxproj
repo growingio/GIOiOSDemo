@@ -17,8 +17,8 @@
 		42F30D1121F0939400C4E6E9 /* GIOEdemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D1021F0939400C4E6E9 /* GIOEdemoTests.m */; };
 		42F30D1C21F0939400C4E6E9 /* GIOEdemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D1B21F0939400C4E6E9 /* GIOEdemoUITests.m */; };
 		42F30D6121F0946100C4E6E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F30D6021F0946100C4E6E9 /* Assets.xcassets */; };
+		4944DE552462D78F00B3E444 /* PlaceholderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4944DE542462D78F00B3E444 /* PlaceholderViewController.m */; };
 		49A7DABB2407701300802F23 /* NSObject+GrowingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7DAB72407701300802F23 /* NSObject+GrowingHelper.m */; };
-		49A7DABC2407701300802F23 /* UIViewController+GIOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7DAB92407701300802F23 /* UIViewController+GIOController.m */; };
 		49A7DAC42407710700802F23 /* ShopingCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7DAC12407710700802F23 /* ShopingCartCell.m */; };
 		49A7DAC52407710700802F23 /* ShoppingCartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7DAC22407710700802F23 /* ShoppingCartController.m */; };
 		49A7DACB240771A800802F23 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7DAC6240771A800802F23 /* MainViewController.m */; };
@@ -44,7 +44,6 @@
 		49A7DB0224078C4A00802F23 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7DB0124078C4A00802F23 /* DataHelper.m */; };
 		49A7DB0524078C8A00802F23 /* TestPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7DB0324078C8900802F23 /* TestPageViewController.m */; };
 		49A7DB0A24078CC900802F23 /* JudgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7DB0724078CC900802F23 /* JudgeController.m */; };
-		49A7DB0B24078CC900802F23 /* LoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7DB0924078CC900802F23 /* LoopView.m */; };
 		9F6519713BAAB6A8849DF9E4 /* libPods-GIOEdemoServiceExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD164FFA4350E96E399E935 /* libPods-GIOEdemoServiceExtension.a */; };
 		DC59ABA4F1992F519E9DC8F1 /* libPods-GIOEdemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 409BA2FB01D947B4FF61ED99 /* libPods-GIOEdemo.a */; };
 /* End PBXBuildFile section */
@@ -112,9 +111,9 @@
 		42F30D1B21F0939400C4E6E9 /* GIOEdemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIOEdemoUITests.m; sourceTree = "<group>"; };
 		42F30D1D21F0939400C4E6E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F30D6021F0946100C4E6E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4944DE532462D78F00B3E444 /* PlaceholderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceholderViewController.h; sourceTree = "<group>"; };
+		4944DE542462D78F00B3E444 /* PlaceholderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceholderViewController.m; sourceTree = "<group>"; };
 		49A7DAB72407701300802F23 /* NSObject+GrowingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GrowingHelper.m"; sourceTree = "<group>"; };
-		49A7DAB82407701300802F23 /* UIViewController+GIOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GIOController.h"; sourceTree = "<group>"; };
-		49A7DAB92407701300802F23 /* UIViewController+GIOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GIOController.m"; sourceTree = "<group>"; };
 		49A7DABA2407701300802F23 /* NSObject+GrowingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GrowingHelper.h"; sourceTree = "<group>"; };
 		49A7DAC02407710700802F23 /* ShoppingCartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartController.h; sourceTree = "<group>"; };
 		49A7DAC12407710700802F23 /* ShopingCartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopingCartCell.m; sourceTree = "<group>"; };
@@ -163,8 +162,6 @@
 		49A7DB0424078C8900802F23 /* TestPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPageViewController.h; sourceTree = "<group>"; };
 		49A7DB0624078CC900802F23 /* JudgeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JudgeController.h; sourceTree = "<group>"; };
 		49A7DB0724078CC900802F23 /* JudgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JudgeController.m; sourceTree = "<group>"; };
-		49A7DB0824078CC900802F23 /* LoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopView.h; sourceTree = "<group>"; };
-		49A7DB0924078CC900802F23 /* LoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopView.m; sourceTree = "<group>"; };
 		BC8781D9E90F60F596005742 /* Pods-GIOEdemoServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GIOEdemoServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-GIOEdemoServiceExtension/Pods-GIOEdemoServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		C30F89EDB07E3664BE6649CE /* Pods-GIOEdemoServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GIOEdemoServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-GIOEdemoServiceExtension/Pods-GIOEdemoServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		DE45B8AB08300A4382E158F0 /* Pods-GIOEdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GIOEdemo.debug.xcconfig"; path = "Target Support Files/Pods-GIOEdemo/Pods-GIOEdemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -246,7 +243,7 @@
 				49A7DAE424078B1600802F23 /* Classify */,
 				49A7DABF2407706300802F23 /* Shopping */,
 				49A7DABE2407705200802F23 /* Mine */,
-				49A7DABD2407702000802F23 /* Main */,
+				49A7DABD2407702000802F23 /* Home */,
 				49A7DAB624076F9900802F23 /* Helpers */,
 				4201E49B2320EC5D008993B1 /* default_b.jpg */,
 				421750F222B7AFF4000A16FE /* GIOEdemo.entitlements */,
@@ -296,19 +293,15 @@
 				49A7DB0124078C4A00802F23 /* DataHelper.m */,
 				49A7DABA2407701300802F23 /* NSObject+GrowingHelper.h */,
 				49A7DAB72407701300802F23 /* NSObject+GrowingHelper.m */,
-				49A7DAB82407701300802F23 /* UIViewController+GIOController.h */,
-				49A7DAB92407701300802F23 /* UIViewController+GIOController.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		49A7DABD2407702000802F23 /* Main */ = {
+		49A7DABD2407702000802F23 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				49A7DB0624078CC900802F23 /* JudgeController.h */,
 				49A7DB0724078CC900802F23 /* JudgeController.m */,
-				49A7DB0824078CC900802F23 /* LoopView.h */,
-				49A7DB0924078CC900802F23 /* LoopView.m */,
 				49A7DB0424078C8900802F23 /* TestPageViewController.h */,
 				49A7DB0324078C8900802F23 /* TestPageViewController.m */,
 				49A7DAE224078B0000802F23 /* CustomCollectionViewCell.h */,
@@ -329,7 +322,7 @@
 				49A7DAC8240771A800802F23 /* NewTabController.h */,
 				49A7DACA240771A800802F23 /* NewTabController.m */,
 			);
-			path = Main;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		49A7DABE2407705200802F23 /* Mine */ = {
@@ -337,6 +330,8 @@
 			children = (
 				49A7DAD42407720D00802F23 /* MineController.h */,
 				49A7DAD52407720D00802F23 /* MineController.m */,
+				4944DE532462D78F00B3E444 /* PlaceholderViewController.h */,
+				4944DE542462D78F00B3E444 /* PlaceholderViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -344,6 +339,8 @@
 		49A7DABF2407706300802F23 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				49A7DAC02407710700802F23 /* ShoppingCartController.h */,
+				49A7DAC22407710700802F23 /* ShoppingCartController.m */,
 				49A7DAF224078C1E00802F23 /* CashierDeskController.h */,
 				49A7DAF124078C1E00802F23 /* CashierDeskController.m */,
 				49A7DAF724078C1E00802F23 /* CheckOrderController.h */,
@@ -360,8 +357,6 @@
 				49A7DAE524078B7E00802F23 /* GoodsModel.m */,
 				49A7DAC32407710700802F23 /* ShopingCartCell.h */,
 				49A7DAC12407710700802F23 /* ShopingCartCell.m */,
-				49A7DAC02407710700802F23 /* ShoppingCartController.h */,
-				49A7DAC22407710700802F23 /* ShoppingCartController.m */,
 			);
 			path = Shopping;
 			sourceTree = "<group>";
@@ -662,14 +657,13 @@
 				49A7DAFB24078C1E00802F23 /* CashierDeskController.m in Sources */,
 				49A7DAD32407720300802F23 /* HomeCell.m in Sources */,
 				49A7DACB240771A800802F23 /* MainViewController.m in Sources */,
-				49A7DABC2407701300802F23 /* UIViewController+GIOController.m in Sources */,
 				49A7DAEA24078B7E00802F23 /* GoodsDetailController.m in Sources */,
 				49A7DAFC24078C1E00802F23 /* OrderCell.m in Sources */,
 				49A7DAFF24078C1E00802F23 /* PayResultController.m in Sources */,
+				4944DE552462D78F00B3E444 /* PlaceholderViewController.m in Sources */,
 				49A7DABB2407701300802F23 /* NSObject+GrowingHelper.m in Sources */,
 				426E80E921F84AC300EFD42A /* main.m in Sources */,
 				49A7DB0524078C8A00802F23 /* TestPageViewController.m in Sources */,
-				49A7DB0B24078CC900802F23 /* LoopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -40,7 +40,7 @@ DEPENDENCIES:
   - YYWebImage (~> 1.0.5)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - Growing
     - GrowingAutoTrackKit
     - GrowingCoreKit
@@ -62,6 +62,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 66c88cd6145715c579ffeea1abc4d7edd168b50f
+PODFILE CHECKSUM: 94709d6a53e911a234ea3dcc70a99eea6acfcc73
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

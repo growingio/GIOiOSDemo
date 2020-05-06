@@ -26,8 +26,6 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"原生模板";
     
-    
-    
 }
 
 - (IBAction)customRender:(id)sender {

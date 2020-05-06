@@ -150,12 +150,6 @@
     return self.dataArray.count ;
 }
 
-
-//-(void)setData{
-//    self.dataArray =[NSMutableArray arrayWithObjects:@"gphone 128G 红色特别版 4G手机",@"gphone 128G 红色特别版 4G手机",@"gphone 128G 红色特别版 4G手机",@"haha",@"haha",nil];
-//    self.titleArray = [NSMutableArray arrayWithObjects:@"¥5,799.00", @"¥5,799.00", @"¥5,799.00",@"¥5,799.00",@"¥5,799.00",nil] ;
-//}
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 160 ;
 }

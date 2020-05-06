@@ -17,6 +17,7 @@
         _imageView = [[UIImageView alloc] init];
         _titleLabel= [[UILabel alloc] init];
         _titleLabel.backgroundColor = [UIColor clearColor];
+        _titleLabel.font = [UIFont systemFontOfSize:16];
         _imageView.image = [UIImage imageNamed:@"palceImage"];
         [self addSubview:_imageView];
         [self addSubview:_titleLabel];
