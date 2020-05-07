@@ -177,38 +177,31 @@ static NSInteger const kBottomViewHeight = 60;
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"添加购物车成功" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
     [alert show];
-    //存储数据
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *cartArray ;
-    if ([defaults objectForKey:@"cartArray"]) {
-        cartArray = [[defaults objectForKey:@"cartArray"] mutableCopy];
-    }else{
-        cartArray = [NSMutableArray array];
-    }
-    if (![cartArray containsObject:[self.goodModel modelTodic]]) {
-        [cartArray addObject:[self.goodModel modelTodic]];
-        [defaults setObject:cartArray forKey:@"cartArray"];
-    }
+    //存储数据Z
+    [self persistCartData];
     [self addToCart:[self.goodModel modelTodic]];
 }
 
 -(void)purchaseAction:(UIButton *)sender {
     //存储数据
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *cartArray ;
-    if ([defaults objectForKey:@"cartArray"]) {
-        cartArray = [[defaults objectForKey:@"cartArray"] mutableCopy];
-    }else{
-        cartArray = [NSMutableArray array];
-    }
-    if (![cartArray containsObject:[self.goodModel modelTodic]]) {
-        [cartArray addObject:[self.goodModel modelTodic]];
-        [defaults setObject:cartArray forKey:@"cartArray"];
-    }
+    [self persistCartData];
     [self addToCart:[self.goodModel modelTodic]];
+    
     self.tabBarController.selectedIndex = 2 ;
     self.goodModel.payAmount_var = [NSNumber numberWithFloat:[self.price_var floatValue]];
     [self checkOut:[self.goodModel modelTodic]];
+}
+
+- (void)persistCartData {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *cartArray = [[defaults objectForKey:@"cartArray"] mutableCopy];
+    
+    if (cartArray &&![cartArray containsObject:[self.goodModel modelTodic]]) {
+        [cartArray addObject:[self.goodModel modelTodic]];
+        [defaults setObject:cartArray forKey:@"cartArray"];
+        [defaults synchronize];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"kShoppingCartDidUpdatedNotification" object:nil];
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

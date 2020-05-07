@@ -5,46 +5,46 @@
 //  Created by GrowingIO on 2019/1/7.
 //  Copyright © 2019年 GIO. All rights reserved.
 //
-#define RGBCOLORV(rgbValue) [UIColor \
-colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
-green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
-blue:((float)(rgbValue & 0x0000FF))/255.0 \
-alpha:1.0]
-#define RGBCOLORVA(rgbValue, alphaValue) [UIColor \
-colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
-green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
-blue:((float)(rgbValue & 0x0000FF))/255.0 \
-alpha:alphaValue]
+
 #import "ShoppingCartController.h"
 #import "ShopingCartCell.h"
 #import "CheckOrderController.h"
 #import "Growing.h"
+
 @interface ShoppingCartController ()<UITableViewDelegate,UITableViewDataSource>
+
 @property (nonatomic , strong) UITableView *tableView ;
 @property (nonatomic , strong) NSMutableArray *cartArray ;
 @property (nonatomic , assign) int allPrice ;
 @property (nonatomic , strong) UILabel *allPriceLabel ;
+
 @end
 
 @implementation ShoppingCartController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 64 - 49)];
-    self.tableView.delegate = self ;
-    self.tableView.dataSource = self;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone ;
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.title = @"购物车" ;
+    
     [self.view addSubview:self.tableView];
     
-    self.navigationItem.title = @"购物车" ;
-    [self getCartData];
+    [self addNotification];
+    
     [self makeGoPay];
+    
+    [self updateShoppingCart];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
+- (void)addNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateShoppingCart)
+                                                 name:@"kShoppingCartDidUpdatedNotification"
+                                               object:nil];
+}
+
+- (void)updateShoppingCart {
+    [self getCartData];
+    
     int price = 0 ;
     for (int i = 0 ; i < self.cartArray.count; i ++) {
         NSDictionary *dict = self.cartArray[i] ;
@@ -52,13 +52,16 @@ alpha:alphaValue]
     }
     self.allPrice = price ;
     self.allPriceLabel.text = [NSString stringWithFormat:@"合计：%d",self.allPrice];
-    [self getCartData];
     [self.tableView reloadData];
 }
 
 -(void)makeGoPay{
     CGFloat checkViewH = 60;
-    UIView *checkView = [[UIView alloc] initWithFrame:CGRectMake(0,self.view.bounds.size.height - checkViewH - CGRectGetMaxY(self.navigationController.navigationBar.frame), self.view.bounds.size.width, checkViewH)];
+    CGFloat checkViewY = self.view.frame.size.height - checkViewH - CGRectGetMaxY(self.navigationController.navigationBar.frame);
+    if ([self iPhoneXSerial]) {
+        checkViewY -= 40;
+    }
+    UIView *checkView = [[UIView alloc] initWithFrame:CGRectMake(0,  checkViewY, self.view.bounds.size.width, checkViewH)];
     UILabel *label = [[UILabel alloc] init];
     label.frame  =  CGRectMake(10, 0, 160 , 60);
     label.textColor = [UIColor blackColor];
@@ -90,6 +93,19 @@ alpha:alphaValue]
     [self.view addSubview:checkView];
 }
 
+- (BOOL)iPhoneXSerial {
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        switch ((int)[[UIScreen mainScreen] nativeBounds].size.height) {
+           case 2436:
+                return YES;
+            case 2688:
+                return YES;
+            default:
+               return NO;
+        }
+    }
+    return NO;
+}
 
 -(void)tapAction
 {
@@ -122,7 +138,21 @@ alpha:alphaValue]
         [Growing track:@"checkOut" withVariable:mutDict];
     }
 }
-//打点结束
+
+-(void)getCartData{
+    //读取数据
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *cartArray ;
+    if ([defaults objectForKey:@"cartArray"]) {
+        NSArray *tempArray = [defaults objectForKey:@"cartArray"];
+        cartArray = [NSMutableArray arrayWithArray:tempArray];
+    }else{
+        cartArray = [NSMutableArray array];
+    }
+    self.cartArray = cartArray ;
+}
+
+#pragma mark UITableViewDelegate, UITableViewDataSource
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *dict = self.cartArray[indexPath.row];
@@ -137,27 +167,38 @@ alpha:alphaValue]
     return cell ;
 }
 
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.cartArray.count ;
 }
 
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 120 ;
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.cartArray removeObjectAtIndex:indexPath.row];
+        NSIndexSet *sections = [[NSIndexSet alloc] initWithIndex:0];
+        [self.tableView reloadSections:sections withRowAnimation:UITableViewRowAnimationFade];
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:self.cartArray forKey:@"cartArray"];
+        [defaults synchronize];
+    }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"删除";
+}
 
--(void)getCartData{
-    //读取数据
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *cartArray ;
-    if ([defaults objectForKey:@"cartArray"]) {
-        cartArray = [defaults objectForKey:@"cartArray"];
-    }else{
-        cartArray = [NSMutableArray array];
+#pragma mark lazy load
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 64 - 49)];
+        _tableView.delegate = self ;
+        _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone ;
+        _tableView.backgroundColor = [UIColor whiteColor];
+        _tableView.rowHeight = 120;
     }
-    self.cartArray = cartArray ;
+    return _tableView;
 }
 
 @end
