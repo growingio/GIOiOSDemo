@@ -10,7 +10,7 @@
 #import "OrderController.h"
 #import "PlaceholderViewController.h"
 
-@interface MineController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MineController () <UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic ,strong) NSArray *dataArray ;
 @property(nonatomic ,strong) UITableView *tableView;
@@ -82,13 +82,11 @@
 - (UIView *)tableHeaderView {
     if (!_tableHeaderView) {
         _tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 100)];
-        _tableHeaderView.backgroundColor = [UIColor whiteColor];
         
         UILabel *leftLabel = [[UILabel alloc] init];
         leftLabel.frame  =  CGRectMake(15, 20, 200,60);
-        leftLabel.backgroundColor =[UIColor whiteColor];
         leftLabel.text = @"GrowingIO";
-        leftLabel.textColor = [UIColor blackColor];
+        leftLabel.textColor = [UIColor darkTextColor];
         leftLabel.textAlignment = NSTextAlignmentLeft ;
         leftLabel.layer.cornerRadius = 5 ;
         leftLabel.layer.masksToBounds = YES;

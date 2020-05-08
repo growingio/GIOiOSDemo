@@ -23,8 +23,6 @@
     self.contentView.backgroundColor = [UIColor whiteColor];
     
     _imageView = [UIImageView new];
-    //_imageView.layer.borderColor = [[UIColor redColor] CGColor];
-   // _imageView.layer.borderWidth = 2;
     [self.contentView addSubview:_imageView];
 }
 

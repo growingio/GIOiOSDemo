@@ -36,7 +36,7 @@
     UILabel *label = [[UILabel alloc] init];
     label.frame  =  CGRectMake(10, 0, 160 , 60);
     label.textColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
-    label.text = [NSString stringWithFormat:@"订单金额：%@",self.allPice];
+    label.text = [NSString stringWithFormat:@"订单金额：%@",self.allPrice];
     [view addSubview:label];
     
     UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(label.frame), self.view.bounds.size.width , 0.5)];
@@ -48,16 +48,12 @@
     label2.frame  =  CGRectMake(self.view.bounds.size.width - 100, 10, 80 , 40);
     //    label2.backgroundColor = [UIColor redColor];
     label2.textColor = [UIColor blackColor];
-    label2.text = self.allPice ;
+    label2.text = [NSString stringWithFormat:@"%@", self.allPrice];
     label2.textAlignment = NSTextAlignmentCenter ;
-    //    label2.layer.cornerRadius = 5 ;
-    //    label2.layer.masksToBounds = YES;
     
     [view addSubview:label2];
     [self.view addSubview:view];
     self.upView = view;
-    //    view.layer.borderColor = [UIColor blackColor].CGColor;
-    //    view.layer.borderWidth = 1 ;
 }
 -(void)makeMiddleview{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(self.upView.frame), self.view.bounds.size.width  , 60)];
@@ -98,10 +94,6 @@
     UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
     [view addGestureRecognizer:tapGesturRecognizer];
     [self.view addSubview:view];
-    
-    
-    //    view.layer.borderColor = [UIColor blackColor].CGColor;
-    //    view.layer.borderWidth = 1 ;
 }
 
 
@@ -119,7 +111,7 @@
     self.model = [[GoodsModel alloc] init];
     self.model.paymentMethod_var = @"GIO支付" ;
     self.model.buyQuantity_var =  @1 ;
-    self.model.payAmount_var = self.allPice ;
+    self.model.payAmount_var = self.allPrice ;
     self.model.orderId_var = self.orderId_var ;
     [Growing track:@"payOrderSuccess" withVariable:[self.model modelTodic]];
     [self paySPUSucess];
@@ -153,6 +145,5 @@
     }
 }
 
-//打点结束
 
 @end

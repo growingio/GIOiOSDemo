@@ -2,18 +2,10 @@
 //  SearchViewController.m
 //  Created by caiq on 16/5/17.
 //  All rights reserved.
-#define RGBCOLORV(rgbValue) [UIColor \
-colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
-green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
-blue:((float)(rgbValue & 0x0000FF))/255.0 \
-alpha:1.0]
-#define RGBCOLORVA(rgbValue, alphaValue) [UIColor \
-colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
-green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
-blue:((float)(rgbValue & 0x0000FF))/255.0 \
-alpha:alphaValue]
+
 #define SCREEN_WIDTH self.view.bounds.size.width
 #define SCREEN_HEIGHT self.view.bounds.size.height
+
 #import "SearchViewController.h"
 #import "OrderCell.h"
 #import "GoodsDetailController.h"
@@ -178,8 +170,6 @@ alpha:alphaValue]
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"未搜索到商品" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];  
     }
-    
-    
 }
 
 //打点开始
@@ -233,11 +223,10 @@ alpha:alphaValue]
     self.searchTable.separatorStyle = NO;
     self.searchTable.delegate = self ;
     self.searchTable.dataSource = self ;
-    self.searchTable.backgroundColor = RGBCOLORV(0xffffff);
+    self.searchTable.backgroundColor = [UIColor lightTextColor];
     UIImageView *imageViewTip = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH /2.0 - 50, 100, 100, 100)];
     imageViewTip.image = [UIImage imageNamed:@"empty"];
     imageViewTip.hidden = YES ;
-    //    self.imageViewTip = imageViewTip ;
     [backSearchView addSubview:imageViewTip];
 }
 

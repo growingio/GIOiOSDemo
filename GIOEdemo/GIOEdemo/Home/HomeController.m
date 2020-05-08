@@ -212,6 +212,7 @@ static NSString* bannerKey = @"9ad8cc83668bb9f0";
     UILabel *upLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0 , self.view.bounds.size.width - 40, 30)];
     upLabel.textAlignment = NSTextAlignmentLeft ;
     upLabel.text = @"GIO推荐" ;
+    upLabel.textColor = [UIColor darkTextColor];
     [self.recommendView addSubview:upLabel];
     self.recommendView.backgroundColor = [UIColor whiteColor];
     HomeCell *cell = [[HomeCell alloc] initWithFrame:CGRectMake(0,40, (self.view.bounds.size.width - 40) , 200 - 40 - 20 )];

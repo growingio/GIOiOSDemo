@@ -82,9 +82,6 @@
     UILabel *label8 = [[UILabel alloc] initWithFrame:CGRectMake(10,CGRectGetMaxY(label7.frame)+10, 200, 30)];
     label8.text = @"运费 ：¥0.00";
     [imageView addSubview:label8];
-    
-    
-    
 }
 
 -(void)makeBottomview{
@@ -126,16 +123,13 @@
 {
     CashierDeskController *VC = [[CashierDeskController alloc] init];
     VC.cartArray = self.cartArray ;
-    VC.allPice = self.dataDict[@"allPrice"];
+    VC.allPrice = self.dataDict[@"allPrice"];
     VC.orderId_var = self.dataDict[@"number"];
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:YES];
     [self payOrder:self.dataDict];
     [self paySPU];
 }
-
-
-
 
 //打点开始
 -(void)payOrder:(NSDictionary *)dict{
