@@ -11,9 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GoodsModel : NSObject
-//商品ID
+//增长ID
 @property (nonatomic,strong)NSString *productId_var ;
-//商品名称
+//增长名称
 @property (nonatomic,strong)NSString *productName_var ;
 //流量位
 @property (nonatomic,strong)NSString *floor_var ;
@@ -21,9 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *searchWord_var ;
 //购买数量
 @property (nonatomic,strong)NSNumber *buyQuantity_var ;
-//订单id
+//增长id
 @property (nonatomic,strong)NSString *orderId_var ;
-//订单金额
+//增长金额
 @property (nonatomic,strong)NSString *orderAmount ;
 //支付方式
 @property (nonatomic,strong)NSString *paymentMethod_var ;

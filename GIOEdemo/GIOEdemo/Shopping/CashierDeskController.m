@@ -36,7 +36,7 @@
     UILabel *label = [[UILabel alloc] init];
     label.frame  =  CGRectMake(10, 0, 160 , 60);
     label.textColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
-    label.text = [NSString stringWithFormat:@"订单金额：%@",self.allPrice];
+    label.text = [NSString stringWithFormat:@"增长金额：%@",self.allPrice];
     [view addSubview:label];
     
     UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(label.frame), self.view.bounds.size.width , 0.5)];
@@ -66,16 +66,9 @@
     UILabel *label = [[UILabel alloc] init];
     label.frame  =  CGRectMake(10, 10, 160 , 30);
     label.textColor = [UIColor blackColor];
-    label.text = @"GIO支付" ;
+    label.text = @"GIO增长" ;
     [view addSubview:label];
     
-    
-    UILabel *label2 = [[UILabel alloc] init];
-    label2.frame  =  CGRectMake(self.view.bounds.size.width - 30, 10, 30 , 30);
-    label2.textColor = [UIColor blackColor];
-    label2.text = @">" ;
-    [view addSubview:label2];
-    [self.view addSubview:view];
 }
 
 
@@ -87,7 +80,7 @@
     label.frame  = view.bounds;
     label.textColor = [UIColor whiteColor];
     label.textAlignment = NSTextAlignmentCenter ;
-    label.text = @"确认支付" ;
+    label.text = @"确认增长" ;
     [view addSubview:label];
     
     
@@ -109,7 +102,7 @@
 //打点开始
 -(void)payOrderSuccess{
     self.model = [[GoodsModel alloc] init];
-    self.model.paymentMethod_var = @"GIO支付" ;
+    self.model.paymentMethod_var = @"GIO增长" ;
     self.model.buyQuantity_var =  @1 ;
     self.model.payAmount_var = self.allPrice ;
     self.model.orderId_var = self.orderId_var ;

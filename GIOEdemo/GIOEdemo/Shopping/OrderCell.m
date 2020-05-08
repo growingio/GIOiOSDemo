@@ -5,16 +5,7 @@
 //  Created by GrowingIO on 2019/1/7.
 //  Copyright © 2019年 GIO. All rights reserved.
 //
-#define RGBCOLORV(rgbValue) [UIColor \
-colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
-green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
-blue:((float)(rgbValue & 0x0000FF))/255.0 \
-alpha:1.0]
-#define RGBCOLORVA(rgbValue, alphaValue) [UIColor \
-colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
-green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
-blue:((float)(rgbValue & 0x0000FF))/255.0 \
-alpha:alphaValue]
+
 #import "OrderCell.h"
 
 @implementation OrderCell
@@ -77,18 +68,18 @@ alpha:alphaValue]
 -(void)updateCell:(NSDictionary *)dict{
     self.numberLabel.text = [[dict objectForKey:@"productId_var"] description];
     if (!self.numberLabel.text.length) {
-        self.numberLabel.text = [NSString stringWithFormat:@"订单编号：%@",[[dict objectForKey:@"number"] description]] ;
+        self.numberLabel.text = [NSString stringWithFormat:@"增长编号：%@",[[dict objectForKey:@"number"] description]] ;
     }
     self.titleLabel.text =  [[dict objectForKey:@"productName_var"] description] ;
     self.divideLabel.text = [[dict objectForKey:@"price_var"] description];
     [self.stateBtn setTitle:[[dict objectForKey:@"state"] description] forState:UIControlStateNormal];
     [self.stateBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.stateBtn.titleLabel.font = [UIFont fontWithName:@"PingFang SC" size:16];
-    if ([self.stateBtn.titleLabel.text isEqualToString:@"待付款"]) {
+    if ([self.stateBtn.titleLabel.text isEqualToString:@"待增长"]) {
         self.stateBtn.backgroundColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
-    }else if([self.stateBtn.titleLabel.text isEqualToString:@"配送中"]){
+    }else if([self.stateBtn.titleLabel.text isEqualToString:@"增长中"]){
         self.stateBtn.backgroundColor = [UIColor colorWithRed:1 green:0.8 blue:0.22 alpha:1];
-    }else if([self.stateBtn.titleLabel.text isEqualToString:@"已收货"]){
+    }else if([self.stateBtn.titleLabel.text isEqualToString:@"已增长"]){
         self.stateBtn.backgroundColor = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:1];
     }
 }

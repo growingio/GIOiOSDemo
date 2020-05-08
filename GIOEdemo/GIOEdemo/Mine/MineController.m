@@ -34,7 +34,7 @@
 #pragma mark UITableViewDelegate, UITableViewDataSource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5 ;
+    return self.dataArray.count ;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -62,7 +62,7 @@
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = [NSArray arrayWithObjects:@"积分", @"会员等级", @"我的订单", @"红包", @"地址",nil];
+        _dataArray = [NSArray arrayWithObjects:@"增长积分", @"增长等级", @"我的增长", @"增长任务",nil];
     }
     return _dataArray;
 }
@@ -96,7 +96,7 @@
         imageView.frame  =  CGRectMake(self.view.bounds.size.width - 80, 20, 60 , 60);
         imageView.layer.masksToBounds = YES ;
         imageView.layer.cornerRadius = 30 ;
-        imageView.image = [UIImage imageNamed:@"mine_icon"];
+        imageView.image = [UIImage imageNamed:@"mine_icon_gio"];
         [_tableHeaderView addSubview:imageView];
     }
     return _tableHeaderView;

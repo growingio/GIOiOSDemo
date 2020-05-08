@@ -42,15 +42,15 @@
     
     _numberLabel= [[UILabel alloc] initWithFrame: CGRectMake(10, 10 ,  self.view.frame.size.width - 100 - 20 , 30)];
     _numberLabel.textAlignment = NSTextAlignmentLeft ;
-    _numberLabel.text = @"订单编号234241249023434124" ;
+    _numberLabel.text = @"增长编号234241249023434124" ;
     
     _payWayLabel= [[UILabel alloc] initWithFrame: CGRectMake(10, CGRectGetMaxY(_numberLabel.frame) + 10 ,  self.view.frame.size.width - 100 - 20 , 30)];
     _payWayLabel.textAlignment = NSTextAlignmentLeft ;
-    _payWayLabel.text = @"支付方式: GIO支付" ;
+    _payWayLabel.text = @"增长方式: GIO增长" ;
     
     _priceLabel= [[UILabel alloc] initWithFrame: CGRectMake(10, CGRectGetMaxY(_payWayLabel.frame) + 10 ,  self.view.frame.size.width - 100 - 20 , 30)];
     _priceLabel.textAlignment = NSTextAlignmentLeft ;
-    _priceLabel.text = @"支付金额：59" ;
+    _priceLabel.text = @"增长金额：59" ;
     
     _discountLabel= [[UILabel alloc] initWithFrame: CGRectMake(10, CGRectGetMaxY(_priceLabel.frame) + 10 ,  self.view.frame.size.width - 100 - 20 , 30)];
     _discountLabel.textAlignment = NSTextAlignmentLeft ;
@@ -64,7 +64,7 @@
     
     _checkOrderBtn= [[UIButton alloc] initWithFrame: CGRectMake(self.view.bounds.size.width / 2.0 - 60, CGRectGetMaxY(_discountLabel.frame) + 30 ,  120, 40)];
     _checkOrderBtn.backgroundColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
-    [_checkOrderBtn setTitle:@"查看订单" forState:UIControlStateNormal];
+    [_checkOrderBtn setTitle:@"查看增长" forState:UIControlStateNormal];
     [_checkOrderBtn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
     _checkOrderBtn.layer.cornerRadius = 5 ;
     _checkOrderBtn.layer.masksToBounds = YES ;

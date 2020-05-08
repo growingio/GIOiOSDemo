@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"我的订单" ;
+    self.title = @"我的增长" ;
     self.view.backgroundColor = [UIColor whiteColor];
     self.dataArray = [NSMutableArray array];
     self.dataAllArrays  = [NSMutableArray array];
@@ -33,13 +33,13 @@
     self.dataRecieveArrays  = [NSMutableArray array];
     
     
-    NSDictionary *dict = @{@"productId_var":@"订单编号：6234542819",@"productName_var":@"GIO 商品",@"price_var":@"¥99.00",@"state":@"待付款",};
+    NSDictionary *dict = @{@"productId_var":@"增长编号：6234542819",@"productName_var":@"GIO 物品",@"price_var":@"¥99.00",@"state":@"待增长",};
     [self.dataAllArrays addObject:dict];
     [self.dataPrePayArrays addObject:dict];
-    NSDictionary *dict2 = @{@"productId_var":@"订单编号：6234542234",@"productName_var":@"GIO 商品",@"price_var":@"¥59.00",@"state":@"配送中",};
+    NSDictionary *dict2 = @{@"productId_var":@"增长编号：6234542234",@"productName_var":@"GIO 物品",@"price_var":@"¥59.00",@"state":@"增长中",};
     [self.dataAllArrays addObject:dict2];
     [self.dataSendArrays addObject:dict2];
-    NSDictionary *dict3 = @{@"productId_var":@"订单编号：62345421232",@"productName_var":@"GIO 商品",@"price_var":@"¥799.00",@"state":@"已收货",};
+    NSDictionary *dict3 = @{@"productId_var":@"增长编号：62345421232",@"productName_var":@"GIO 物品",@"price_var":@"¥799.00",@"state":@"已增长",};
     [self.dataRecieveArrays addObject:dict3];
     [self.dataAllArrays addObject:dict3];
     self.dataArray = [self.dataAllArrays mutableCopy];
@@ -64,17 +64,17 @@
                 break;
             case 1:
             {
-                [btn setTitle:@"代付款" forState:UIControlStateNormal];
+                [btn setTitle:@"待增长" forState:UIControlStateNormal];
             }
                 break;
             case 2:
             {
-                [btn setTitle:@"配送中" forState:UIControlStateNormal];
+                [btn setTitle:@"增长中" forState:UIControlStateNormal];
             }
                 break;
             case 3:
             {
-                [btn setTitle:@"已收货" forState:UIControlStateNormal];
+                [btn setTitle:@"已增长" forState:UIControlStateNormal];
             }
                 break;
             default:
@@ -97,13 +97,13 @@
     
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(label6.frame) + 20 , self.view.bounds.size.width, 20)];
-    titleLabel.text = @"物流信息" ;
+    titleLabel.text = @"增长信息" ;
     [footerView addSubview:titleLabel];
     self.tableView.tableFooterView = footerView ;
     self.tableView.tableFooterView.hidden = YES ;
     
     UILabel *Label2 = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(titleLabel.frame) + 20 , self.view.bounds.size.width, 20)];
-    Label2.text = @"已经到达中转中心，预计明天开始配送" ;
+    Label2.text = @"已经到达中转中心，预计明天开始增长" ;
     [footerView addSubview:Label2];
 
     UILabel *Label3 = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(Label2.frame) + 5, self.view.bounds.size.width, 20)];

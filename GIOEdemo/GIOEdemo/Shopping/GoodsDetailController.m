@@ -17,7 +17,6 @@ static NSInteger const kBottomViewHeight = 60;
 @interface GoodsDetailController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic , strong) UITableView *tableView ;
-@property (nonatomic , strong) NSMutableArray *dataArray ;
 @property (nonatomic , strong) NSMutableArray *suggestArray ;
 @property (nonatomic , strong) NSMutableArray *titleArray;
 @property (nonatomic , strong) UIView *shareView ;
@@ -35,7 +34,7 @@ static NSInteger const kBottomViewHeight = 60;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"商品详情";
+    self.navigationItem.title = @"增长详情";
     self.view.backgroundColor = [UIColor whiteColor];
     
     if (self.goodModel) {
@@ -147,13 +146,14 @@ static NSInteger const kBottomViewHeight = 60;
     
     UIButton *btnLeft = [[UIButton alloc] init];
     btnLeft.backgroundColor = [UIColor whiteColor];
-    btnLeft.frame  = CGRectMake(40, 0, self.view.bounds.size.width /2.0 - 50, 40);
+    btnLeft.frame = CGRectMake(40, 0, self.view.bounds.size.width /2.0 - 50, 40);
     btnLeft.titleLabel.textAlignment = NSTextAlignmentCenter ;
+    btnLeft.titleLabel.font = [UIFont systemFontOfSize:15];
     btnLeft.layer.masksToBounds = YES ;
     btnLeft.layer.cornerRadius = 5 ;
     btnLeft.layer.borderColor = [UIColor blackColor].CGColor;
     btnLeft.layer.borderWidth = 1 ;
-    [btnLeft setTitle:@"加入购物车" forState:UIControlStateNormal];
+    [btnLeft setTitle:@"加入增长平台" forState:UIControlStateNormal];
     [btnLeft setTitleColor: [UIColor blackColor] forState:UIControlStateNormal];
     [btnLeft addTarget:self action:@selector(addShoppingCartAction:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btnLeft];
@@ -162,8 +162,9 @@ static NSInteger const kBottomViewHeight = 60;
     btnRight.backgroundColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
     btnRight.frame  = CGRectMake(self.view.bounds.size.width /2.0 + 10 , 0, self.view.bounds.size.width /2.0  - 50, 40);
     btnRight.titleLabel.textColor = [UIColor whiteColor];
+    btnRight.titleLabel.font = [UIFont systemFontOfSize:15];
     btnRight.titleLabel.textAlignment = NSTextAlignmentCenter ;
-    [btnRight setTitle:@"立即购买" forState:UIControlStateNormal];
+    [btnRight setTitle:@"立即增长" forState:UIControlStateNormal];
     btnRight.layer.masksToBounds = YES ;
     btnRight.layer.cornerRadius = 5 ;
     [btnRight addTarget:self action:@selector(purchaseAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -175,7 +176,7 @@ static NSInteger const kBottomViewHeight = 60;
     
     [Growing track:@"addToBag"];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"添加购物车成功" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"添加增长平台成功" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
     [alert show];
     //存储数据Z
     [self persistCartData];
@@ -194,7 +195,7 @@ static NSInteger const kBottomViewHeight = 60;
 
 - (void)persistCartData {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *cartArray = [[defaults objectForKey:@"cartArray"] mutableCopy];
+    NSMutableArray *cartArray = [[defaults objectForKey:@"cartArray"] mutableCopy] ?: [NSMutableArray array];
     
     if (cartArray &&![cartArray containsObject:[self.goodModel modelTodic]]) {
         [cartArray addObject:[self.goodModel modelTodic]];
@@ -353,13 +354,6 @@ static NSInteger const kBottomViewHeight = 60;
     return _tableView;
 }
 
-- (NSMutableArray *)dataArray {
-    if (!_dataArray) {
-        _dataArray = [NSMutableArray arrayWithObjects:@"GIO 商品",@"GIO 商品",@"GIO 商品",@"GIO 商品",nil];
-    }
-    return _dataArray;
-}
-
 - (NSMutableArray *)titleArray {
     if (!_titleArray) {
         _titleArray = [NSMutableArray arrayWithObjects:@"¥599.00", @"¥5,799.00", @"¥59.00",@"¥599.00",@"¥59.00",nil];
@@ -403,7 +397,7 @@ static NSInteger const kBottomViewHeight = 60;
         [_shareView addSubview:btnClose];
         
         UILabel *shareLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 200, 40)];
-        shareLabel.text = @"分享商品" ;
+        shareLabel.text = @"分享物品" ;
         [_shareView addSubview:shareLabel];
         
         _shareView.layer.masksToBounds = YES ;

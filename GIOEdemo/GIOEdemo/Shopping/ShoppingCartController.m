@@ -17,6 +17,7 @@
 @property (nonatomic , strong) NSMutableArray *cartArray ;
 @property (nonatomic , assign) int allPrice ;
 @property (nonatomic , strong) UILabel *allPriceLabel ;
+@property (nonatomic, strong) UILabel *emptyLabel;
 
 @end
 
@@ -24,9 +25,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"购物车" ;
+    self.navigationItem.title = @"增长" ;
     
     [self.view addSubview:self.tableView];
+    [self.view addSubview:self.emptyLabel];
     
     [self addNotification];
     
@@ -53,6 +55,7 @@
     self.allPrice = price ;
     self.allPriceLabel.text = [NSString stringWithFormat:@"合计：%d",self.allPrice];
     [self.tableView reloadData];
+    self.emptyLabel.hidden = (self.cartArray.count > 0);
 }
 
 -(void)makeGoPay{
@@ -78,7 +81,7 @@
     UILabel *label2 = [[UILabel alloc] init];
     label2.frame  =  CGRectMake(self.view.bounds.size.width - 110, 10, 100 , 40);
     label2.textColor = [UIColor whiteColor];
-    label2.text = @"去结算" ;
+    label2.text = @"去增长" ;
     label2.textAlignment = NSTextAlignmentCenter ;
     label2.layer.cornerRadius = 5 ;
     label2.layer.masksToBounds = YES ;
@@ -110,7 +113,7 @@
 -(void)tapAction
 {
     if (!self.cartArray.count) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请先添加商品" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请先添加增长" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
         [alert show];
         return ;
     }
@@ -120,7 +123,7 @@
     dict[@"image"] = @"chore1" ;
     dict[@"number"] = [NSString stringWithFormat:@"%u",arc4random()%1000000000];
     dict[@"allPrice"] = [NSString stringWithFormat:@"%d",self.allPrice];
-    dict[@"name"] = @"优惠商品";
+    dict[@"name"] = @"优惠增长";
     VC.dataDict = dict ;
     VC.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:VC animated:YES];
@@ -174,12 +177,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.cartArray removeObjectAtIndex:indexPath.row];
-        NSIndexSet *sections = [[NSIndexSet alloc] initWithIndex:0];
-        [self.tableView reloadSections:sections withRowAnimation:UITableViewRowAnimationFade];
-        
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:self.cartArray forKey:@"cartArray"];
         [defaults synchronize];
+        
+        [self updateShoppingCart];
     }
 }
 
@@ -199,6 +201,21 @@
         _tableView.rowHeight = 120;
     }
     return _tableView;
+}
+
+- (UILabel *)emptyLabel {
+    if (!_emptyLabel) {
+        _emptyLabel = [[UILabel alloc] init];
+        CGFloat w = 220;
+        CGFloat h = 100;
+        CGFloat x = (self.view.frame.size.width - w) * 0.5;
+        CGFloat y = self.view.frame.size.height * 0.35;
+        _emptyLabel.frame = CGRectMake(x, y, w, h);
+        _emptyLabel.text = @"暂无增长信息，请去分类中添加";
+        _emptyLabel.font = [UIFont systemFontOfSize:13];
+        _emptyLabel.textColor = [UIColor darkGrayColor];
+    }
+    return _emptyLabel;
 }
 
 @end

@@ -104,7 +104,7 @@
         dict[@"searchWord_var"] = searchBar.text;
         [self searchNoResultView:dict];
         [self searchGoods:dict];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"未搜索到商品" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"未搜索到该增长" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];
     }
 }
@@ -167,7 +167,7 @@
         dict[@"searchWord_var"] = btn.titleLabel.text;
         [self searchNoResultView:dict];
         [self searchGoods:dict];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"未搜索到商品" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"未搜索到该增长" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];  
     }
 }

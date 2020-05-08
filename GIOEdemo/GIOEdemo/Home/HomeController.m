@@ -16,7 +16,10 @@
 #import "MainViewController.h"
 #import "GrowingTouchCoreKit/GrowingTouchBannerView.h"
 
-@interface HomeController ()
+static NSString* bannerKey = @"9ad8cc83668bb9f0";
+
+@interface HomeController () <GrowingTouchBannerViewDelegate>
+
 @property(nonatomic , strong)  UIScrollView *backScrollView ;
 @property(nonatomic , strong)  UIView *upView ;
 @property(nonatomic , strong)  UIView *backSeckillingView ;
@@ -25,12 +28,12 @@
 @property(nonatomic , strong)  NSMutableArray *allDataArray ;
 @property(nonatomic , strong)  GrowingTouchBannerView *bannerViews ;
 @property(nonatomic , strong)  UIImage *placeholderImage ;
+@property (nonatomic, strong) UIImageView *errorPlaceholder;
+
 @end
 
 @implementation HomeController
 
-
-static NSString* bannerKey = @"9ad8cc83668bb9f0";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -78,9 +81,11 @@ static NSString* bannerKey = @"9ad8cc83668bb9f0";
     [searchBar addGestureRecognizer:tap];
     
     //触达banner
-    UIImage* placeholderImage = [UIImage imageNamed:@"default_b.jpg"];
-    self.bannerViews = [GrowingTouchBannerView bannerKey:bannerKey bannerFrame:CGRectMake(0, 0, self.view.bounds.size.width ,220) placeholderImage:placeholderImage];
-    //self.bannerViews.delegate = self ;
+    UIImage* placeholderImage = [UIImage imageNamed:@"suggest1"];
+    self.bannerViews = [GrowingTouchBannerView bannerKey:bannerKey
+                                             bannerFrame:CGRectMake(0, 0, self.view.bounds.size.width ,220)
+                                        placeholderImage:placeholderImage];
+    self.bannerViews.bannerViewErrorImage = placeholderImage;
     [self.bannerViews loadBannerWithDelegate:self];
     [self.backScrollView addSubview:self.bannerViews];
 }
@@ -106,7 +111,7 @@ static NSString* bannerKey = @"9ad8cc83668bb9f0";
         switch (i) {
             case 0:
             {
-                cell.titleLabel.text  = @"商品分类" ;
+                cell.titleLabel.text  = @"增长分类" ;
                 tapGesturRecognizer.view.tag = i ;
             }
                 break;
@@ -118,13 +123,13 @@ static NSString* bannerKey = @"9ad8cc83668bb9f0";
                 break;
             case 2:
             {
-                cell.titleLabel.text  = @"购物车" ;
+                cell.titleLabel.text  = @"增长" ;
                 tapGesturRecognizer.view.tag = i ;
             }
                 break;
             case 3:
             {
-                cell.titleLabel.text  = @"查看订单" ;
+                cell.titleLabel.text  = @"查看增长" ;
                 tapGesturRecognizer.view.tag = i ;
             }
                 break;
@@ -241,5 +246,22 @@ static NSString* bannerKey = @"9ad8cc83668bb9f0";
     }
 }
 
+#pragma mark GrowingTouchBannerViewDelegate
+
+- (void)growingTouchBannerLoadFailed:(GrowingTouchBannerView *)bannerView error:(NSError *)error {
+    if (![bannerView.subviews containsObject:self.errorPlaceholder]) {
+        [bannerView addSubview:self.errorPlaceholder];
+    }
+}
+
+#pragma mark lazy load
+
+- (UIImageView *)errorPlaceholder {
+    if (!_errorPlaceholder) {
+        _errorPlaceholder = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"suggest1"]];
+        _errorPlaceholder.frame = self.bannerViews.bounds;
+    }
+    return _errorPlaceholder;
+}
 
 @end

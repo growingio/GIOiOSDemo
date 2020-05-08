@@ -24,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"填写订单";
+    self.title = @"填写增长";
     [self makeImageView];
     [self makeBottomview];
 }
@@ -65,7 +65,7 @@
     
     UILabel *label5 = [[UILabel alloc] initWithFrame:CGRectMake(10,CGRectGetMaxY(label4.frame)+10, 200, 120)];
     label5.numberOfLines = 0 ;
-    label5.text = @"支付配送  \n\n 在线支付\n GIO 快递";
+    label5.text = @"增长配送  \n\n 在线增长\n GIO 快递";
     [imageView addSubview:label5];
     
     
@@ -75,7 +75,7 @@
     
     
     UILabel *label7 = [[UILabel alloc] initWithFrame:CGRectMake(10,CGRectGetMaxY(label6.frame)+ 10, 300, 30)];
-    label7.text = [NSString stringWithFormat:@"商品金额 ：¥%@",self.dataDict[@"allPrice"]];
+    label7.text = [NSString stringWithFormat:@"物品金额 ：¥%@",self.dataDict[@"allPrice"]];
     [imageView addSubview:label7];
     
     
@@ -105,7 +105,7 @@
     label2.frame  =  CGRectMake(self.view.bounds.size.width - 110, 10, 100 , 40);
     label2.backgroundColor = [UIColor colorWithRed:1 green:0.41 blue:0.22 alpha:1];
     label2.textColor = [UIColor whiteColor];
-    label2.text = @"提交订单" ;
+    label2.text = @"提交增长" ;
     label2.textAlignment = NSTextAlignmentCenter ;
     label2.layer.cornerRadius = 5 ;
     label2.layer.masksToBounds = YES;
@@ -135,8 +135,8 @@
 -(void)payOrder:(NSDictionary *)dict{
     self.model = [[GoodsModel alloc] init];
     self.model.orderId_var =  [[self.dataDict objectForKey:@"number"] description];
-    self.model.productName_var = @"订单商品" ;
-    self.model.paymentMethod_var = @"GIO支付" ;
+    self.model.productName_var = @"增长物品" ;
+    self.model.paymentMethod_var = @"GIO增长" ;
     self.model.buyQuantity_var =  @1;
     self.model.productId_var = self.dataDict[@"image"];
     NSDictionary *dict1 = [self.model modelTodic];
@@ -156,7 +156,7 @@
         [mutDict removeObjectForKey:@"price_var"];
         mutDict[@"buyQuantity_var"] = @1;
         mutDict[@"orderId_var"] = [[self.dataDict objectForKey:@"number"] description];
-        mutDict[@"paymentMethod_var"] = @"GIO支付";
+        mutDict[@"paymentMethod_var"] = @"GIO增长";
         mutDict[@"payAmount_var"] = [NSNumber numberWithFloat:[dict[@"price_var"] floatValue]];
         [Growing track:@"paySPU" withVariable:mutDict];
     }
