@@ -1,3 +1,7 @@
+2.8.16 Release Note
+1.提升稳定性
+
+
 2.8.15 Release Note
 1. 新增 setSessionInterval:(NSTimeInterval)interval 接口
 2. 优化代码性能

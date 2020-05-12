@@ -85,7 +85,7 @@
     }];
     
     ConfigurationModel *configModol = [ConfigurationModel readConfigration];
-    NSString *user = configModol.userID ?: @"zhangsan";
+    NSString *user = configModol.userID ?: @"zhangsaniOS";
     NSString *systemVersion = [UIDevice currentDevice].systemVersion;
     NSString *name = [user stringByAppendingString:systemVersion];
     NSLog(@"设置的登陆用户ID是 %@", name);
