@@ -9,6 +9,7 @@
 #import "MineController.h"
 #import "OrderController.h"
 #import "PlaceholderViewController.h"
+#import "ConfigurationViewController.h"
 
 @interface MineController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -98,9 +99,16 @@
         imageView.layer.cornerRadius = 30 ;
         imageView.image = [UIImage imageNamed:@"mine_icon_gio"];
         [_tableHeaderView addSubview:imageView];
+        
+        UITapGestureRecognizer *tapHeaderGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headerTapHandle:)];
+        [_tableHeaderView addGestureRecognizer:tapHeaderGesture];
     }
     return _tableHeaderView;
 }
 
+- (void)headerTapHandle:(UITapGestureRecognizer *)tap {
+    ConfigurationViewController *configVC = [[ConfigurationViewController alloc] init];
+    [self.navigationController pushViewController:configVC animated:YES];
+}
 
 @end

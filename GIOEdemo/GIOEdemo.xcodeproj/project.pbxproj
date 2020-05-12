@@ -18,6 +18,9 @@
 		42F30D1C21F0939400C4E6E9 /* GIOEdemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F30D1B21F0939400C4E6E9 /* GIOEdemoUITests.m */; };
 		42F30D6121F0946100C4E6E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F30D6021F0946100C4E6E9 /* Assets.xcassets */; };
 		4944DE552462D78F00B3E444 /* PlaceholderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4944DE542462D78F00B3E444 /* PlaceholderViewController.m */; };
+		4978B0FF246A46840002C0B9 /* ConfigurationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4978B0FE246A46840002C0B9 /* ConfigurationModel.m */; };
+		4978B103246A48560002C0B9 /* ConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4978B101246A48560002C0B9 /* ConfigurationViewController.m */; };
+		4978B104246A48560002C0B9 /* ConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4978B102246A48560002C0B9 /* ConfigurationViewController.xib */; };
 		49A7DABB2407701300802F23 /* NSObject+GrowingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7DAB72407701300802F23 /* NSObject+GrowingHelper.m */; };
 		49A7DAC42407710700802F23 /* ShopingCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7DAC12407710700802F23 /* ShopingCartCell.m */; };
 		49A7DAC52407710700802F23 /* ShoppingCartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7DAC22407710700802F23 /* ShoppingCartController.m */; };
@@ -113,6 +116,11 @@
 		42F30D6021F0946100C4E6E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4944DE532462D78F00B3E444 /* PlaceholderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceholderViewController.h; sourceTree = "<group>"; };
 		4944DE542462D78F00B3E444 /* PlaceholderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceholderViewController.m; sourceTree = "<group>"; };
+		4978B0FD246A46840002C0B9 /* ConfigurationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigurationModel.h; sourceTree = "<group>"; };
+		4978B0FE246A46840002C0B9 /* ConfigurationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigurationModel.m; sourceTree = "<group>"; };
+		4978B100246A48560002C0B9 /* ConfigurationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigurationViewController.h; sourceTree = "<group>"; };
+		4978B101246A48560002C0B9 /* ConfigurationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigurationViewController.m; sourceTree = "<group>"; };
+		4978B102246A48560002C0B9 /* ConfigurationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigurationViewController.xib; sourceTree = "<group>"; };
 		49A7DAB72407701300802F23 /* NSObject+GrowingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GrowingHelper.m"; sourceTree = "<group>"; };
 		49A7DABA2407701300802F23 /* NSObject+GrowingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GrowingHelper.h"; sourceTree = "<group>"; };
 		49A7DAC02407710700802F23 /* ShoppingCartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartController.h; sourceTree = "<group>"; };
@@ -286,6 +294,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4978B0FC246A466C0002C0B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4978B0FD246A46840002C0B9 /* ConfigurationModel.h */,
+				4978B0FE246A46840002C0B9 /* ConfigurationModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		49A7DAB624076F9900802F23 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +349,10 @@
 				49A7DAD52407720D00802F23 /* MineController.m */,
 				4944DE532462D78F00B3E444 /* PlaceholderViewController.h */,
 				4944DE542462D78F00B3E444 /* PlaceholderViewController.m */,
+				4978B100246A48560002C0B9 /* ConfigurationViewController.h */,
+				4978B101246A48560002C0B9 /* ConfigurationViewController.m */,
+				4978B102246A48560002C0B9 /* ConfigurationViewController.xib */,
+				4978B0FC246A466C0002C0B9 /* Model */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -542,6 +563,7 @@
 				42F30CFF21F0939300C4E6E9 /* Main.storyboard in Resources */,
 				49A7DADE2407726400802F23 /* BannerCustomViewController.xib in Resources */,
 				49A7DADF2407726400802F23 /* BannerTestViewController.xib in Resources */,
+				4978B104246A48560002C0B9 /* ConfigurationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +663,9 @@
 				49A7DB0224078C4A00802F23 /* DataHelper.m in Sources */,
 				49A7DAFE24078C1E00802F23 /* CheckOrderController.m in Sources */,
 				49A7DACD240771A800802F23 /* NewTabController.m in Sources */,
+				4978B103246A48560002C0B9 /* ConfigurationViewController.m in Sources */,
 				49A7DAF024078BD700802F23 /* SearchViewController.m in Sources */,
+				4978B0FF246A46840002C0B9 /* ConfigurationModel.m in Sources */,
 				49A7DAE924078B7E00802F23 /* GoodsModel.m in Sources */,
 				49A7DAC42407710700802F23 /* ShopingCartCell.m in Sources */,
 				49A7DAFD24078C1E00802F23 /* OrderController.m in Sources */,
@@ -729,7 +753,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = GIOEdemoServiceExtension/GIOEdemoServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20200508001;
+				CURRENT_PROJECT_VERSION = 20200512001;
 				DEVELOPMENT_TEAM = SXBU677CPT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -759,7 +783,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = GIOEdemoServiceExtension/GIOEdemoServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20200508001;
+				CURRENT_PROJECT_VERSION = 20200512001;
 				DEVELOPMENT_TEAM = SXBU677CPT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -903,7 +927,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GIOEdemo/GIOEdemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20200508001;
+				CURRENT_PROJECT_VERSION = 20200512001;
 				DEVELOPMENT_TEAM = SXBU677CPT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -963,7 +987,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GIOEdemo/GIOEdemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20200508001;
+				CURRENT_PROJECT_VERSION = 20200512001;
 				DEVELOPMENT_TEAM = SXBU677CPT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

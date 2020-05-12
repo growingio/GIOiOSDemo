@@ -11,6 +11,7 @@
 #import <GrowingTouchCoreKit/GrowingTouchCoreKit.h>
 #import <UserNotifications/UserNotifications.h>
 #import "NSObject+GrowingHelper.h"
+#import "ConfigurationModel.h"
 
 @interface AppDelegate () <GrowingTouchEventPopupDelegate,UNUserNotificationCenterDelegate,CLLocationManagerDelegate>
 
@@ -82,14 +83,17 @@
         NSLog(@"欢迎使用GIO自定义协议的跳转逻辑，不需要可以不用此方法");
         
     }];
-    NSString *name1 = @"zhangsan";
+    
+    ConfigurationModel *configModol = [ConfigurationModel readConfigration];
+    NSString *user = configModol.userID ?: @"zhangsan";
     NSString *systemVersion = [UIDevice currentDevice].systemVersion;
-    NSString *name = [name1 stringByAppendingString:systemVersion];
-    NSLog(@"设置的登陆用户ID是 %@",name);
-    // 登陆用户属性 注册至今 需设置CreateAt，值必须用YYYYMMDD 的方式上传，否则无法生效  要求SDK1.2.1及以上
-    [Growing setUserId:name];
-    [Growing setPeopleVariable:@{@"CreateAt":@"20191219"}];
+    NSString *name = [user stringByAppendingString:systemVersion];
+    NSLog(@"设置的登陆用户ID是 %@", name);
 
+    [Growing setUserId:name];
+    [Growing setFlushInterval:configModol.flushInterval ?: 15];
+    [Growing setSessionInterval:configModol.sessionInterval ?: 30];
+    [Growing setPeopleVariable:@{@"CreateAt":@"20191219"}];
     
     return YES;
 }
