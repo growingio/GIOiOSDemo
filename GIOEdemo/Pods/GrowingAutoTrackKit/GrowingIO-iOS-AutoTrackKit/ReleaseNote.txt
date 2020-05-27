@@ -1,6 +1,9 @@
+2.8.17 Release Note
+1.WKWebView兼容性提升
+2.做了一些小优化
+
 2.8.16 Release Note
 1.提升稳定性
-
 
 2.8.15 Release Note
 1. 新增 setSessionInterval:(NSTimeInterval)interval 接口

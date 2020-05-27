@@ -36,7 +36,7 @@
     [self registerRemoteNotification];
 //    [Growing setDataHost:@"https://demo1gta.growingio.com"];
 //    [Growing setReportHost:@"https://demo1gta.growingio.com"];
-//    [Growing setTrackerHost:@"https://apifwd.growingio.com"];
+    [Growing setTrackerHost:@"https://apifwd.growingio.com"];
 //    [Growing setGtaHost:@"https://demo1gta.growingio.com"];
 //    [Growing setWsHost:@"wss://demo1gta.growingio.com"];
     

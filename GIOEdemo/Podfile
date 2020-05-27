@@ -9,7 +9,7 @@ target 'GIOEdemo' do
   pod 'GrowingTouch/GrowingTouchKit', '~> 1.3.2' #弹窗SDK
   pod 'GrowingTouch/GrowingPushKit', '~> 1.3.2' #推送SDK(不含后台送达数据上报)
   pod 'GrowingTouch/GrowingTouchBannerKit', '~> 1.3.2' #bannerSDK
-  pod 'GrowingAutoTrackKit', '2.8.16'     #无埋点采集
+  pod 'GrowingAutoTrackKit', '2.8.17'     #无埋点采集
   pod 'YYImage', '~> 1.0.4'
   pod 'YYWebImage', '~> 1.0.5'
   pod 'YYImage/WebP'
