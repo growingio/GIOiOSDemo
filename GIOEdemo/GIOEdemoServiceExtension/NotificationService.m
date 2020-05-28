@@ -23,15 +23,16 @@
     self.bestAttemptContent = [request.content mutableCopy];
     
     
-    [GrowingPushExtensionKit sendNotificationRequest:request withCompletionHandler:^(id response) {
+    [GrowingPushExtensionKit handleNotificationRequest:request
+                                        withCompletion:^(NSArray<UNNotificationAttachment *> * _Nullable attachments, NSArray<NSError *> * _Nullable errors) {
         NSLog(@"执行成功");
-        NSLog(@"回调信息是%@",response);
+        NSLog(@"回调信息是 attachments = %@, error = %@", attachments, errors);
         
         // Modify the notification content here...
-        self.bestAttemptContent.title = [NSString stringWithFormat:@"%@ [PushExtensionKit集成成功]", self.bestAttemptContent.title];
+        self.bestAttemptContent.attachments = attachments;
+        // self.bestAttemptContent.title = [NSString stringWithFormat:@"%@ [PushExtensionKit集成成功]", self.bestAttemptContent.title];
         
         self.contentHandler(self.bestAttemptContent);
-
     }];
 
 }
