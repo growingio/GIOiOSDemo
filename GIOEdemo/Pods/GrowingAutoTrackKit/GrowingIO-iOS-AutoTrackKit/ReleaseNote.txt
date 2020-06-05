@@ -1,3 +1,7 @@
+2.8.19 Release Note
+1.优化日志性能
+2.解决个别用户符号重定义错误
+
 2.8.17 Release Note
 1.WKWebView兼容性提升
 2.做了一些小优化
