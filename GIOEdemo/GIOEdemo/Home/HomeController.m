@@ -86,6 +86,13 @@ static NSString* bannerKey = @"9ad8cc83668bb9f0";
                                              bannerFrame:CGRectMake(0, 0, self.view.bounds.size.width ,220)
                                         placeholderImage:placeholderImage];
     self.bannerViews.bannerViewErrorImage = placeholderImage;
+        //  设置图片
+//    self.bannerViews.currentPageIndicatorImage = [UIImage imageNamed:@"page_select"];
+//    self.bannerViews.pageIndicatorImage = [UIImage imageNamed:@"page_unselect"];
+    //    self.bannerView.pageIndicatorSize = CGSizeMake(6,6);
+    //    self.bannerView.currentPageIndicatorSize = CGSizeMake(16,16);
+    //    self.bannerView.currentPageIndicatorTintColor = [UIColor redColor];
+    //    self.bannerView.pageIndicatorTintColor = [UIColor yellowColor];
     [self.bannerViews loadBannerWithDelegate:self];
     [self.backScrollView addSubview:self.bannerViews];
 }

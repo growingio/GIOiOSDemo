@@ -91,6 +91,20 @@ typedef NS_ENUM (NSInteger, GrowingTouchBannerViewPageControlStyle){
 @property (nonatomic, assign) GrowingTouchBannerViewPageControlStyle pageControlStyle;
 /** pageControl 的位置 */
 @property (nonatomic, assign) GrowingTouchBannerViewPageControlAlignment pageControlAlignment;
+/** pageControl 未选中时的图片 */
+@property (nonatomic, strong) UIImage *pageIndicatorImage;
+/** pageControl 选中时的图片 */
+@property (nonatomic, strong) UIImage *currentPageIndicatorImage;
+/** pageControl 未选中的颜色 */
+@property (nonatomic, strong) UIColor *pageIndicatorTintColor;
+/** pageControl 选中的颜色 */
+@property (nonatomic, strong) UIColor *currentPageIndicatorTintColor;
+/** pageControl 未选中的尺寸大小 */
+@property (nonatomic, assign) CGSize pageIndicatorSize;
+/** pageControl 选中的尺寸大小 */
+@property (nonatomic, assign) CGSize currentPageIndicatorSize;
+/** pageControl 间距大小 */
+@property (nonatomic, assign) CGFloat pageIndicatorSpaing;
 /** 轮播视图为空的默认错误视图 */
 @property (nonatomic, strong) UIImage *bannerViewErrorImage;
 /** 图片的填充模式,包括轮播图以及背景图 */
