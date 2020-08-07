@@ -80,8 +80,13 @@
 
     //  推送的自定义协议的跳转逻辑
     [GrowingTouch clickMessageWithCompletionHandler:^(NSDictionary *params) {
-        NSLog(@"欢迎使用GIO自定义协议的跳转逻辑，不需要可以不用此方法");
-        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"推送的自定义协议" message:params.description preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [alert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alert addAction:action];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+        NSLog(@"欢迎使用GIO推送的自定义协议的跳转逻辑，不需要可以不用此方法");
     }];
     
     ConfigurationModel *configModol = [ConfigurationModel readConfigration];
