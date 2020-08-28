@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 #import "GrowingTouchBannerView.h"
 
-@class GrowingTouchBannerData,GrowingTouchBannerItem;
+@class GrowingTouchBannerData, GrowingTouchBannerItem, GrowingPopupWindowEvent;
 
 @protocol GrowingTouchEventPopupDelegate;
 
@@ -89,6 +89,13 @@
 + (BOOL)isDebugEnabled;
 
 + (void)setServerHost:(NSString *)host;
+
+/**
+ * 拉取所有的弹窗数据
+ *
+ * @param completion 完成回调，包含弹窗数组和错误信息
+ */
++ (void)loadPopupWindowEventsCompletion:(void (^)(NSArray <GrowingPopupWindowEvent *> * popups, NSError *error))completion;
 
 #pragma mark - GrowingBanner
 /**

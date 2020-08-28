@@ -13,5 +13,8 @@
 #import <GrowingTouchCoreKit/GrowingTouchEventPopupDelegate.h>
 #import <GrowingTouchCoreKit/GrowingTouchBannerView.h>
 #import <GrowingTouchCoreKit/GrowingTouchBannerData.h>
+#import <GrowingTouchCoreKit/GrowingPopupWindowEvent.h>
+#import <GrowingTouchCoreKit/GrowingEventPopupDecisionAction.h>
+#import <GrowingTouchCoreKit/GrowingTouchRuleModels.h>
 
 #endif /* GrowingTouchCoreKit_h */

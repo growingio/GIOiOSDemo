@@ -35,7 +35,7 @@ typedef NS_ENUM (NSInteger, GrowingTouchBannerViewPageControlStyle){
  
  @param bannerView 对应的banner视图
  */
-- (void)growingTouchBannerLoadSuccess:(GrowingTouchBannerView*) bannerView;
+- (void)growingTouchBannerLoadSuccess:(GrowingTouchBannerView *) bannerView;
 
 /**
  banner 加载失败
@@ -43,7 +43,7 @@ typedef NS_ENUM (NSInteger, GrowingTouchBannerViewPageControlStyle){
  @param bannerView 对应的banner视图
  @param error 失败error
  */
-- (void)growingTouchBannerLoadFailed:(GrowingTouchBannerView*) bannerView error:(NSError *)error;
+- (void)growingTouchBannerLoadFailed:(GrowingTouchBannerView *) bannerView error:(NSError *)error;
 
 /**
  点击选中某一个banner视图,是否消费此次点击事件
@@ -53,7 +53,7 @@ typedef NS_ENUM (NSInteger, GrowingTouchBannerViewPageControlStyle){
  @param openUrl 跳转的链接
  @return 是否消费此次点击
  */
-- (BOOL)growingTouchBanner:(GrowingTouchBannerView*) bannerView didSelectAtIndex:(NSInteger)index openUrl:(NSString *)openUrl;
+- (BOOL)growingTouchBanner:(GrowingTouchBannerView *) bannerView didSelectAtIndex:(NSInteger)index openUrl:(NSString *)openUrl;
 
 /**
  视图展示方法
@@ -61,14 +61,14 @@ typedef NS_ENUM (NSInteger, GrowingTouchBannerViewPageControlStyle){
  @param bannerView 对应的banner视图
  @param index banner 位置
  */
-- (void)growingTouchBanner:(GrowingTouchBannerView*) bannerView didShowAtIndex:(NSInteger)index;
+- (void)growingTouchBanner:(GrowingTouchBannerView *) bannerView didShowAtIndex:(NSInteger)index;
 
 /**
  banner视图加载失败未展示的默认点击事件
 
  @param bannerView 对应的banner视图
  */
-- (void)growingTouchBannerErrorImageClick:(GrowingTouchBannerView*) bannerView;
+- (void)growingTouchBannerErrorImageClick:(GrowingTouchBannerView *) bannerView;
 
 @end
 
