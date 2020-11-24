@@ -1,3 +1,11 @@
+更新日志
+https://docs.growingio.com/v3/developer-manual/sdkintegrated/ios-sdk/iossdk-log
+
+2.8.22 release note
+
+2.8.20 release note
+无
+
 2.8.19 release note
 无
 

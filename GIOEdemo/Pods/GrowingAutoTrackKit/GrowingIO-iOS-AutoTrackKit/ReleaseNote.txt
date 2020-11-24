@@ -1,3 +1,11 @@
+更新日志
+https://docs.growingio.com/v3/developer-manual/sdkintegrated/ios-sdk/iossdk-log
+2.8.22 Release Note
+
+2.8.20 Release Note
+1.半自动埋点优化
+2.更新新版帮助文档
+
 2.8.19 Release Note
 1.优化日志性能
 2.解决个别用户符号重定义错误

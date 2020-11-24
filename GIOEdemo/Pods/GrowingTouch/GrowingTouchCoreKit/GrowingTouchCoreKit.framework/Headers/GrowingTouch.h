@@ -6,6 +6,9 @@
 #import <Foundation/Foundation.h>
 #import "GrowingTouchBannerView.h"
 
+FOUNDATION_EXPORT NSString *const GTouchSdkVersion;
+FOUNDATION_EXPORT int const GTouchSdkVersionCode;
+
 @class GrowingTouchBannerData, GrowingTouchBannerItem, GrowingPopupWindowEvent;
 
 @protocol GrowingTouchEventPopupDelegate;

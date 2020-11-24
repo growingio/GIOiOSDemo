@@ -151,3 +151,10 @@
 
 @end
 
+@interface WKWebView(GrowingAttributes)
+
+// 手动标识该WKWebView可以被采集
+@property (nonatomic, assign) BOOL growingAttributesIsTracked;
+
+@end
+
